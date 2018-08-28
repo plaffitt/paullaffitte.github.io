@@ -1,37 +1,91 @@
-## Welcome to GitHub Pages
+---
+layout: page
 
-You can use the [editor on GitHub](https://github.com/paullaffitte/paullaffitte.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+information:
+  firstname: Paul
+  lastname: Laffitte
+  profession: Développeur
+  address: 20, Rue Ernest Michel
+  zipCode: '34000'
+  city: MONTPELLIER
+  phoneNumber: "+33.01.04.24.96"
+  emailAddress: paul.laffitte@epitech.eu
+  linkedin: paul-laffitte-41b009140
+  github: paullaffitte
+  personalSite:
+    label: localhost:8730
+    icon: ''
+    href: http://localhost:8730
+  picture: https://avatars0.githubusercontent.com/u/23403270
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+about:
+  label: A Propos
+  content: Passionné d'informatique depuis jeune. Je cherche à an apprendre toujours
+    plus, à améliorer mes compétences dans dse languages et technologies déjà connus
+    ainsi qu'en apprendre de nouveaux.
 
-### Markdown
+skills:
+- label: Compétences
+  units:
+  - type: text
+    id: determination
+    label: déterminé
+  - type: text
+    id: organisation
+    label: organisé
+  - type: text
+    id: autonomy
+    label: autonome
+  - type: text
+    id: inventiveness
+    label: inventif
+  - type: text
+    id: sociability
+    label: sociable
+  - type: text
+    id: toeic
+    label: 750 points au TOEIC
+- label: Languages
+  sort: true
+  units:
+  - type: progressbar
+    id: langC
+    label: C
+    value: 80
+  - type: progressbar
+    id: langJava
+    label: Java
+    value: 60
+  - type: progressbar
+    id: langCpp
+    label: C++
+    value: 60
+  - type: progressbar
+    id: langPython
+    label: Python
+    value: 40
+  - type: progressbar
+    id: langBash
+    label: Bash
+    value: 30
+  - type: progressbar
+    id: langCsharp
+    label: C#
+    value: 20
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+activities:
+- label: EXPÉRIENCE PROFESSIONNELLE
+  units:
+  - title: Iamanys
+    location: Fabrègues
+    role: Développeur Java
+    from: Aout 2015
+    to: Mars 2016
+    description: Participant au développement d'un gestionnaire de dossier de patient
+      dans le domaine du médical.
+    skills:
+    - langJava
+    - langCsharp
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/paullaffitte/paullaffitte.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+---
+{{ page.information.firstname }} {{ page.information.lastname }}
