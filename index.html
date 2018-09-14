@@ -1,35 +1,6 @@
 ---
 layout: page
 
-skills:
-- label: Languages
-  sort: true
-  units:
-  - type: progressbar
-    id: langC
-    label: C
-    value: 80
-  - type: progressbar
-    id: langJava
-    label: Java
-    value: 60
-  - type: progressbar
-    id: langCpp
-    label: C++
-    value: 60
-  - type: progressbar
-    id: langPython
-    label: Python
-    value: 40
-  - type: progressbar
-    id: langBash
-    label: Bash
-    value: 30
-  - type: progressbar
-    id: langCsharp
-    label: C#
-    value: 20
-
 activities:
 - label: EXPÉRIENCE PROFESSIONNELLE
   units:
@@ -45,10 +16,10 @@ activities:
     - langCsharp
 
 ---
+{% assign softskills = site.skills | where: 'category', 'softskills' %}
+{% assign langs = site.skills | where: 'category', 'langs' %}
 
 {{ site.data.profile.firstname }} {{ site.data.profile.lastname }}
-{% include pageBy.md title="About" %}
-
-{% for skill in site.skills %}
-  {% include skillCard.html skill=skill.path %}
-{% endfor %}
+{% include pageBy.md title='About' %}
+{% include skillCards.html skills=softskills %}
+{% include skillCards.html skills=langs %}
