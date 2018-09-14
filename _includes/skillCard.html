@@ -1,0 +1,5 @@
+{% include collectionItem.md collection="skills" name=include.skill %}
+{{ assign skill = collectionItem }}
+
+<h2>{{ skill.label | capitalize }}</h2>
+<p>{{ skill.content }}</p>

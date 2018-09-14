@@ -2,26 +2,6 @@
 layout: page
 
 skills:
-- label: Compétences
-  units:
-  - type: text
-    id: determination
-    label: déterminé
-  - type: text
-    id: organisation
-    label: organisé
-  - type: text
-    id: autonomy
-    label: autonome
-  - type: text
-    id: inventiveness
-    label: inventif
-  - type: text
-    id: sociability
-    label: sociable
-  - type: text
-    id: toeic
-    label: 750 points au TOEIC
 - label: Languages
   sort: true
   units:
@@ -65,9 +45,10 @@ activities:
     - langCsharp
 
 ---
-{{ page.information.firstname }} {{ page.information.lastname }}
+
+{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}
 {% include pageBy.md title="About" %}
+
 {% for skill in site.skills %}
-  <h2>{{ skill.label | capitalize }}</h2>
-  <p>{{ skill.content }}</p>
+  {% include skillCard.html skill=skill.path %}
 {% endfor %}
