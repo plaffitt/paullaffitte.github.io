@@ -1,1 +1,23 @@
-theme: jekyll-theme-tactile
+title: Paul Laffitte
+theme: minima
+email: paul.laffitte@epitech.eu
+github_username: paullaffitte
+
+collections_dir: collections
+collections:
+  - skills
+  - activities
+
+# markdown: kramdown
+# plugins:
+#   - jekyll-feed
+
+destination: _site
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore

@@ -1,29 +1,6 @@
 ---
 layout: page
 
-information:
-  firstname: Paul
-  lastname: Laffitte
-  profession: Développeur
-  address: 20, Rue Ernest Michel
-  zipCode: '34000'
-  city: MONTPELLIER
-  phoneNumber: "+33.01.04.24.96"
-  emailAddress: paul.laffitte@epitech.eu
-  linkedin: paul-laffitte-41b009140
-  github: paullaffitte
-  personalSite:
-    label: localhost:8730
-    icon: ''
-    href: http://localhost:8730
-  picture: https://avatars0.githubusercontent.com/u/23403270
-
-about:
-  label: A Propos
-  content: Passionné d'informatique depuis jeune. Je cherche à an apprendre toujours
-    plus, à améliorer mes compétences dans dse languages et technologies déjà connus
-    ainsi qu'en apprendre de nouveaux.
-
 skills:
 - label: Compétences
   units:
@@ -89,3 +66,8 @@ activities:
 
 ---
 {{ page.information.firstname }} {{ page.information.lastname }}
+{% include pageBy.md title="About" %}
+{% for skill in site.skills %}
+  <h2>{{ skill.label | capitalize }}</h2>
+  <p>{{ skill.content }}</p>
+{% endfor %}
