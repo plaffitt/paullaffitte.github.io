@@ -17,7 +17,7 @@ activities:
 
 ---
 {% assign softskills = site.skills | where: 'category', 'softskills' %}
-{% assign langs = site.skills | where: 'category', 'langs' %}
+{% assign langs = site.skills | where: 'category', 'langs' | sort: 'value' | reverse %}
 
 {{ site.data.profile.firstname }} {{ site.data.profile.lastname }}
 {% include pageBy.md title='About' %}
