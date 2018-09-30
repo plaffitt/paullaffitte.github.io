@@ -5,10 +5,28 @@ layout: page
 {% assign softskills = site.skills | where: 'category', 'softskills' %}
 {% assign langs = site.skills | where: 'category', 'langs' | sort: 'value' | reverse %}
 {% assign xppro = site.activities | where: 'category', 'xp-pro' %}
+{% assign scolar = site.activities | where: 'category', 'scolar' %}
 
-{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}
-{% include pageBy.md title='About' %}
+<div class="row">
+  <div class="col-md-3">
+    <img src="{{ site.data.profile.picture }}" class="img-fluid" alt="{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}">
+  </div>
+  <div class="col-md-9">
+    <h1>{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}</h1>
 
-{% include skillCards.html skills=softskills %}
-{% include skillCards.html skills=langs %}
-{% include activityCards.html activities=xppro %}
+    <p>{% include pageBy.md title='About' %}</p>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-9">
+    {% include activityCards.html activities=xppro %}
+    {% include activityCards.html activities=scolar %}
+  </div>
+  <div class="col-md-3">
+    {% include skillCards.html skills=softskills %}
+    {% include skillCards.html skills=langs %}
+  </div>
+</div>
