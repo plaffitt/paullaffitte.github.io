@@ -1,3 +1,5 @@
 {% for skill in include.skills %}
-	{% include skillCard.html skill=skill.path %}
+	{% if skill.hidden != true %}
+		{% include skillCard.html skill=skill.path %}
+	{% endif %}
 {% endfor %}

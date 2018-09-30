@@ -1,25 +1,14 @@
 ---
 layout: page
-
-activities:
-- label: EXPÉRIENCE PROFESSIONNELLE
-  units:
-  - title: Iamanys
-    location: Fabrègues
-    role: Développeur Java
-    from: Aout 2015
-    to: Mars 2016
-    description: Participant au développement d'un gestionnaire de dossier de patient
-      dans le domaine du médical.
-    skills:
-    - langJava
-    - langCsharp
-
 ---
+
 {% assign softskills = site.skills | where: 'category', 'softskills' %}
 {% assign langs = site.skills | where: 'category', 'langs' | sort: 'value' | reverse %}
+{% assign xppro = site.activities | where: 'category', 'xp-pro' %}
 
 {{ site.data.profile.firstname }} {{ site.data.profile.lastname }}
 {% include pageBy.md title='About' %}
+
 {% include skillCards.html skills=softskills %}
 {% include skillCards.html skills=langs %}
+{% include activityCards.html activities=xppro %}

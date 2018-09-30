@@ -1,0 +1,7 @@
+{% include collectionItem.md collection="activity" name=include.activity %}
+{% assign activity = collectionItem %}
+<h3>{{ activity.title }} - <small>{{ activity.role }}</small></h3><h4></h4>
+<span><small>Location: {{activity.location}} - from {{ activity.from }} to {{ activity.to }}</small></span>
+<hr>
+<p>{{ activity.description }}</p>
+<!-- TODO: related skills -->
