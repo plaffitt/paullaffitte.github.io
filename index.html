@@ -1,32 +1,33 @@
 ---
-layout: page
+layout: default
 ---
 
 {% assign softskills = site.skills | where: 'category', 'softskills' %}
 {% assign langs = site.skills | where: 'category', 'langs' | sort: 'value' | reverse %}
-{% assign xppro = site.activities | where: 'category', 'xp-pro' %}
+{% assign xppro = site.activities | where: 'category', 'xppro' %}
 {% assign scolar = site.activities | where: 'category', 'scolar' %}
 
-<div class="row">
-  <div class="col-md-3">
-    <img src="{{ site.data.profile.picture }}" class="img-fluid" alt="{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}">
-  </div>
-  <div class="col-md-9">
-    <h1>{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}</h1>
+<section id="cv">
+  <header class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 bd-highlight">
+      <img id="profile-picture" src="{{ site.data.profile.picture }}" class="float-left" alt="{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}">
+    </div>
+    <div class="p-2 bd-highlight w-auto">
+      <h1>{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}</h1>
+      {% include pageBy.md title='About' %}
+    </div>
+  </header>
 
-    <p>{% include pageBy.md title='About' %}</p>
-  </div>
-</div>
+  <hr class="mb-3">
 
-<hr>
-
-<div class="row">
-  <div class="col-md-9">
-    {% include activityCards.html activities=xppro %}
-    {% include activityCards.html activities=scolar %}
+  <div class="row">
+    <div class="col-md-9">
+      {% include activityCards.html label=site.data.activityCategories.xppro.label activities=xppro %}
+      {% include activityCards.html label=site.data.activityCategories.scolar.label activities=scolar %}
+    </div>
+    <div class="col-md-3">
+      {% include skillCards.html skills=softskills %}
+      {% include skillCards.html skills=langs %}
+    </div>
   </div>
-  <div class="col-md-3">
-    {% include skillCards.html skills=softskills %}
-    {% include skillCards.html skills=langs %}
-  </div>
-</div>
+</section>
