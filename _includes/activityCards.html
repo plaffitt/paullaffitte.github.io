@@ -1,6 +1,9 @@
+{% assign category = site.data.categories[include.category] %}
+{% assign activities = site.data.activities | where: 'category', include.category %}
+
 <section>
-	<h2>{{include.label}}</h2>
-	{% for activity in include.activities %}
-		{% include activityCard.html activity=activity.path %}
+	<h2>{{category.label}}</h2>
+	{% for activity in activities %}
+		{% include activityCard.html activity=activity %}
 	{% endfor %}
 </section>

@@ -1,6 +1,6 @@
-{% include collectionItem.md collection="skills" name=include.skill %}
-{% assign skill = collectionItem %}
-{% assign category = site.data.skillCategories[skill.category]%}
+{% assign skill = include.skill %}
+{% assign category = include.category %}
+
 {% case category.type %}
 	{% when 'text' %}
 		<p>{{ skill.label | capitalize }}</p>

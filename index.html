@@ -2,11 +2,6 @@
 layout: default
 ---
 
-{% assign softskills = site.skills | where: 'category', 'softskills' %}
-{% assign langs = site.skills | where: 'category', 'langs' | sort: 'value' | reverse %}
-{% assign xppro = site.activities | where: 'category', 'xppro' %}
-{% assign scolar = site.activities | where: 'category', 'scolar' %}
-
 <section id="cv">
   <header class="d-flex flex-row bd-highlight mb-3">
     <div class="p-2 bd-highlight">
@@ -22,12 +17,13 @@ layout: default
 
   <div class="row">
     <div class="col-md-9">
-      {% include activityCards.html label=site.data.activityCategories.xppro.label activities=xppro %}
-      {% include activityCards.html label=site.data.activityCategories.scolar.label activities=scolar %}
+      {% include activityCards.html category='xppro' %}
+      {% include activityCards.html category='scolar' %}
     </div>
     <div class="col-md-3">
-      {% include skillCards.html skills=softskills %}
-      {% include skillCards.html skills=langs %}
+      {% assign langs = site.data.skills | where: 'category', 'langs' | sort: 'value' | reverse %}
+      {% include skillCards.html category='softskills' %}
+      {% include skillCards.html category='langs' skills=langs %}
     </div>
   </div>
 </section>

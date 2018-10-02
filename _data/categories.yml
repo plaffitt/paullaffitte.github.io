@@ -1,0 +1,17 @@
+scolar:
+  section: activities
+  label: Cursus scolaire
+
+xppro:
+  section: activities
+  label: Expérience professionelle
+
+softskills:
+  section: skills
+  label: Soft skills
+  type: text
+
+langs:
+  section: skills
+  label: Langs
+  type: progressbar

@@ -1,5 +1,14 @@
-{% for skill in include.skills %}
+{% assign category = site.data.categories[include.category] %}
+
+{% if include.skills %}
+	{% assign skills = include.skills | where: 'category', include.category %}
+{% else %}
+	{% assign skills = site.data.skills | where: 'category', include.category %}
+{% endif %}
+
+
+{% for skill in skills %}
 	{% if skill.hidden != true %}
-		{% include skillCard.html skill=skill.path %}
+		{% include skillCard.html category=category skill=skill %}
 	{% endif %}
 {% endfor %}

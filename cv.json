@@ -1,0 +1,3 @@
+---
+---
+{"skills":{{ site.data.skills | jsonify }},"activities":{{ site.data.activities | jsonify }},"categories":{{ site.data.categories | jsonify }}}
