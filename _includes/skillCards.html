@@ -6,9 +6,11 @@
 	{% assign skills = site.data.skills | where: 'category', include.category %}
 {% endif %}
 
-
-{% for skill in skills %}
-	{% if skill.hidden != true %}
-		{% include skillCard.html category=category skill=skill %}
-	{% endif %}
-{% endfor %}
+<section class="mb-4">
+	<h2>{{ category.label }}</h2>
+	{% for skill in skills %}
+		{% if skill.hidden != true %}
+			{% include skillCard.html category=category skill=skill %}
+		{% endif %}
+	{% endfor %}
+</section>

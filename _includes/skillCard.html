@@ -3,7 +3,15 @@
 
 {% case category.type %}
 	{% when 'text' %}
-		<p>{{ skill.label | capitalize }}</p>
+		<span class="badge badge-pill badge-primary">{{ skill.label | capitalize }}</span>
 	{% when 'progressbar' %}
-		<p>{{ skill.label | capitalize }}: {{ skill.value }}/100</p>
+		<div>
+			<div class="progress mb-2">
+				<div class="progress-bar" style="width: {{ skill.value }}%;" role="progressbar" aria-valuenow="{{ skill.value }}" aria-valuemin="0" aria-valuemax="100">
+					<div>
+						<span class="float-left ml-2">{{ skill.label | capitalize }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
 {% endcase %}
