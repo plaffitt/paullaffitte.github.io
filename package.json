@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn run webpack --watch --config webpack.config.js & bundle exec jekyll serve -d /tmp/jekyll && fg",
-    "build": "yarn run webpack --config webpack.config.js"
+    "build": "yarn run webpack --config webpack.config.js",
+    "publish": "./publish.sh"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
