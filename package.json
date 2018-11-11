@@ -43,5 +43,7 @@
     "unionfs": "^4.4.0",
     "webpack": "^4.25.1",
     "yaml-js": "^0.2.3"
+    "html2canvas": "^1.0.0-alpha.12",
+    "jspdf": "^1.4.1"
   }
 }
