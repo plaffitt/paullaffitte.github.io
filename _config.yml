@@ -16,3 +16,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - .gitignore
+  - package.json
+  - webpack.config.js
+  - yarn.lock
+  - node_modules
+  - src
