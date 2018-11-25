@@ -32,5 +32,10 @@ sed .gitignore -i -e 's/api\/\*\.json//'
 git add --all
 git commit -m "build"
 git push --force
+buildedHash=$(git log $DEPLOYED --oneline --pretty=format:"%h" -2 | awk 'NR==2')
+lastTag=$(git tag | grep -P "\d*-\d{4}-\d{2}-\d{2}" | tail -n1 | cut -d'-' -f1)
+tag=$(echo "$lastTag + 1" | bc)-$(date +%Y-%m-%d)
+git tag $tag $buildedHash
+git push origin $tag
 
 rm $TMPDIR -rf
