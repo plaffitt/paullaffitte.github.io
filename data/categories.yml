@@ -1,0 +1,13 @@
+scolar:
+  label: Cursus scolaire
+
+xppro:
+  label: Expérience professionelle
+
+softskills:
+  label: Soft skills
+  type: text
+
+langs:
+  label: Langs
+  type: progressbar

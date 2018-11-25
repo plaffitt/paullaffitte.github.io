@@ -1,0 +1,56 @@
+autonomous:
+  category: softskills
+  label: Autonomous
+creative:
+  category: softskills
+  label: Creative
+involved:
+  category: softskills
+  label: Involved
+organized:
+  category: softskills
+  label: Organized
+sociable:
+  category: softskills
+  label: Sociable
+tepitech:
+  category: softskills
+  label: Tepitech (Epitech TOEIC like) 750
+
+c:
+  category: langs
+  label: C
+  value: 90
+cpp:
+  category: langs
+  label: C++
+  value: 70
+csharp:
+  category: langs
+  label: C#
+  value: 10
+  hidden: true
+haskell:
+  category: langs
+  label: Haskell
+  value: 40
+java:
+  category: langs
+  label: Java
+  value: 40
+js:
+  category: langs
+  label: Javascript
+  value: 80
+python:
+  category: langs
+  label: Python
+  value: 60
+scss:
+  category: langs
+  label: Scss
+  value: 60
+shell_script:
+  category: langs
+  label: Shell script
+  value: 70

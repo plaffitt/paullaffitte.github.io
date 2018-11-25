@@ -23,7 +23,7 @@ git reset --hard origin/develop
 yarn
 yarn run build
 
-sed .gitignore -i -e 's/assets\/js\/\*\.js//'
+sed .gitignore -i -e 's/assets\/js\/\*\.js//' # FIXME remove api/*.json as well
 git add --all
 git commit -m "build"
 git push --force
