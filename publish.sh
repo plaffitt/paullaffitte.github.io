@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-read -p "This action will hard reset master onto develop and force push. Are you sure? (y/n) " -n 1 -r
+TO_DEPLOY='develop'
+DEPLOYED='master'
+
+read -p "This action will hard reset $DEPLOYED onto $TO_DEPLOY and force push. Are you sure? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Nn]$ ]];
 	then exit
@@ -14,16 +17,18 @@ cd $TMPDIR
 git add --all
 git stash
 
-git checkout develop
+git checkout $TO_DEPLOY
 git fetch origin
 
-git checkout master
-git reset --hard origin/develop
+git checkout $DEPLOYED
+git reset --hard origin/$TO_DEPLOY
 
 yarn
-yarn run build
+yarn run re
 
-sed .gitignore -i -e 's/assets\/js\/\*\.js//' # FIXME remove api/*.json as well
+sed .gitignore -i -e 's/assets\/js\/\*\.js//'
+sed .gitignore -i -e 's/api\/\*\.json//'
+
 git add --all
 git commit -m "build"
 git push --force
