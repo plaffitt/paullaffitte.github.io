@@ -7,3 +7,5 @@ yarn-error.log
 
 assets/js/*.js
 api/*.json
+
+_data2

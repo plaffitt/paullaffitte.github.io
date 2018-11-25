@@ -1,3 +1,5 @@
+const YAML = require('yaml');
+
 module.exports = class DataExtractorPlugin {
   apply(compiler) {
     compiler.hooks.emit.tapAsync('DataExtractorPlugin', (compilation, callback) => {
