@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn run build && (yarn run webpack --watch --config webpack.config.js & bundle exec jekyll serve -d /tmp/jekyll && fg)",
     "build": "yarn run webpack --config webpack.config.js",
-    "clean": "bash -c \"rm dist api assets/js node_modules/.bin/{file-loader,terser-webpack-plugin} node_modules/webpack/node_modules/.bin/terser-webpack-plugin -rfv\"",
+    "clean": "bash -c \"rm dist api _data2 assets/js node_modules/.bin/{file-loader,terser-webpack-plugin} node_modules/webpack/node_modules/.bin/terser-webpack-plugin -rfv\"",
     "re": "yarn run clean && yarn run build",
     "publish": "./publish.sh"
   },
@@ -20,5 +20,8 @@
     "webpack-cli": "^3.1.2",
     "yaml": "^1.0.2",
     "yaml-loader": "^0.5.0"
+  },
+  "dependencies": {
+    "node-jq": "^1.3.1"
   }
 }

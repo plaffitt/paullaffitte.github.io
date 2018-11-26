@@ -5,10 +5,10 @@ module.exports = class JsonPostProcessPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.emit.tapAsync('JsonPostProcessPlugin', (compilation, callback) => {
+    compiler.hooks.emit.tapAsync('JsonPostProcessPlugin', async (compilation, callback) => {
       for (var filename in compilation.assets) {
         let data = JSON.parse(compilation.assets[filename].source());
-        let newData = this.processor(filename, data);
+        let newData = await this.processor(filename, data);
         compilation.assets[filename].source = () => {
           return (this.raw || typeof newData == 'string')
             ? newData
