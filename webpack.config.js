@@ -1,5 +1,9 @@
 const path = require('path');
 const DataExtractorPlugin = require('./src/webpack/DataExtractorPlugin');
+const JsonPostProcessPlugin = require('./src/webpack/JsonPostProcessPlugin');
+const CVPostProcessor = require('./src/webpack/CVPostProcessor');
+const ApiPostProcessor = require('./src/webpack/ApiPostProcessor');
+const ToYamlPostProcessor = require('./src/webpack/ToYamlPostProcessor');
 
 const applicationModule = {
   entry: { index: "./src/index.js" }, // webpack folder's entry js - excluded from jekll's build process.
@@ -49,15 +53,15 @@ function loadData(folder, name, plugins=[]) {
     },
     plugins: [
       new DataExtractorPlugin(),
-      /* new CVPlugin(), */
+      new JsonPostProcessPlugin(CVPostProcessor),
       ...plugins
     ],
     mode: 'development'
   };
 }
 
-const apiModule = loadData('api', '[path][name].json');
-const dataModule = loadData('_data2', '[path][name].yml', [ /* new ToYamlPlugin() */ ]);
+const apiModule = loadData('api', '[path][name].json', [ new JsonPostProcessPlugin(ApiPostProcessor) ]);
+const dataModule = loadData('_data2', '[path][name].yml', [ new JsonPostProcessPlugin(ToYamlPostProcessor, true) ]);
 
 module.exports = [
   applicationModule,
