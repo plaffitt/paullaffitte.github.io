@@ -18,5 +18,5 @@ iamanys:
   to: Mars 2016
   description: Développement d'un gestionnaire de dossier médicaux.
   skills:
-   - lang-java
-   - lang-csharp
+   - java
+   - csharp

@@ -1,5 +1,9 @@
 const path = require('path');
 const DataExtractorPlugin = require('./src/webpack/DataExtractorPlugin');
+const JsonPostProcessPlugin = require('./src/webpack/JsonPostProcessPlugin');
+const CVPostProcessor = require('./src/webpack/CVPostProcessor');
+const ApiPostProcessor = require('./src/webpack/ApiPostProcessor');
+const ToYamlPostProcessor = require('./src/webpack/ToYamlPostProcessor');
 
 const applicationModule = {
   entry: { index: "./src/index.js" }, // webpack folder's entry js - excluded from jekll's build process.
@@ -22,39 +26,46 @@ const applicationModule = {
   mode: 'development' // Avoids a warning when running `webpack`. Set to 'production' for minified version.
 };
 
-const apiModule = {
-  entry: {
-    index: './data/index.js'
-  },
-  output: {
-    path: path.resolve(__dirname, 'api'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.yml$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].json',
-              context: 'src'
-            }
-          }, {
-            loader: 'yaml-loader'
-          }
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new DataExtractorPlugin(),
-  ],
-  mode: 'development'
-};
+function loadData(folder, name, plugins=[]) {
+  return {
+    entry: {
+      index: './data/index.js'
+    },
+    output: {
+      path: path.resolve(__dirname, folder),
+    },
+    module: {
+      rules: [
+        {
+          test: /\.yml$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: name,
+                context: 'src'
+              }
+            },
+            'yaml-loader'
+          ]
+        }
+      ]
+    },
+    plugins: [
+      new DataExtractorPlugin(),
+      new JsonPostProcessPlugin(CVPostProcessor),
+      ...plugins
+    ],
+    mode: 'development'
+  };
+}
+
+const apiModule = loadData('api', '[path][name].json', [ new JsonPostProcessPlugin(ApiPostProcessor) ]);
+const dataModule = loadData('_data', '[path][name].yml', [ new JsonPostProcessPlugin(ToYamlPostProcessor, true) ]);
 
 module.exports = [
   applicationModule,
-  apiModule
+  apiModule,
+  dataModule
 ]
 

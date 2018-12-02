@@ -21,9 +21,8 @@ layout: default
       {% include activityCards.html category='scolar' %}
     </div>
     <div class="col-md-3">
-      {% assign langs = site.data.skills | where: 'category', 'langs' | sort: 'value' | reverse %}
       {% include skillCards.html category='softskills' %}
-      {% include skillCards.html category='langs' skills=langs %}
+      {% include skillCards.html category='langs' %}
     </div>
   </div>
 </section>
