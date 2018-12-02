@@ -39,11 +39,7 @@ class CV {
     return Promise.resolve(data);
   }
 
-  async _processor(filename, data) {
-    let name = filename.split('.');
-    name.pop();
-    name = name.join('.');
-
+  async _processor(name, data) {
     this.resolvePart(name, data);
     return await this.processPart(name, data);
   }

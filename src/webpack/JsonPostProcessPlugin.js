@@ -10,9 +10,12 @@ module.exports = class JsonPostProcessPlugin {
     compiler.hooks.emit.tapAsync('JsonPostProcessPlugin', async (compilation, callback) => {
       let processors = Object.keys(compilation.assets).map(async filename => {
         let data = JSON.parse(compilation.assets[filename].source());
+        let name = filename.split('.');
+        name.pop();
+        name = name.join('.');
         return {
           filename: filename,
-          data: await this.processor(filename, data)
+          data: await this.processor(name, data)
         };
       });
 
