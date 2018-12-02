@@ -61,7 +61,7 @@ function loadData(folder, name, plugins=[]) {
 }
 
 const apiModule = loadData('api', '[path][name].json', [ new JsonPostProcessPlugin(ApiPostProcessor) ]);
-const dataModule = loadData('_data2', '[path][name].yml', [ new JsonPostProcessPlugin(ToYamlPostProcessor, true) ]);
+const dataModule = loadData('_data', '[path][name].yml', [ new JsonPostProcessPlugin(ToYamlPostProcessor, true) ]);
 
 module.exports = [
   applicationModule,
