@@ -5,7 +5,7 @@ _site
 node_modules
 yarn-error.log
 
+# Webpack
 assets/js/*.js
-api/*.json
+api
 _data
-
