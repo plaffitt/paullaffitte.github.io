@@ -28,6 +28,7 @@ yarn run re
 
 sed .gitignore -i -e 's/assets\/js\/\*\.js//'
 sed .gitignore -i -e 's/api\/\*\.json//'
+sed .gitignore -i -e 's/_data//'
 
 git add --all
 git commit -m "build"
