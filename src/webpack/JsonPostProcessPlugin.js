@@ -1,3 +1,5 @@
+const { RawSource } = require('webpack-sources');
+
 module.exports = class JsonPostProcessPlugin {
   constructor(processor, raw=false) {
     this.processor = processor;
@@ -15,11 +17,11 @@ module.exports = class JsonPostProcessPlugin {
       });
 
       (await Promise.all(processors)).forEach(result => {
-        compilation.assets[result.filename].source = () => {
-          return (this.raw || typeof result.data == 'string')
-            ? result.data
-            : JSON.stringify(result.data, null, 2);
-        }
+        let newSource = (this.raw || typeof result.data == 'string')
+          ? result.data
+          : JSON.stringify(result.data, null, 2);
+
+        compilation.assets[result.filename] = new RawSource(newSource);
       });
 
       callback();
