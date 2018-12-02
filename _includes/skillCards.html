@@ -1,10 +1,5 @@
 {% assign category = site.data.categories[include.category] %}
-
-{% if include.skills %}
-	{% assign skills = include.skills | where: 'category', include.category %}
-{% else %}
-	{% assign skills = site.data.skills | where: 'category', include.category %}
-{% endif %}
+{% assign skills = site.data.skills[include.category] %}
 
 <section class="mb-4">
 	<h2>{{ category.label }}</h2>

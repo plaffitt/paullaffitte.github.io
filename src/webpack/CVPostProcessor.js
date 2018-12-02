@@ -4,6 +4,10 @@ async function jqRun(query, data) {
   return jq.run(query, data, {input: 'json'});
 }
 
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 class CV {
 
   constructor() {
@@ -29,7 +33,7 @@ class CV {
 
   processPart(name, data) {
     console.log(`process ${name}`);
-    name = name.charAt(0).toUpperCase() + name.slice(1);
+    name = capitalizeFirstLetter(name);
 
     if (`process${name}` in this)
       return this[`process${name}`](data);
@@ -54,7 +58,27 @@ class CV {
   }
 
   async processSkills(data) {
-    return await jqRun('.', data);
+    let processed = Object.keys(data).map(name => {
+      let skill = data[name];
+      return skill;
+    }).reduce((acc, skill) => {
+      let category = skill.category;
+      skill.label = capitalizeFirstLetter(skill.label);
+      if (!acc[category])
+        acc[category] = [];
+      acc[category].push(skill);
+      return acc;
+    }, {});
+
+    Object.keys(processed).forEach(category => {
+      processed[category].sort((a, b) => {
+        if (Object.keys(a).includes('value') || Object.keys(b).includes('value'))
+          return a.value < b.value
+        return ((a.label == b.label) ? 0 : ((a.label > b.label) ? 1 : -1));
+      });
+    });
+
+    return processed;
   }
 }
 
