@@ -50,7 +50,13 @@ class CV {
 
   async processActivities(data) {
     let skills = await this.skills;
-    return await jqRun('.', data);
+    let processed = this.categorize(data, activity => {
+      activity.title = capitalizeFirstLetter(activity.title);
+      if (activity.skills)
+        activity.skills = activity.skills.map(skill => skills[skill]);
+      return activity;
+    });
+    return processed;
   }
 
   async processCategories(data) {
@@ -58,17 +64,10 @@ class CV {
   }
 
   async processSkills(data) {
-    let processed = Object.keys(data).map(name => {
-      let skill = data[name];
-      return skill;
-    }).reduce((acc, skill) => {
-      let category = skill.category;
+    let processed = this.categorize(data, skill => {
       skill.label = capitalizeFirstLetter(skill.label);
-      if (!acc[category])
-        acc[category] = [];
-      acc[category].push(skill);
-      return acc;
-    }, {});
+      return skill;
+    });
 
     Object.keys(processed).forEach(category => {
       processed[category].sort((a, b) => {
@@ -79,6 +78,17 @@ class CV {
     });
 
     return processed;
+  }
+
+  categorize(data, processItem) {
+    return Object.values(data).reduce((acc, item) => {
+      let category = item.category;
+      item = processItem(item);
+      if (!acc[category])
+        acc[category] = [];
+      acc[category].push(item);
+      return acc;
+    }, {});
   }
 }
 

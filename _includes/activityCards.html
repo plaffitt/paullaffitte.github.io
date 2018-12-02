@@ -1,5 +1,5 @@
 {% assign category = site.data.categories[include.category] %}
-{% assign activities = site.data.activities | where: 'category', include.category %}
+{% assign activities = site.data.activities[include.category] %}
 
 <section>
 	<h2>{{category.label}}</h2>
