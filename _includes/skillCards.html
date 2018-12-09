@@ -1,7 +1,7 @@
 {% assign category = site.data.categories[include.category] %}
 {% assign skills = site.data.skills[include.category] %}
 
-<section class="mb-4">
+<section class="mb-4 skill-cards skills-{{include.category}}">
 	<h2>{{ category.label }}</h2>
 	{% for skill in skills %}
 		{% if skill.hidden != true %}
