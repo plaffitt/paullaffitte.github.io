@@ -16,14 +16,12 @@ layout: default
       </div>
     </div>
     <div class="col">
-      <header class="d-flex flex-row bd-highlight mb-3">
-        <div class="p-2 bd-highlight w-auto">
+      <header class="d-flex flex-row mb-4">
+        <div>
           <h1>{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}</h1>
           {% include pageBy.md title='About' %}
         </div>
       </header>
-
-      <hr class="mb-3">
 
       {% include activityCards.html category='xppro' %}
       {% include activityCards.html category='scolar' %}

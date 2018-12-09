@@ -40,6 +40,11 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
+$primary: #157bbc;
+$secondary: #d7c18b;
+$primary-light: lighten($primary, 20%);
+$secondary-light: lighten($secondary, 20%);
+
 @import
   "cv/base",
   "cv/layout",

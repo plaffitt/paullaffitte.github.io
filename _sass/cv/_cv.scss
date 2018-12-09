@@ -4,8 +4,8 @@ $cv-side-width: 16em;
 .cv-card {
 	border: 1px solid $border-color;
 	border-radius: 0.3em;
-	box-shadow: 0em 0.15em 0.5em #f4f4f4;
 	overflow: hidden;
+	box-shadow: 0em 0.15em 0.5em #f4f4f4;
 
 	transition-property: box-shadow;
 	transition-duration: 0.5s;
@@ -66,9 +66,28 @@ section#cv {
 
 	}
 
-	article.activity {
-		margin-bottom: 1em;
-		padding: 0.3em;
+	section.activity-cards {
+		h2 {
+			margin-top: 5px;
+			margin-bottom: 0;
+			box-shadow: 0em -5px 0em $primary;
+			background-color: $primary-light;
+			padding-left: 0.2em;
+			padding-bottom: 0.1em;
+			padding-top: 0.1em;
+		}
+
+		margin-bottom: 3em;
+
+		article.activity {
+			padding: 1em 1em 0 1em;
+			margin-bottom: 1em;
+		}
+
+		article.activity:last-child {
+			margin-bottom: 0em;
+		}
 	}
+
 
 }
