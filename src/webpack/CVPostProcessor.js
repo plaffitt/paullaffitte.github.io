@@ -53,9 +53,10 @@ class CV {
     let addProfile = (label, service, url, filter) => {
       if (!label)
         return;
+      let opts = {label, service, url};
       if (filter)
-        filter({label, service, url});
-      data.profiles.unshift(makeProfile(label, service, url));
+        filter(opts);
+      data.profiles.unshift(makeProfile(opts.label, opts.service, opts.url));
     };
 
     addProfile(data.phoneNumber, 'phone', `tel:${data.phoneNumber}`);
