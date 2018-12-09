@@ -48,6 +48,25 @@ class CV {
     return await this.processPart(name, data);
   }
 
+  async processProfile(data) {
+    let makeProfile = (label, service, url) => ({label, service, url, icon: `assets/img/icons/${service}.svg`});
+    let addProfile = (label, service, url, filter) => {
+      if (!label)
+        return;
+      if (filter)
+        filter({label, service, url});
+      data.profiles.unshift(makeProfile(label, service, url));
+    };
+
+    addProfile(data.phoneNumber, 'phone', `tel:${data.phoneNumber}`);
+    addProfile(data.emailAddress, 'email', `mailto:${data.emailAddress}`);
+    addProfile(data.website, 'website', data.website, (opts) => {
+      let label = opts.label.split('://');
+      opts.label = (label.length > 1 ? label[1] : label[0]).replace(/\/$/, '');
+    });
+    return data;
+  }
+
   async processActivities(data) {
     let skills = await this.skills;
     let processed = this.categorize(data, activity => {
@@ -57,10 +76,6 @@ class CV {
       return activity;
     });
     return processed;
-  }
-
-  async processCategories(data) {
-    return await jqRun('.', data);
   }
 
   async processSkills(data) {

@@ -1,18 +1,25 @@
 firstname: Paul
 lastname: Laffitte
 profession: Developer
-address: 20, Rue Ernest Michel
-zipCode: '34000'
-city: MONTPELLIER
+picture: https://avatars0.githubusercontent.com/u/23403270
 phoneNumber: "+33.01.04.24.96"
 emailAddress: paul.laffitte@epitech.eu
-linkedin: paul-laffitte-41b009140
-github: paullaffitte
-personalSite:
-  label: paullaffitte.github.io
-  icon: ''
-  href: https://paullaffitte.github.io/
-picture: https://avatars0.githubusercontent.com/u/23403270
-bio: Passionné d'informatique depuis jeune. Je cherche à an apprendre toujours plus,
+website: https://paullaffitte.github.io/
+location:
+  address: 20, Rue Ernest Michel
+  zipCode: '34000'
+  city: MONTPELLIER
+
+bio: Passionné d'informatique depuis jeune. Je cherche à en apprendre toujours plus,
  à améliorer mes compétences dans des languages et technologies déjà connus ainsi qu'en apprendre de nouveaux.
 
+profiles:
+  - label: paullaffitte
+    service: 'Github'
+    url: https://github.com/paullaffitte/
+    icon: 'https://github.com/fluidicon.png'
+
+  - label: paul-laffitte
+    service: 'LinkedIn'
+    url: https://www.linkedin.com/in/paul-laffitte/
+    icon: 'https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca'

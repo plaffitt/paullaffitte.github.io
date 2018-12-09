@@ -11,12 +11,26 @@ section#cv {
 			margin-top: 0.5em;
 			margin-bottom: 0.6em;
 		}
+
+		ul#profiles {
+			list-style-type: none;
+			margin-left: 0;
+			.profile-icon {
+				height: 1.3em;
+				margin-right: 0.3em;
+			}
+			li.profile-service- {
+				.profile-icon {
+					height: 1.2em;
+					margin-left: 0.05em;
+				}
+			}
+		}
 	}
 
 	article.activity {
 		margin-bottom: 1em;
 		padding: 0.3em;
 	}
-
 
 }
