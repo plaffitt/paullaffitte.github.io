@@ -70,8 +70,9 @@ section#cv {
 		h2 {
 			margin-top: 5px;
 			margin-bottom: 0;
-			box-shadow: 0em -5px 0em $primary;
-			background-color: $primary-light;
+			box-shadow: 0em -5px 0em $primary-light;
+			background-image: linear-gradient(to right, $primary, $primary-light);
+			color: white;
 			padding-left: 0.2em;
 			padding-bottom: 0.1em;
 			padding-top: 0.1em;
