@@ -7,7 +7,7 @@ layout: default
   <div class="row">
     <div id="cv-side" class="col">
       <section id="profiles-card" class="mb-4 cv-card">
-        <img id="profile-picture" class="mb-3" src="{{ site.data.profile.picture }}" alt="{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}">
+        <div id="profile-picture" class="zoom mb-3"><img src="{{ site.data.profile.picture }}" alt="{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}"></div>
         {% include profiles.html %}
       </section>
       <div class="cv-card skills">
@@ -29,4 +29,8 @@ layout: default
   </div>
 </section>
 
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
 <script src="assets/js/index.bundle.min.js"></script>

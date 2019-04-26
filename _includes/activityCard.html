@@ -1,6 +1,6 @@
 {% assign activity = include.activity %}
 <article class="activity">
-	<h3>{{ activity.title }} - <small>{{ activity.role }}</small></h3><h4></h4>
+	<h3 class="activity-title">{{ activity.title }}<small class="activity-role">, {{ activity.role }}</small></h3><h4></h4>
 	<span><small>Location: {{activity.location}} - from {{ activity.from }} to {{ activity.to }}</small></span>
 	<hr>
 	<p>{{ activity.description }}</p>
