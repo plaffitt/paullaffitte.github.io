@@ -88,9 +88,10 @@ class CV {
     Object.keys(processed).forEach(category => {
       processed[category].sort((a, b) => {
         if (Object.keys(a).includes('value') || Object.keys(b).includes('value'))
-          return a.value < b.value
-        return ((a.label == b.label) ? 0 : ((a.label > b.label) ? 1 : -1));
+          return b.value - a.value;
+        return ((a.label < b.label) ? -1 : ((a.label > b.label) ? 1 : 0));
       });
+      console.log(processed[category]);
     });
 
     return processed;

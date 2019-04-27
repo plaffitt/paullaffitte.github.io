@@ -1,8 +1,8 @@
 scolar:
-  label: Cursus scolaire
+  label: Formation
 
 xppro:
-  label: Expérience professionelle
+  label: Expérience professionnelle
 
 softskills:
   label: Soft skills
@@ -10,4 +10,12 @@ softskills:
 
 langs:
   label: Langs
+  type: progressbar
+
+tools:
+  label: Tools
+  type: progressbar
+
+libraries:
+  label: Frameworks
   type: progressbar

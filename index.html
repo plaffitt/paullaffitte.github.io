@@ -10,9 +10,13 @@ layout: default
         <div id="profile-picture" class="zoom mb-3"><img src="{{ site.data.profile.picture }}" alt="{{ site.data.profile.firstname }} {{ site.data.profile.lastname }}"></div>
         {% include profiles.html %}
       </section>
-      <div class="cv-card skills">
+      <div class="cv-card skills mb-4">
         {% include skillCards.html category='softskills' %}
         {% include skillCards.html category='langs' %}
+      </div>
+      <div class="cv-card skills">
+        {% include skillCards.html category='tools' %}
+        {% include skillCards.html category='libraries' %}
       </div>
     </div>
     <div class="col">
