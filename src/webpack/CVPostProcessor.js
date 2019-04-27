@@ -91,7 +91,6 @@ class CV {
           return b.value - a.value;
         return ((a.label < b.label) ? -1 : ((a.label > b.label) ? 1 : 0));
       });
-      console.log(processed[category]);
     });
 
     return processed;
