@@ -32,6 +32,26 @@ function initZooms() {
 	});
 }
 
+function initBio() {
+	const $about = $('.about');
+	const $more = $about.find('.show-more');
+	const $less = $about.find('.show-less');
+	const $collapse = $about.find('.collapse');
+
+	$more.on('click', () => {
+		$more.addClass('d-none');
+		$less.removeClass('d-none');
+		$collapse.collapse('show');
+	});
+
+	$less.on('click', () => {
+		$less.addClass('d-none');
+		$more.removeClass('d-none');
+		$collapse.collapse('hide');
+	});
+}
+
 $(function() {
 	initZooms();
+	initBio();
 });

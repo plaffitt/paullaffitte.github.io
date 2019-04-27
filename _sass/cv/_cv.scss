@@ -19,10 +19,15 @@ header {
 		text-shadow: 2px 2px 1px #eee, -1px -1px 1px #ccc;
 		transform: translate(0, 0.02em);
 	}
+}
 
-	.about {
-		font-family: 'Kalam', cursive;
-		font-size: 16pt;
+.about {
+	font-family: 'Kalam', cursive;
+	font-size: 16pt;
+
+	.show-more, .show-less {
+		float: right;
+		color: grey;
 	}
 }
 

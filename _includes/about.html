@@ -1,0 +1,11 @@
+{% assign more = include.more %}
+<div class="about">
+	<p>{{ site.data.profile.bio }}</p>
+	{% if more == true %}
+		<p>{{ site.data.profile.bioMore }}</p>
+	{% else %}
+		<p class="collapse">{{ site.data.profile.bioMore }}</p>
+		<small class="show-more">more...</small>
+		<small class="show-less d-none">less...</small>
+	{% endif %}
+</div>
