@@ -2,16 +2,17 @@ const metalsmith = require('metalsmith');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const yamlApiGenerator = require('./plugins/yamlApiGenerator');
+const webpack = require('./plugins/webpack-metalsmith');
 
 const prod = process.argv.includes('--prod');
 
 const ms = metalsmith(__dirname)
-  .clean(true)
-  .frontmatter(true)
-  .source('src')
   .destination(prod ? 'build' : 'build-dev')
   .use(yamlApiGenerator({
     source: '../legacy/data',
+  }))
+  .use(webpack({
+    prod
   }));
 
 if (prod) {

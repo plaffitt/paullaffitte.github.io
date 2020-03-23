@@ -12,9 +12,18 @@
     "publish": "./legacy/publish.sh"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "babel-loader": "^8.1.0",
+    "html-loader": "^1.0.0",
+    "html-webpack-plugin": "^4.0.1",
+    "memfs": "^3.1.2",
     "metalsmith": "^2.3.0",
     "metalsmith-serve": "^0.0.7",
     "metalsmith-watch": "^1.0.3",
+    "preact": "^10.3.4",
+    "webpack": "^4.25.1",
     "yaml-js": "^0.2.3"
   }
 }
