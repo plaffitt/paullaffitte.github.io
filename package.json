@@ -1,0 +1,20 @@
+{
+  "name": "paul.laffitte",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ./build.js",
+    "prod": "node ./build.js --prod",
+    "build": "yarn prod",
+    "clean": "rm build build-dev -rfv",
+    "re": "yarn clean && yarn build",
+    "publish": "./legacy/publish.sh"
+  },
+  "devDependencies": {
+    "metalsmith": "^2.3.0",
+    "metalsmith-serve": "^0.0.7",
+    "metalsmith-watch": "^1.0.3",
+    "yaml-js": "^0.2.3"
+  }
+}
