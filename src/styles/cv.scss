@@ -25,9 +25,10 @@ header {
 	font-family: 'Kalam', cursive;
 	font-size: 16pt;
 
-	.show-more, .show-less {
+	.toggle-more {
 		float: right;
 		color: gray;
+		cursor: pointer;
 	}
 }
 

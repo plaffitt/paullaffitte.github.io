@@ -39,4 +39,6 @@ $primary-light: lighten($primary, 20%);
 $secondary-light: lighten($secondary, 20%);
 
 @import '~bootstrap/scss/bootstrap';
+@import 'base';
+@import 'layout';
 @import 'cv';

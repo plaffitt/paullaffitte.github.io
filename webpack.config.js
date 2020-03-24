@@ -9,6 +9,7 @@ const applicationModule = ({ prod }={}) => ({
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
+  entry: ['babel-polyfill', './src/index.js'],
   module: {
     rules: [
       {
