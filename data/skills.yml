@@ -1,21 +1,21 @@
 autonomous:
   category: softskills
-  label: Autonomous
+  label: Autonome
 creative:
   category: softskills
-  label: Creative
+  label: Créatif
 involved:
   category: softskills
-  label: Involved
+  label: Impliqué
 organized:
   category: softskills
-  label: Organized
+  label: Organisé
 sociable:
   category: softskills
   label: Sociable
 tepitech:
   category: softskills
-  label: Tepitech (Epitech TOEIC like) 770
+  label: TOEIC 770
 
 c:
   category: langs
@@ -37,11 +37,11 @@ haskell:
 java:
   category: langs
   label: Java
-  value: 40
+  value: 50
 js:
   category: langs
   label: Javascript
-  value: 80
+  value: 90
 python:
   category: langs
   label: Python
@@ -61,7 +61,7 @@ php:
 sql:
   category: langs
   label: SQL
-  value: 50
+  value: 60
 
 opengl:
   category: libraries
@@ -99,7 +99,7 @@ kubernetes:
 git:
   category: tools
   label: Git
-  value: 50
+  value: 65
 windows:
   category: tools
   label: Windows
@@ -111,4 +111,8 @@ linux:
 photoshop:
   category: tools
   label: Photoshop
-  value: 70
+  value: 55
+da-vinci:
+  category: tools
+  label: DaVinci Resolve
+  value: 50

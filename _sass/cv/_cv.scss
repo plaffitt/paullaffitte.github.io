@@ -100,7 +100,7 @@ section#cv {
 
 	section.activity-cards {
 		h2 {
-			margin-top: 5px;
+			// margin-top: 5px;
 			margin-bottom: 0;
 			box-shadow: 0em -5px 0em $primary-light;
 			background-image: linear-gradient(to right, $primary, $primary-light);
@@ -132,4 +132,24 @@ section#cv {
 		padding-left: 12px;
 	}
 
+}
+
+.badgee {
+	display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+hr {
+	margin: 6px 0 !important;
+}
+
+.page-content {
+	padding-top: 80px !important;
 }

@@ -4,18 +4,21 @@ scolar:
 xppro:
   label: Expérience professionnelle
 
+perso:
+  label: Projets personnel
+
 softskills:
   label: Soft skills
   type: text
 
 langs:
-  label: Langs
+  label: Langages
   type: progressbar
 
 tools:
-  label: Tools
+  label: Outils
   type: progressbar
 
 libraries:
-  label: Frameworks
+  label: Bibliothèques
   type: progressbar

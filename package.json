@@ -10,12 +10,14 @@
     "open": "yarn opn http://localhost:4000",
     "clean": "bash -c \"rm dist api _data2 assets/js node_modules/.bin/{file-loader,terser-webpack-plugin} node_modules/webpack/node_modules/.bin/terser-webpack-plugin -rfv\"",
     "re": "yarn clean && yarn build",
-    "publish": "./publish.sh"
+    "publish": "./publish.sh",
+    "pdf": "chrome-headless-render-pdf --url http://127.0.0.1:4000/ --pdf ./cv.pdf --include-background"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "7",
     "babel-preset-es2015": "^6.24.1",
+    "chrome-headless-render-pdf": "^1.8.4",
     "extract-loader": "^3.0.0",
     "file-loader": "^2.0.0",
     "node-jq": "^1.3.1",

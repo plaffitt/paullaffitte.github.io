@@ -3,7 +3,7 @@ iamanys:
   title: Iamanys
   location: Fabrègues
   role: Développeur Java
-  from: Aout 2015
+  from: Août 2015
   to: Avril 2016
   description: Développement d'un gestionnaire de dossier médicaux.
   skills:
@@ -15,26 +15,21 @@ epitech:
   category: scolar
   title: Epitech
   location: Montpellier
-  role: Etudiant
+  role: Étudiant
   from: 2016
-  to: Now
-  description: Etudes d'expert en informatique.
+  to: aujourd'hui
+  description: Études d'expert en informatique.
    De nombreux projets sont à réaliser et à rendre sur une base régulière.
-   Une expérience rapidement professionnalisante est proposée à travers plusieurs stages, se déroulants de 4 à 6 mois.
 
 vrxTech:
   category: xppro
   title: Rebirth Technologies
   location: Barcelone / Paris
   role: Développeur full-stack
-  from: Aout 2017
-  to: Now
+  from: Août 2017
+  to: aujourd'hui
   description: Développement et administration d'une plateforme de streaming en réalité virtuelle.
-   C'est lors de mon stage de 2e année à Epitech que j'ai rejoins l'équipe de Rebirth Technologies, une jeune start-up française, en tant que stagiaire.
-   J'y effectue depuis des missions réccurentes lorsque je ne suis pas en stage.<br>
-   <br>
-   Mon implication au sein de l'entreprise m'a rapidement permis d'atteindre une position importante au sein de celle-ci,
-   ainsi que de gagner la confiance de mes collaborateurs.
+   C'est lors de ma 2e année à Epitech que j'ai rejoins l'équipe de Rebirth Technologies, une jeune start-up française, d'abord en tant que stagiaire, puis en tant que freelance.
   skills:
    - php
    - docker
@@ -46,16 +41,25 @@ vrxTech:
    - shellScript
    - opengl
 
-kubernetesFormation:
-  category: scolar
-  title: Formation Kubernetes
-  location: Enix, Paris
-  role: Participant
-  from: 16 Décembre
-  to: 18 Décembre 2018
-  description: Formation à l'utilisation de Kubernetes chez l'entreprise Enix.
-   Durant deux jours se sont succédé théorie et pratique,
-   un cluster de 5 noeud nous étant fourni durant toute la durée de la formation afin de pratiquer dans des conditions proches du réel.<br>
-   <br>
-   J'ai rapidement pu faire le tour de Kubernetes en assimillant la plupart des concepts clés de cette technologie,
-   que j'utilise aujourd'hui dans mes projets personnels et professionnels.
+cardsEditor:
+  category: perso
+  title: Cards Editor
+  location: Depuis ma chambre
+  role: Chef de projet et développeur
+  from: 16 Janvier 2019
+  to: aujourd'hui
+  description: <a href="https://github.com/paullaffitte/cards-editor" target="_blank">https://github.com/paullaffitte/cards-editor</a>
+   <br/>Création et gestion d'un outil open-source de fabrication de cartes à jouer.
+   Après une discussion avec mon frère, passionné de jeux de cartes, j'ai eu l'idée de créer un logiciel qui puisse lui permettre de créer ses propres jeux de carte.
+   Inspiré de jeux tels que Hearthstone ou Magic, l'éditeur permet de créer des cartes de différents types répondants aux exigences de mon frère.
+
+worldAnim:
+  category: perso
+  title: WorldAnim
+  location: Depuis ma chambre
+  role: Co-chef de projet et développeur
+  from: 2011 à 2016 puis de Novembre 2019
+  to: aujourd'hui
+  description: <a href="https://www.worldanim.net" target="_blank">https://www.worldanim.net</a>
+   <br/>Réseau social et forum dans le domaine du graphisme et de l'animation 2D et 3D.
+   Ce projet, commencé il y a de nombreuses années avec l'un de mes amis proches, a pu revoir le jour en 2019 grâce à nos compétences nouvellement aquises et voit sa communautée se reformer petit à petit.
