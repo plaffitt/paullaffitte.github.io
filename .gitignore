@@ -6,6 +6,6 @@ node_modules
 yarn-error.log
 
 # Webpack
-assets/js/*.js
-api
-_data
+
+
+

@@ -1,0 +1,107 @@
+{
+  "xppro": [
+    {
+      "category": "xppro",
+      "title": "Iamanys",
+      "location": "Fabrègues",
+      "role": "Développeur Java",
+      "from": "Aout 2015",
+      "to": "Avril 2016",
+      "description": "Développement d'un gestionnaire de dossier médicaux.",
+      "skills": [
+        {
+          "category": "langs",
+          "label": "Java",
+          "value": 40
+        },
+        {
+          "category": "langs",
+          "label": "C#",
+          "value": 40,
+          "hidden": true
+        },
+        {
+          "category": "langs",
+          "label": "SQL",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "category": "xppro",
+      "title": "Rebirth Technologies",
+      "location": "Barcelone / Paris",
+      "role": "Développeur full-stack",
+      "from": "Aout 2017",
+      "to": "Now",
+      "description": "Développement et administration d'une plateforme de streaming en réalité virtuelle. C'est lors de mon stage de 2e année à Epitech que j'ai rejoins l'équipe de Rebirth Technologies, une jeune start-up française, en tant que stagiaire. J'y effectue depuis des missions réccurentes lorsque je ne suis pas en stage.<br> <br> Mon implication au sein de l'entreprise m'a rapidement permis d'atteindre une position importante au sein de celle-ci, ainsi que de gagner la confiance de mes collaborateurs.",
+      "skills": [
+        {
+          "category": "langs",
+          "label": "Php",
+          "value": 80
+        },
+        {
+          "category": "tools",
+          "label": "Docker",
+          "value": 80
+        },
+        {
+          "category": "tools",
+          "label": "Docker-Compose",
+          "value": 90
+        },
+        {
+          "category": "tools",
+          "label": "Kubernetes",
+          "value": 50
+        },
+        {
+          "category": "langs",
+          "label": "Javascript",
+          "value": 80
+        },
+        {
+          "category": "langs",
+          "label": "SQL",
+          "value": 50
+        },
+        {
+          "category": "langs",
+          "label": "Python",
+          "value": 70
+        },
+        {
+          "category": "langs",
+          "label": "Shell script",
+          "value": 80
+        },
+        {
+          "category": "libraries",
+          "label": "OpenGL",
+          "value": 30
+        }
+      ]
+    }
+  ],
+  "scolar": [
+    {
+      "category": "scolar",
+      "title": "Epitech",
+      "location": "Montpellier",
+      "role": "Etudiant",
+      "from": 2016,
+      "to": "Now",
+      "description": "Etudes d'expert en informatique. De nombreux projets sont à réaliser et à rendre sur une base régulière. Une expérience rapidement professionnalisante est proposée à travers plusieurs stages, se déroulants de 4 à 6 mois."
+    },
+    {
+      "category": "scolar",
+      "title": "Formation Kubernetes",
+      "location": "Enix, Paris",
+      "role": "Participant",
+      "from": "16 Décembre",
+      "to": "18 Décembre 2018",
+      "description": "Formation à l'utilisation de Kubernetes chez l'entreprise Enix. Durant deux jours se sont succédé théorie et pratique, un cluster de 5 noeud nous étant fourni durant toute la durée de la formation afin de pratiquer dans des conditions proches du réel.<br> <br> J'ai rapidement pu faire le tour de Kubernetes en assimillant la plupart des concepts clés de cette technologie, que j'utilise aujourd'hui dans mes projets personnels et professionnels."
+    }
+  ]
+}

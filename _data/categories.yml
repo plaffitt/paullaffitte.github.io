@@ -1,0 +1,16 @@
+scolar:
+  label: Formation
+xppro:
+  label: Expérience professionnelle
+softskills:
+  label: Soft skills
+  type: text
+langs:
+  label: Langs
+  type: progressbar
+tools:
+  label: Tools
+  type: progressbar
+libraries:
+  label: Frameworks
+  type: progressbar
