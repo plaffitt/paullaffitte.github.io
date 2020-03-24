@@ -7,7 +7,6 @@ const webpack = require('./plugins/webpack-metalsmith');
 const prod = process.argv.includes('--prod');
 
 const ms = metalsmith(__dirname)
-  .destination(prod ? 'build' : 'build-dev')
   .use(yamlApiGenerator({
     source: '../legacy/data',
   }))

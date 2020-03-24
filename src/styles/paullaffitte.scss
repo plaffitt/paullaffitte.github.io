@@ -23,21 +23,14 @@ $content-width:    1000px !default;
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
 @mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
+	@media screen and (max-width: $device) {
+		@content;
+	}
 }
 
 @mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
+	font-size: $base-font-size * $ratio;
 }
 
 $primary: #157bbc;
@@ -45,8 +38,5 @@ $secondary: #d7c18b;
 $primary-light: lighten($primary, 20%);
 $secondary-light: lighten($secondary, 20%);
 
-@import
-  "cv/base",
-  "cv/layout",
-  "cv/cv"
-;
+@import '~bootstrap/scss/bootstrap';
+@import 'cv';
