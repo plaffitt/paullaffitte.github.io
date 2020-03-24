@@ -30,9 +30,9 @@ git reset --hard origin/$TO_DEPLOY
 yarn
 yarn run re
 
-sed .gitignore -i -e 's/assets\/js\/\*\.js//'
-sed .gitignore -i -e 's/api//'
-sed .gitignore -i -e 's/_data//'
+rm -rfv $(ls -a | grep -v 'build' | grep -v '.git')
+mv build/** .
+rm -d build
 
 git add --all
 git commit -m "build"

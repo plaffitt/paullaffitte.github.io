@@ -9,7 +9,7 @@
     "build": "yarn prod",
     "clean": "rm build build-dev -rfv",
     "re": "yarn clean && yarn build",
-    "publish": "./legacy/publish.sh"
+    "deploy": "./deploy.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
