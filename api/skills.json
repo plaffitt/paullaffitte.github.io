@@ -1,0 +1,155 @@
+{
+  "softskills": [
+    {
+      "category": "softskills",
+      "label": "Autonome"
+    },
+    {
+      "category": "softskills",
+      "label": "Créatif"
+    },
+    {
+      "category": "softskills",
+      "label": "Impliqué"
+    },
+    {
+      "category": "softskills",
+      "label": "Organisé"
+    },
+    {
+      "category": "softskills",
+      "label": "Sociable"
+    },
+    {
+      "category": "softskills",
+      "label": "TOEIC 770"
+    }
+  ],
+  "langs": [
+    {
+      "category": "langs",
+      "label": "C",
+      "value": 90
+    },
+    {
+      "category": "langs",
+      "label": "Javascript",
+      "value": 90
+    },
+    {
+      "category": "langs",
+      "label": "Shell script",
+      "value": 80
+    },
+    {
+      "category": "langs",
+      "label": "Php",
+      "value": 80
+    },
+    {
+      "category": "langs",
+      "label": "C++",
+      "value": 70
+    },
+    {
+      "category": "langs",
+      "label": "Python",
+      "value": 70
+    },
+    {
+      "category": "langs",
+      "label": "Scss",
+      "value": 60
+    },
+    {
+      "category": "langs",
+      "label": "SQL",
+      "value": 60
+    },
+    {
+      "category": "langs",
+      "label": "Java",
+      "value": 50
+    },
+    {
+      "category": "langs",
+      "label": "C#",
+      "value": 40,
+      "hidden": true
+    },
+    {
+      "category": "langs",
+      "label": "Haskell",
+      "value": 40
+    }
+  ],
+  "libraries": [
+    {
+      "category": "libraries",
+      "label": "JQuery",
+      "value": 90
+    },
+    {
+      "category": "libraries",
+      "label": "React",
+      "value": 70
+    },
+    {
+      "category": "libraries",
+      "label": "Electron",
+      "value": 60
+    },
+    {
+      "category": "libraries",
+      "label": "Spring",
+      "value": 40
+    },
+    {
+      "category": "libraries",
+      "label": "OpenGL",
+      "value": 30
+    }
+  ],
+  "tools": [
+    {
+      "category": "tools",
+      "label": "Docker-Compose",
+      "value": 90
+    },
+    {
+      "category": "tools",
+      "label": "Docker",
+      "value": 80
+    },
+    {
+      "category": "tools",
+      "label": "Linux",
+      "value": 70
+    },
+    {
+      "category": "tools",
+      "label": "Git",
+      "value": 65
+    },
+    {
+      "category": "tools",
+      "label": "Photoshop",
+      "value": 55
+    },
+    {
+      "category": "tools",
+      "label": "Kubernetes",
+      "value": 50
+    },
+    {
+      "category": "tools",
+      "label": "DaVinci Resolve",
+      "value": 50
+    },
+    {
+      "category": "tools",
+      "label": "Windows",
+      "value": 40
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "firstname": "Paul",
+  "lastname": "Laffitte",
+  "profession": "Developer",
+  "picture": "https://avatars0.githubusercontent.com/u/23403270",
+  "phoneNumber": "+33.01.04.24.96",
+  "emailAddress": "paul.laffitte@epitech.eu",
+  "website": "https://paullaffitte.github.io/",
+  "location": {
+    "address": "20, Rue Ernest Michel",
+    "zipCode": "34000",
+    "city": "MONTPELLIER"
+  },
+  "bio": "Passionné d'informatique depuis jeune. J'ai eu la chance de pouvoir travailler sur une grande variété de projets et de développer des compétences dans la gestion de ceux-ci.",
+  "bioMore": "",
+  "profiles": [
+    {
+      "label": "paullaffitte.github.io",
+      "service": "website",
+      "url": "https://paullaffitte.github.io/",
+      "icon": "assets/img/icons/website.svg"
+    },
+    {
+      "label": "paul.laffitte@epitech.eu",
+      "service": "email",
+      "url": "mailto:paul.laffitte@epitech.eu",
+      "icon": "assets/img/icons/email.svg"
+    },
+    {
+      "label": "+33.01.04.24.96",
+      "service": "phone",
+      "url": "tel:+33.01.04.24.96",
+      "icon": "assets/img/icons/phone.svg"
+    },
+    {
+      "label": "paullaffitte",
+      "service": "Github",
+      "url": "https://github.com/paullaffitte/",
+      "icon": "https://github.com/fluidicon.png"
+    },
+    {
+      "label": "paul-laffitte",
+      "service": "LinkedIn",
+      "url": "https://www.linkedin.com/in/paul-laffitte/",
+      "icon": "https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca"
+    }
+  ]
+}

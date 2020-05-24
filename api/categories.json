@@ -1,0 +1,27 @@
+{
+  "scolar": {
+    "label": "Formation"
+  },
+  "xppro": {
+    "label": "Expérience professionnelle"
+  },
+  "perso": {
+    "label": "Projets personnel"
+  },
+  "softskills": {
+    "label": "Soft skills",
+    "type": "text"
+  },
+  "langs": {
+    "label": "Langages",
+    "type": "progressbar"
+  },
+  "tools": {
+    "label": "Outils",
+    "type": "progressbar"
+  },
+  "libraries": {
+    "label": "Bibliothèques",
+    "type": "progressbar"
+  }
+}
