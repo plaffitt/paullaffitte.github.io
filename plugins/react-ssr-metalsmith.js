@@ -6,42 +6,82 @@ import { Provider } from 'react-redux'
 import App from '../src/App';
 import getStore from '../src/getStore';
 
-const renderApp = async ({ contents }, files) => {
-  const store = getStore();
+const preloadLock = {
+  promises: [],
+  resolves: {},
+}
 
-  global.fetch = (url) => {
+const waitForActionsToFinishMiddleware = store => next => action => {
+  const state = action.type.split('/').pop();
+  const isAsyncThunk = ['pending', 'fulfilled'].includes(state);
+
+  if (!isAsyncThunk) {
+    return next(action);
+  }
+
+  const { requestId } = action.meta;
+  const result = next(action);
+
+  if (state == 'pending') {
+    preloadLock.promises.push(new Promise(r => preloadLock.resolves[requestId] = r));
+  } else if (state == 'fulfilled') {
+    preloadLock.resolves[requestId]();
+  }
+
+  return result;
+};
+
+const getStoreWithMiddleware = () => getStore({
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(
+    waitForActionsToFinishMiddleware,
+  ),
+});
+
+async function preloadState(app, store) {
+  const html = renderToString(app);
+  await Promise.all(preloadLock.promises);
+  const preloadedState = store.getState();
+
+  return preloadedState;
+}
+
+function getFetch(files) {
+  return (url) => {
     const contents = files[url.substr(1)].contents;
     return {
       json: () => JSON.parse(contents),
     };
   };
-  const html = renderToString(
+}
+
+const renderApp = async ({ contents }, files) => {
+  global.fetch = getFetch(files);
+  const store = getStoreWithMiddleware();
+  const app = (
     <Provider store={store}>
       <App />
     </Provider>
   );
+  const preloadedState = await preloadState(app, store);
 
-  await new Promise(resolve => setTimeout(resolve, 2000));
-
-  const preloadedState = store.getState();
-
-  return contents.replace('<div id="container"></div>', `
-    <div id="container">${renderToString(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  )}</div>
-    <script>
-      window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')};
-    </script>
-  `);
+  const renderedApp = `<div id="container">${renderToString(app)}</div><script src="preloadedState.js"></script>`;
+  return {
+    html: contents.replace('<div id="container"></div>', renderedApp),
+    state: `window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')};`,
+  };
 }
 
 function reactSSR() {
   return async function(files, metalsmith, done) {
+    const { html, state } = await renderApp(files['index.html'], files);
+
     files['index.html'] = {
-      contents: await renderApp(files['index.html'], files),
+      contents: html,
     };
+    files['preloadedState.js'] = {
+      contents: state,
+    };
+
     done();
   };
 };

@@ -9,7 +9,7 @@ import './styles/paullaffitte.scss';
 const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
 
-const store = getStore(preloadedState);
+const store = getStore({ preloadedState });
 
 hydrate(
 	<Provider store={ store }>
