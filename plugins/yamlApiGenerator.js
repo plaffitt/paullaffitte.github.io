@@ -38,10 +38,14 @@ function readItems(files, itemsPreprocessor=objectItems) {
           collection,
           ...item
         }));
+        items.push({
+          id: collection,
+          items: itemsPreprocessor(fileItems),
+        });
       } else {
         items.push({
           id: collection,
-          ...fileItems[0]
+          ...fileItems[0],
         });
       }
     }
@@ -72,17 +76,18 @@ function yamlApiGenerator({ source, destination='api', metadataDestination='api'
     const metadata = metalsmith.metadata();
     metadata[metadataDestination] = {};
 
-    items.map(item => {
+    items.forEach(item => {
       if (item.id) {
         const apiCode = item.collection ? `${item.collection}/${item.id}` : item.id;
         const filename = `${destination}/${apiCode}.json`;
 
-        files[filename] = { contents: JSON.stringify(item) };
+        files[filename] = { contents: JSON.stringify(item.items || item) };
         metadata[metadataDestination][apiCode.replace('/', '_')] = item;
       } else {
         console.warn('items without id, ignoring...', item);
       }
     });
+
     done();
   };
 };
