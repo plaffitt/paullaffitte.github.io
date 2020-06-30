@@ -6,7 +6,7 @@ const About = ({ profile, more }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div class="about">
+    <div className="about">
       <p>{ profile.bio }</p>
       { more
         ? (<p>profile.bioMore</p>)
@@ -15,7 +15,7 @@ const About = ({ profile, more }) => {
             <Collapse isOpen={ isOpen }>
               <p>{ profile.bioMore }</p>
             </Collapse>
-            <small class="toggle-more" onClick={toggle}>{ isOpen ? 'less' : 'more' }...</small>
+            <small className="toggle-more" onClick={toggle}>{ isOpen ? 'less' : 'more' }...</small>
           </React.Fragment>
         )
       }
