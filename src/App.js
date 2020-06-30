@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux'
 import Profiles from './components/Profiles.js';
 import About from './components/About.js';
 import SkillCards from './components/SkillCards.js';
 import ActivityCards from './components/ActivityCards.js';
+import cv, { fetchProfile } from './slices/cv.js';
 
-const api = async url => (await fetch(`/api/${url}.json`)).json();
+const App = ({ profile, fetchProfile }) => {
 
-const App = () => {
-  const [profile, setProfile] = useState({ profiles: [] });
+  if (!profile) {
+    fetchProfile();
+    return 'Loading...';
+  }
+
   const fullname = profile.firstname + ' ' + profile.lastname;
-
-  useEffect(async () => {
-    setProfile(await api('profile'));
-  }, [setProfile]);
 
   return (
     <main class="page-content" aria-label="Content">
@@ -53,4 +54,12 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = state => ({
+  profile: state.cv.profile,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchProfile: () => dispatch(fetchProfile()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
