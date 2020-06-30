@@ -4,10 +4,11 @@ import Profiles from './components/Profiles.js';
 import About from './components/About.js';
 import SkillCards from './components/SkillCards.js';
 import ActivityCards from './components/ActivityCards.js';
-import cv, { fetchProfile } from './slices/cv.js';
+import { fetchProfile } from './slices/cv.js';
 
 const App = ({ profile, fetchProfile }) => {
 
+  // TODO useEffect?
   if (!profile) {
     fetchProfile();
     return 'Loading...';

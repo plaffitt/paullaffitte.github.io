@@ -8,12 +8,22 @@ export const fetchProfile = createAsyncThunk(
   },
 );
 
+export const fetchSkills = createAsyncThunk(
+  'cv/skills/fetch',
+  async () => {
+    return await api('skills');
+  },
+);
+
 export default createSlice({
   name: 'cv',
   initialState: {},
   extraReducers: {
     [fetchProfile.fulfilled]: (state, action) => {
       state.profile = action.payload;
+    },
+    [fetchSkills.fulfilled]: (state, action) => {
+      state.skills = action.payload;
     },
   },
 });
