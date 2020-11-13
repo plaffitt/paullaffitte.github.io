@@ -15,15 +15,37 @@ export const fetchSkills = createAsyncThunk(
   },
 );
 
+export const fetchCategories = createAsyncThunk(
+  'cv/categories/fetch',
+  async () => {
+    return await api('categories');
+  },
+);
+
+export const fetchActivities = createAsyncThunk(
+  'cv/activities/fetch',
+  async () => {
+    return await api('activities');
+  },
+);
+
 export default createSlice({
   name: 'cv',
   initialState: {},
   extraReducers: {
     [fetchProfile.fulfilled]: (state, action) => {
       state.profile = action.payload;
+      console.log(action.payload)
     },
     [fetchSkills.fulfilled]: (state, action) => {
       state.skills = action.payload;
+    },
+    [fetchCategories.fulfilled]: (state, action) => {
+      state.categories = action.payload;
+      console.log(action.payload)
+    },
+    [fetchActivities.fulfilled]: (state, action) => {
+      state.activities = action.payload;
     },
   },
 });

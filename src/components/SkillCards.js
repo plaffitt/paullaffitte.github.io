@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { fetchCategoryById } from '../slices/cv.js';
+// import { fetchCategoryById } from '../slices/cv.js';
 import { fetchSkills } from '../slices/cv.js';
 
 // {% assign category = site.data.categories[include.category] %}
@@ -15,10 +15,17 @@ import { fetchSkills } from '../slices/cv.js';
 //   {% endfor %}
 // </section>
 
+const SkillCard = ({ skill }) => {
+  return skill.label;
+}
 
 const SkillCards = ({ category, categories, skills }) => {
+  const ownSkills = Object.values(skills).filter(skill => skill.category == category && !skill.hidden);
+
   return (
-    <section class={ `mb-4 skill-cards skills-${category}` }>
+    <section className={ `mb-4 skill-cards skills-${category}` }>
+      <h4>{ categories[category].label }</h4>
+      { ownSkills.map(skill => <SkillCard skill={ skill }/>) }
     </section>
   );
 };
@@ -31,7 +38,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchSkills: () => dispatch(fetchSkills()),
-  fetchCategoryById: () => dispatch(fetchCategoryById()),
+  // fetchCategoryById: () => dispatch(fetchCategoryById()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SkillCards)

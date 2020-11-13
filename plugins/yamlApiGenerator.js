@@ -70,6 +70,10 @@ function initSource(metalsmith, source, files) {
   return files;
 }
 
+function toCollection(items) {
+  return items.reduce((acc, { id, ...item }) => ({ ...acc, [id]: item }), {});
+}
+
 function yamlApiGenerator({ source, destination='api', metadataDestination='api', itemsPreprocessor }) {
   return async function(files, metalsmith, done) {
     const items = readItems(await initSource(metalsmith, source, files), itemsPreprocessor);
@@ -81,7 +85,7 @@ function yamlApiGenerator({ source, destination='api', metadataDestination='api'
         const apiCode = item.collection ? `${item.collection}/${item.id}` : item.id;
         const filename = `${destination}/${apiCode}.json`;
 
-        files[filename] = { contents: JSON.stringify(item.items || item) };
+        files[filename] = { contents: JSON.stringify(item.items ? toCollection(item.items) : item) };
         metadata[metadataDestination][apiCode.replace('/', '_')] = item;
       } else {
         console.warn('items without id, ignoring...', item);

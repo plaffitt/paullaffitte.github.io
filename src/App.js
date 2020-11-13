@@ -4,13 +4,16 @@ import Profiles from './components/Profiles.js';
 import About from './components/About.js';
 import SkillCards from './components/SkillCards.js';
 import ActivityCards from './components/ActivityCards.js';
-import { fetchProfile } from './slices/cv.js';
+import { fetchProfile, fetchCategories, fetchSkills, fetchActivities } from './slices/cv.js';
 
-const App = ({ profile, fetchProfile }) => {
+const App = ({ profile, categories, fetchProfile, fetchCategories, fetchSkills, fetchActivities }) => {
 
   // TODO useEffect?
-  if (!profile) {
+  if (!profile || !categories) {
     fetchProfile();
+    fetchCategories();
+    fetchSkills();
+    fetchActivities();
     return 'Loading...';
   }
 
@@ -57,10 +60,14 @@ const App = ({ profile, fetchProfile }) => {
 
 const mapStateToProps = state => ({
   profile: state.cv.profile,
+  categories: state.cv.categories,
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchProfile: () => dispatch(fetchProfile()),
+  fetchCategories: () => dispatch(fetchCategories()),
+  fetchSkills: () => dispatch(fetchSkills()),
+  fetchActivities: () => dispatch(fetchActivities()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
