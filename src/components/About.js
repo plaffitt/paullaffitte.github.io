@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Collapse } from 'reactstrap';
+import Text from './Text';
 
 const About = ({ profile }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const About = ({ profile }) => {
     <div className="about">
       <p>{ bio }</p>
       <Collapse isOpen={ isOpen }>
-        { bioMore.map((text, i) => <p key={ i }>{ text }</p> )}
+        <Text text={ bioMore.join('\n') }/>
       </Collapse>
       <small className="toggle-more" onClick={ toggle }>{ isOpen ? 'less' : 'more' }...</small>
     </div>

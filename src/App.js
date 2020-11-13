@@ -38,7 +38,7 @@ const App = ({ profile }) => {
               </header>
 
               <ActivityCards categoryId="xppro" />
-              <ActivityCards categoryId="scholar" />
+              <ActivityCards categoryId="academic" />
             </div>
           </div>
         </section>
