@@ -1,7 +1,7 @@
 require("@babel/register");
 const metalsmith = require('metalsmith');
-const serve = require('metalsmith-serve');
-const watch = require('metalsmith-watch');
+const browsersync = require('metalsmith-browser-sync');
+const htmlmin = require('metalsmith-html-minifier');
 const yamlApiGenerator = require('./plugins/yamlApiGenerator');
 const webpack = require('./plugins/webpack-metalsmith');
 const reactSSR = require('./plugins/react-ssr-metalsmith').default;
@@ -16,9 +16,14 @@ const ms = metalsmith(__dirname)
   .use(reactSSR());
 
 if (prod) {
-  ms.build(function(err) { if (err) throw err });
+  ms.use(htmlmin());
 } else {
-  ms.use(serve({ port: 8282 }))
-    .use(watch())
-    .build(err => { if (err) throw err });
+  ms.use(browsersync({
+    server: './build',
+    files: [ './src' + '/**/*' ]
+  }));
 }
+
+ms.build(function(err) {
+  if (err) throw err;
+});
