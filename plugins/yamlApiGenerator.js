@@ -1,44 +1,29 @@
 const yaml = require('yaml-js');
-const fs = require('fs');
 const minimatch = require('minimatch');
-const { relative } = require('path');
+const path = require('path');
 
-function readItems(files) {
+function readItems(files, cache={}) {
   const data = {};
 
   for (var filename in files) {
+    if (!minimatch(filename, '**/*.{yml,yaml}')) {
+      continue;
+    }
+
     const file = files[filename];
     const contents = file.contents.toString('utf8');
-    const collection = filename.replace(/\.[^/.]+$/, '');
+    const { name: collection } = path.parse(filename);
 
-    if ( minimatch(filename, '**/*.{yml,yaml}') ) {
-      data[collection] = yaml.load_all(contents)[0];
-    }
+    data[collection] = yaml.load_all(contents)[0];
   }
 
-  return data;
+  return { ...cache, ...data };
 }
 
-function initSource(metalsmith, source, files) {
-  if (source) {
-    return new Promise((resolve, reject) => {
-      metalsmith.read(metalsmith.source() + '/' + source, (err, files) => {
-        if (err) {
-          reject(err)
-          return;
-        }
-        resolve(files);
-      });
-    });
-  }
-
-  return files;
-}
-
-function yamlApiGenerator({ source, destination='data.json', metadataDestination='api', itemsPreprocessor }) {
+function yamlApiGenerator({ destination='data.json', metadataDestination='api' }={}) {
   return async function(files, metalsmith, done) {
-    const data = readItems(await initSource(metalsmith, source, files), itemsPreprocessor);
     const metadata = metalsmith.metadata();
+    const data = readItems(files, metadata[metadataDestination]);
     metadata[metadataDestination] = data;
     files[destination] = { contents: JSON.stringify(data) };
     done();

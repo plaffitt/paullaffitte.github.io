@@ -9,9 +9,7 @@ const reactSSR = require('./plugins/react-ssr-metalsmith').default;
 const prod = process.argv.includes('--prod');
 
 const ms = metalsmith(__dirname)
-  .use(yamlApiGenerator({
-    source: '../legacy/data',
-  }))
+  .use(yamlApiGenerator())
   .use(webpack({
     prod
   }))
@@ -20,7 +18,7 @@ const ms = metalsmith(__dirname)
 if (prod) {
   ms.build(function(err) { if (err) throw err });
 } else {
-  ms.use(serve({port:8282}))
+  ms.use(serve({ port: 8282 }))
     .use(watch())
     .build(err => { if (err) throw err });
 }
