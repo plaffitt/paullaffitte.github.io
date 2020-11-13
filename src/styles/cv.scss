@@ -2,137 +2,137 @@ $border-color: #eee;
 $cv-side-width: 16em;
 
 header {
-	h1 {
-		// font-family: 'Exo', sans-serif;
-		// font-family: 'Barlow', sans-serif;
-		font-family: 'Permanent Marker', cursive;
-		font-size: 36pt;
+  h1 {
+    // font-family: 'Exo', sans-serif;
+    // font-family: 'Barlow', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 36pt;
 
-		transition-property: color, text-shadow, transform;
-		transition-duration: 0.3s;
-		transition-timing-function: ease-out;
-		display: inline-block;
-	}
+    transition-property: color, text-shadow, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    display: inline-block;
+  }
 
-	h1:hover {
-		color: white;
-		text-shadow: 2px 2px 1px #eee, -1px -1px 1px #ccc;
-		transform: translate(0, 0.02em);
-	}
+  h1:hover {
+    color: white;
+    text-shadow: 2px 2px 1px #eee, -1px -1px 1px #ccc;
+    transform: translate(0, 0.02em);
+  }
 }
 
 .about {
-	font-family: 'Kalam', cursive;
-	font-size: 16pt;
+  font-family: 'Kalam', cursive;
+  font-size: 16pt;
 
-	.toggle-more {
-		float: right;
-		color: gray;
-		cursor: pointer;
-	}
+  .toggle-more {
+    float: right;
+    color: gray;
+    cursor: pointer;
+  }
 }
 
 .cv-card {
-	border: 1px solid $border-color;
-	border-radius: 0.3em;
-	overflow: hidden;
-	box-shadow: 0em 0.15em 0.5em #f4f4f4;
+  border: 1px solid $border-color;
+  border-radius: 0.3em;
+  overflow: hidden;
+  box-shadow: 0em 0.15em 0.5em #f4f4f4;
 
-	transition-property: box-shadow;
-	transition-duration: 0.5s;
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
 
-	font-family: 'Barlow', sans-serif;
-	.section-title, .activity-title {
-		font-family: 'Exo', sans-serif;
-	}
+  font-family: 'Barlow', sans-serif;
+  .section-title, .activity-title {
+    font-family: 'Exo', sans-serif;
+  }
 }
 
 .cv-card:hover {
-	box-shadow: 0em 0.3em 1em $border-color;
+  box-shadow: 0em 0.3em 1em $border-color;
 }
 
 section#cv {
-	#cv-side {
-		-ms-flex: 0 0 $cv-side-width;
-		flex: 0 0 $cv-side-width;
+  #cv-side {
+    -ms-flex: 0 0 $cv-side-width;
+    flex: 0 0 $cv-side-width;
 
-		#profiles-card {
-			img#profile-picture {
-				border-radius: 1%;
-			}
-			ul#profiles {
-				list-style-type: none;
-				margin-left: 1em;
-				font-size: 11pt;
-				.profile-icon {
-					height: 1.3em;
-					margin-right: 0.3em;
-				}
-				li {
-					margin-bottom: 0.2em;
-				}
-				li.profile-service- {
-					.profile-icon {
-						height: 1.2em;
-						margin-left: 0.05em;
-					}
-				}
-			}
-		}
+    #profiles-card {
+      img#profile-picture {
+        border-radius: 1%;
+      }
+      ul#profiles {
+        list-style-type: none;
+        margin-left: 1em;
+        font-size: 11pt;
+        .profile-icon {
+          height: 1.3em;
+          margin-right: 0.3em;
+        }
+        li {
+          margin-bottom: 0.2em;
+        }
+        li.profile-service- {
+          .profile-icon {
+            height: 1.2em;
+            margin-left: 0.05em;
+          }
+        }
+      }
+    }
 
-		.cv-card.skills {
-			padding: 1em;
-			.skill-cards {
-				h2 {
-					margin-bottom: 0.3em;
-				}
+    .cv-card.skills {
+      padding: 1em;
+      .skill-cards {
+        h2 {
+          margin-bottom: 0.3em;
+        }
         span.badge {
           margin-right: 0.3em;
         }
-			}
-			.skill-cards.skills-softskills {
-				h2 {
-					margin-bottom: 0.15em;
-				}
-			}
-			.skill-cards:last-child {
-				margin-bottom: 0 !important;
-			}
-		}
+      }
+      .skill-cards.skills-softskills {
+        h2 {
+          margin-bottom: 0.15em;
+        }
+      }
+      .skill-cards:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
 
-	}
+  }
 
-	section.activity-cards {
-		h2 {
-			margin-top: 5px;
-			margin-bottom: 0;
-			box-shadow: 0em -5px 0em $primary-light;
-			background-image: linear-gradient(to right, $primary, $primary-light);
-			color: white;
-			padding-left: 0.2em;
-			padding-bottom: 0.1em;
-			padding-top: 0.1em;
-		}
+  section.activity-cards {
+    h2 {
+      margin-top: 5px;
+      margin-bottom: 0;
+      box-shadow: 0em -5px 0em $primary-light;
+      background-image: linear-gradient(to right, $primary, $primary-light);
+      color: white;
+      padding-left: 0.2em;
+      padding-bottom: 0.1em;
+      padding-top: 0.1em;
+    }
 
-		article.activity {
-			padding: 1em 1em 0 1em;
-			margin-bottom: 1em;
-		}
+    article.activity {
+      padding: 1em 1em 0 1em;
+      margin-bottom: 1em;
+    }
 
-		article.activity:last-child {
-			margin-bottom: 0em;
-		}
+    article.activity:last-child {
+      margin-bottom: 0em;
+    }
 
-		article.activity {
-			.activity-role {
-				// float: right;
-				// position: absolute;
-			}
-		}
-	}
+    article.activity {
+      .activity-role {
+        // float: right;
+        // position: absolute;
+      }
+    }
+  }
 
-	.col {
-		padding-right: 12px;
-		padding-left: 12px;
-	}
+  .col {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
 }

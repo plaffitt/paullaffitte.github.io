@@ -24,13 +24,13 @@ $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
 @mixin media-query($device) {
-	@media screen and (max-width: $device) {
-		@content;
-	}
+  @media screen and (max-width: $device) {
+    @content;
+  }
 }
 
 @mixin relative-font-size($ratio) {
-	font-size: $base-font-size * $ratio;
+  font-size: $base-font-size * $ratio;
 }
 
 $primary: #157bbc;
