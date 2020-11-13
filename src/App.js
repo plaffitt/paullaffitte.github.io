@@ -21,12 +21,12 @@ const App = ({ profile }) => {
                 <Profiles profiles={ profile.profiles } />
               </section>
               <div className="cv-card skills mb-4">
-                <SkillCards category="softskills" />
-                <SkillCards category="langs" />
+                <SkillCards categoryId="softskills" />
+                <SkillCards categoryId="langs" />
               </div>
               <div className="cv-card skills">
-                <SkillCards category="tools" />
-                <SkillCards category="libraries" />
+                <SkillCards categoryId="tools" />
+                <SkillCards categoryId="libraries" />
               </div>
             </div>
             <div className="col">
@@ -37,8 +37,8 @@ const App = ({ profile }) => {
                 </div>
               </header>
 
-              <ActivityCards category="xppro" />
-              <ActivityCards category="scholar" />
+              <ActivityCards categoryId="xppro" />
+              <ActivityCards categoryId="scholar" />
             </div>
           </div>
         </section>
@@ -47,6 +47,8 @@ const App = ({ profile }) => {
   );
 };
 
-const mapStateToProps = s => s;
+const mapStateToProps = state => ({
+  profile: state.profile,
+});
 
 export default connect(mapStateToProps)(App)

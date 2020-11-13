@@ -38,7 +38,7 @@ $secondary: #d7c18b;
 $primary-light: lighten($primary, 20%);
 $secondary-light: lighten($secondary, 20%);
 
-@import '~bootstrap/scss/bootstrap';
 @import 'base';
 @import 'layout';
 @import 'cv';
+@import '~bootstrap/scss/bootstrap';
