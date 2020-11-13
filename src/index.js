@@ -3,17 +3,18 @@ import { hydrate } from 'react-dom';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App';
-import getStore from './getStore';
 import './styles/paullaffitte.scss';
 
-const preloadedState = window.__PRELOADED_STATE__;
-delete window.__PRELOADED_STATE__;
+async function setup() {
+  const preloadedState = await (await fetch('/data.json')).json();
+  const store = createStore(s => s, preloadedState);
 
-const store = getStore({ preloadedState });
+  hydrate(
+    <Provider store={ store }>
+      <App />
+    </Provider>,
+    document.getElementById('container')
+  );
+}
 
-hydrate(
-	<Provider store={ store }>
-		<App />
-	</Provider>,
-	document.getElementById('container')
-);
+setup();

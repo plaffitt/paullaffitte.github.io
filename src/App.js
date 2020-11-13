@@ -4,15 +4,8 @@ import Profiles from './components/Profiles.js';
 import About from './components/About.js';
 import SkillCards from './components/SkillCards.js';
 import ActivityCards from './components/ActivityCards.js';
-import cv, { fetchProfile } from './slices/cv.js';
 
-const App = ({ profile, fetchProfile }) => {
-
-  if (!profile) {
-    fetchProfile();
-    return 'Loading...';
-  }
-
+const App = ({ profile }) => {
   const fullname = profile.firstname + ' ' + profile.lastname;
 
   return (
@@ -54,12 +47,6 @@ const App = ({ profile, fetchProfile }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  profile: state.cv.profile,
-});
+const mapStateToProps = s => s;
 
-const mapDispatchToProps = dispatch => ({
-  fetchProfile: () => dispatch(fetchProfile()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps)(App)
