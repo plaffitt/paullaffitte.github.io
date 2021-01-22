@@ -27,7 +27,7 @@ vrxTech:
   location: Barcelone / Paris
   role: Développeur full-stack
   from: Août 2017
-  to: aujourd'hui
+  to: Août 2020
   description: Développement et administration d'une plateforme de streaming en réalité virtuelle.
    C'est lors de ma 2e année à Epitech que j'ai rejoins l'équipe de Rebirth Technologies, une jeune start-up française, d'abord en tant que stagiaire, puis en tant que freelance.
   skills:
@@ -41,17 +41,27 @@ vrxTech:
    - shellScript
    - opengl
 
-cardsEditor:
-  category: perso
-  title: Cards Editor
-  location: Depuis ma chambre
-  role: Chef de projet et développeur
-  from: 16 Janvier 2019
+enix:
+  category: xppro
+  title: Enix
+  location: Paris
+  role: Développeur / Administrateur système et réseau
+  from: Septembre 2020
   to: aujourd'hui
-  description: <a href="https://github.com/paullaffitte/cards-editor" target="_blank">https://github.com/paullaffitte/cards-editor</a>
-   <br/>Création et gestion d'un outil open-source de fabrication de cartes à jouer.
-   Après une discussion avec mon frère, passionné de jeux de cartes, j'ai eu l'idée de créer un logiciel qui puisse lui permettre de créer ses propres jeux de carte.
-   Inspiré de jeux tels que Hearthstone ou Magic, l'éditeur permet de créer des cartes de différents types répondants aux exigences de mon frère.
+  description: Développement d'outils d'administration système et réseau
+   À l'occasion d'un stage optionnel puis d'un stage de fin d'études en CDI, je rejoins Enix afin de développer des outils ayant pour objectifs d'aider notre équipe à répondre aux besoins de nos clients ainsi que de cristaliser nos connaissances dans le domaines dans des outils open-sources.
+
+# cardsEditor:
+#   category: perso
+#   title: Cards Editor
+#   location: Depuis ma chambre
+#   role: Chef de projet et développeur
+#   from: 16 Janvier 2019
+#   to: aujourd'hui
+#   description: <a href="https://github.com/paullaffitte/cards-editor" target="_blank">https://github.com/paullaffitte/cards-editor</a>
+#    <br/>Création et gestion d'un outil open-source de fabrication de cartes à jouer.
+#    Après une discussion avec mon frère, passionné de jeux de cartes, j'ai eu l'idée de créer un logiciel qui puisse lui permettre de créer ses propres jeux de carte.
+#    Inspiré de jeux tels que Hearthstone ou Magic, l'éditeur permet de créer des cartes de différents types répondants aux exigences de mon frère.
 
 worldAnim:
   category: perso

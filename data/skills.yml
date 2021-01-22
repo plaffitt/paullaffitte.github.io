@@ -25,15 +25,15 @@ cpp:
   category: langs
   label: C++
   value: 70
-csharp:
-  category: langs
-  label: C#
-  value: 40
-  hidden: true
-haskell:
-  category: langs
-  label: Haskell
-  value: 40
+# csharp:
+#   category: langs
+#   label: C#
+#   value: 40
+#   hidden: true
+# haskell:
+#   category: langs
+#   label: Haskell
+#   value: 40
 java:
   category: langs
   label: Java
@@ -45,11 +45,11 @@ js:
 python:
   category: langs
   label: Python
-  value: 70
-scss:
-  category: langs
-  label: Scss
   value: 60
+# scss:
+#   category: langs
+#   label: Scss
+#   value: 60
 shellScript:
   category: langs
   label: Shell script
@@ -62,6 +62,10 @@ sql:
   category: langs
   label: SQL
   value: 60
+go:
+  category: langs
+  label: Go
+  value: 75
 
 opengl:
   category: libraries
@@ -74,7 +78,7 @@ jquery:
 react:
   category: libraries
   label: React
-  value: 70
+  value: 80
 electron:
   category: libraries
   label: Electron
@@ -83,6 +87,10 @@ spring:
   category: libraries
   label: Spring
   value: 40
+grpc:
+  category: libraries
+  label: Go gRPC
+  value: 85
 
 docker:
   category: tools
@@ -95,7 +103,7 @@ dockerCompose:
 kubernetes:
   category: tools
   label: Kubernetes
-  value: 50
+  value: 70
 git:
   category: tools
   label: Git
@@ -108,11 +116,11 @@ linux:
   category: tools
   label: Linux
   value: 70
-photoshop:
-  category: tools
-  label: Photoshop
-  value: 55
-da-vinci:
-  category: tools
-  label: DaVinci Resolve
-  value: 50
+# photoshop:
+#   category: tools
+#   label: Photoshop
+#   value: 55
+# da-vinci:
+#   category: tools
+#   label: DaVinci Resolve
+#   value: 50

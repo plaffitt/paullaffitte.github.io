@@ -19,7 +19,6 @@ profiles:
     service: 'Github'
     url: https://github.com/paullaffitte/
     icon: 'https://github.com/fluidicon.png'
-
   - label: paul-laffitte
     service: 'LinkedIn'
     url: https://www.linkedin.com/in/paul-laffitte/
