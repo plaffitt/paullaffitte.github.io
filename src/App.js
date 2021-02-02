@@ -18,7 +18,12 @@ const App = ({ profile }) => {
                 <div id="profile-picture" className="zoom mb-3">
                   <img src={ profile.picture } alt={ fullname } />
                 </div>
-                <Profiles profiles={ profile.profiles } />
+                <Profiles
+                  profiles={ profile.profiles }
+                  website={ profile.website }
+                  emailAddress={ profile.emailAddress }
+                  phoneNumber={ profile.phoneNumber }
+                />
               </section>
               <div className="cv-card skills mb-4">
                 <SkillCards categoryId="softskills" />

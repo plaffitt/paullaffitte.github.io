@@ -4,7 +4,7 @@ profession: Developer
 picture: https://avatars0.githubusercontent.com/u/23403270
 phoneNumber: "+33.01.04.24.96"
 emailAddress: paul.laffitte@epitech.eu
-website: https://paullaffitte.github.io/
+website: paullaffitte.github.io
 location:
   address: 20, Rue Ernest Michel
   zipCode: '34000'
@@ -17,11 +17,11 @@ bio: |-
 
 profiles:
   - label: paullaffitte
-    service: 'Github'
+    service: github
     url: https://github.com/paullaffitte/
     icon: 'https://github.com/fluidicon.png'
 
   - label: paul-laffitte
-    service: 'LinkedIn'
+    service: linkedin
     url: https://www.linkedin.com/in/paul-laffitte/
     icon: 'https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca'
