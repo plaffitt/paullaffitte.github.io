@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
+import ProfilePicture from './components/ProfilePicture.js';
 import Profiles from './components/Profiles.js';
 import About from './components/About.js';
 import SkillCards from './components/SkillCards.js';
@@ -15,9 +16,7 @@ const App = ({ profile }) => {
           <div className="row">
             <div id="cv-side" className="col">
               <section id="profiles-card" className="mb-4 cv-card">
-                <div id="profile-picture" className="zoom mb-3">
-                  <img src={ profile.picture } alt={ fullname } />
-                </div>
+                <ProfilePicture picture={ profile.picture } fullname={ fullname } />
                 <Profiles
                   profiles={ profile.profiles }
                   website={ profile.website }

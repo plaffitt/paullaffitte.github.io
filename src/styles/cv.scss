@@ -57,8 +57,8 @@ section#cv {
     flex: 0 0 $cv-side-width;
 
     #profiles-card {
-      img#profile-picture {
-        border-radius: 1%;
+      #profile-picture {
+        border-radius: 0.2em;
       }
       ul#profiles {
         list-style-type: none;
@@ -121,13 +121,6 @@ section#cv {
 
     article.activity:last-child {
       margin-bottom: 0em;
-    }
-
-    article.activity {
-      .activity-role {
-        // float: right;
-        // position: absolute;
-      }
     }
   }
 
