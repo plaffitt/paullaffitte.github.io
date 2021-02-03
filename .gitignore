@@ -1,11 +1,4 @@
-_site
-.sass-cache
-.jekyll-metadata
-
 node_modules
+build
+cache
 yarn-error.log
-
-# Webpack
-assets/js/*.js
-api
-_data

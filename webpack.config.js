@@ -1,71 +1,56 @@
 const path = require('path');
-const DataExtractorPlugin = require('./src/webpack/DataExtractorPlugin');
-const JsonPostProcessPlugin = require('./src/webpack/JsonPostProcessPlugin');
-const CVPostProcessor = require('./src/webpack/CVPostProcessor');
-const ApiPostProcessor = require('./src/webpack/ApiPostProcessor');
-const ToYamlPostProcessor = require('./src/webpack/ToYamlPostProcessor');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const applicationModule = {
-  entry: { index: "./src/index.js" }, // webpack folder's entry js - excluded from jekll's build process.
-  output: { // we're going to put the generated file in the assets folder so jekyll will grab it.
-    path: path.resolve(__dirname, 'assets/js'),
-    filename: "[name].bundle.min.js"
+const applicationModule = ({ prod }={}) => ({
+  mode: prod ? 'production' : 'development',
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
+  entry: ['./src/index.js'],
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         include: path.resolve(__dirname, "src"),
-        loader: 'babel-loader',
-        query: {
-          presets: ["es2015"]
+        use: {
+          loader: 'babel-loader',
         }
-      }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        include: path.resolve(__dirname, "src"),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ]
   },
-  mode: 'development' // Avoids a warning when running `webpack`. Set to 'production' for minified version.
-};
-
-function loadData(folder, name, plugins=[]) {
-  return {
-    entry: {
-      index: './data/index.js'
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin(),
+  ],
+  resolve: {
+    alias: {
+      "react": "preact/compat",
+      "react-dom": "preact/compat",
     },
-    output: {
-      path: path.resolve(__dirname, folder),
-    },
-    module: {
-      rules: [
-        {
-          test: /\.yml$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: name,
-                context: 'src'
-              }
-            },
-            'yaml-loader'
-          ]
-        }
-      ]
-    },
-    plugins: [
-      new DataExtractorPlugin(),
-      new JsonPostProcessPlugin(CVPostProcessor),
-      ...plugins
-    ],
-    mode: 'development'
-  };
-}
+  }
+});
 
-const apiModule = loadData('api', '[path][name].json', [ new JsonPostProcessPlugin(ApiPostProcessor) ]);
-const dataModule = loadData('_data', '[path][name].yml', [ new JsonPostProcessPlugin(ToYamlPostProcessor, true) ]);
-
-module.exports = [
-  applicationModule,
-  apiModule,
-  dataModule
-]
-
+module.exports = applicationModule;

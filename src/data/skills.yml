@@ -1,0 +1,88 @@
+softskills:
+  autonomous:
+    label: Autonomous
+  creative:
+    label: Creative
+  involved:
+    label: Involved
+  organized:
+    label: Organized
+  sociable:
+    label: Sociable
+  tepitech:
+    label: Tepitech (Epitech TOEIC like) 770
+
+langs:
+  c:
+    label: C
+    value: 90
+  cpp:
+    label: C++
+    value: 70
+  csharp:
+    label: C#
+    value: 40
+  haskell:
+    label: Haskell
+    value: 40
+  java:
+    label: Java
+    value: 40
+  js:
+    label: Javascript
+    value: 80
+  python:
+    label: Python
+    value: 70
+  scss:
+    label: Scss
+    value: 60
+  shellScript:
+    label: Shell script
+    value: 80
+  php:
+    label: Php
+    value: 80
+  sql:
+    label: SQL
+    value: 50
+
+libraries:
+  opengl:
+    label: OpenGL
+    value: 30
+  jquery:
+    label: jQuery
+    value: 90
+  react:
+    label: React
+    value: 70
+  electron:
+    label: Electron
+    value: 60
+  spring:
+    label: Spring
+    value: 40
+
+tools:
+  docker:
+    label: Docker
+    value: 80
+  dockerCompose:
+    label: Docker-Compose
+    value: 90
+  kubernetes:
+    label: Kubernetes
+    value: 50
+  git:
+    label: Git
+    value: 50
+  windows:
+    label: Windows
+    value: 40
+  linux:
+    label: Linux
+    value: 70
+  photoshop:
+    label: Photoshop
+    value: 70

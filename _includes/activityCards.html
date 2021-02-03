@@ -1,9 +1,0 @@
-{% assign category = site.data.categories[include.category] %}
-{% assign activities = site.data.activities[include.category] %}
-
-<section class="activity-cards activities-{{include.category}} cv-card mb-4">
-	<h2 class="section-title">{{category.label}}</h2>
-	{% for activity in activities %}
-		{% include activityCard.html activity=activity %}
-	{% endfor %}
-</section>

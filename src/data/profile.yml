@@ -1,0 +1,27 @@
+firstname: Paul
+lastname: Laffitte
+profession: Developer
+picture: https://avatars0.githubusercontent.com/u/23403270
+phoneNumber: "+33.01.04.24.96"
+emailAddress: paul.laffitte@epitech.eu
+website: paullaffitte.github.io
+location:
+  address: 20, Rue Ernest Michel
+  zipCode: '34000'
+  city: MONTPELLIER
+
+bio: |-
+ Passionné d'informatique depuis jeune. Je cherche à en apprendre toujours plus, à améliorer mes compétences dans des languages et technologies déjà connus ainsi qu'en apprendre de nouveaux.
+ Après avoir passé mon bac en fillière scientifique, j'ai intégré l'école Epitech où j'ai rapidement pu me placer parmis les meilleurs élements. Je suis curieux de nature et j'aime aller au fond des choses, je suis toujours en quête de qualité lorsque je travail sur un projet.
+ Mes qualités de développeur sont renforcées par des notions relativement approfondies en administration système et réseaux, notamment au travers d'outils tels que docker ou kubernetes.
+
+profiles:
+  - label: paullaffitte
+    service: github
+    url: https://github.com/paullaffitte/
+    icon: 'https://github.com/fluidicon.png'
+
+  - label: paul-laffitte
+    service: linkedin
+    url: https://www.linkedin.com/in/paul-laffitte/
+    icon: 'https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca'

@@ -1,7 +1,0 @@
-<ul id="profiles" class="mb-3">
-	{% for profile in site.data.profile.profiles %}
-		<li class="profile-service-{{ profile.service }}">
-			<img class="profile-icon" src="{{ profile.icon }}"><a href="{{ profile.url }}" target="_blank">{{ profile.label }}</a>
-		</li>
-	{% endfor %}
-</ul>
