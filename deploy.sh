@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+set -xe
+
 TO_DEPLOY='develop'
 DEPLOYED='master'
 
 if [[ "$1" == '--dry-run' ]]; then
-	DRY_RUN=true
+	DRY_RUN='true'
 else
 	read -p "This action will hard reset $DEPLOYED onto $TO_DEPLOY and force push. Are you sure? (y/n) " -n 1 -r
 	echo
@@ -13,29 +15,24 @@ else
 	fi
 fi
 
-TMPDIR=$(mktemp -d)
 
-cp . $TMPDIR -R
+TMPDIR=$(mktemp -d)
+export BUILD_TARGET=$(mktemp -d)
+cp -r . $TMPDIR
 cd $TMPDIR
 
-git add --all
-git stash
-
-git checkout $TO_DEPLOY
-git fetch origin
-
-git checkout $DEPLOYED
-git reset --hard origin/$TO_DEPLOY
+git symbolic-ref HEAD refs/heads/$DEPLOYED
+git reset --soft $TO_DEPLOY
 
 yarn
-yarn run re
+yarn run prod
 
-rm -rfv $(ls -a | grep -v 'build' | grep -v '.git')
-mv build/** .
-rm -d build
+cp -r .git CNAME $BUILD_TARGET/
+cd $BUILD_TARGET
 
 git add --all
 git commit -m "build"
+
 if [[ $DRY_RUN != 'true' ]]; then
 	git push --force
 fi
@@ -47,8 +44,9 @@ if [[ $DRY_RUN != 'true' ]]; then
 	git push origin $tag
 fi
 
+rm $TMPDIR -rf
 if [[ $DRY_RUN != 'true' ]]; then
-	rm $TMPDIR -rf
+	rm $BUILD_TARGET -rf
 else
-	echo "Dry run output can be found here: $TMPDIR"
+	echo "Dry run output can be found here: $BUILD_TARGET"
 fi

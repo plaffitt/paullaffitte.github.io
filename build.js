@@ -9,6 +9,7 @@ const reactSSR = require('./plugins/react-ssr-metalsmith').default;
 const prod = process.argv.includes('--prod');
 
 const ms = metalsmith(__dirname)
+  .destination(process.env.BUILD_TARGET || './build')
   .use(yamlApiGenerator())
   .use(webpack({
     prod

@@ -15,6 +15,7 @@ function readItems(files, cache={}) {
     const { name: collection } = path.parse(filename);
 
     data[collection] = yaml.load_all(contents)[0];
+    delete files[filename];
   }
 
   return { ...cache, ...data };
