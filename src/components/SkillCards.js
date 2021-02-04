@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SkillCard from './SkillCard'
 
 const SkillCards = ({ categoryId, categories, skills }) => {
-  const skillsList = Object.values(skills[categoryId]).sort((a, b) => (b.value - a.value) || a.label.localeCompare(b.label));
+  const skillsList = Object.values(skills[categoryId]).sort((a, b) => (b.value - a.value));
   const category = categories[categoryId];
 
   return (

@@ -6,7 +6,7 @@ import About from './components/About.js';
 import SkillCards from './components/SkillCards.js';
 import ActivityCards from './components/ActivityCards.js';
 
-const App = ({ profile }) => {
+const App = ({ profile, activityCategories }) => {
   const fullname = profile.firstname + ' ' + profile.lastname;
 
   return (
@@ -40,9 +40,7 @@ const App = ({ profile }) => {
                   <About profile={ profile } />
                 </div>
               </header>
-
-              <ActivityCards categoryId="xppro" />
-              <ActivityCards categoryId="academic" />
+              { activityCategories.map(categoryId => <ActivityCards categoryId={ categoryId } />) }
             </div>
           </div>
         </section>
@@ -53,6 +51,7 @@ const App = ({ profile }) => {
 
 const mapStateToProps = state => ({
   profile: state.profile,
+  activityCategories: Object.keys(state.activities),
 });
 
 export default connect(mapStateToProps)(App)

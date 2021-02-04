@@ -6,7 +6,7 @@ const Profiles = ({ profiles, website, emailAddress, phoneNumber }) => {
     !website ? null : {
       label: website,
       service: 'website',
-      url: website.substring(website.lastIndexOf('/') + 1),
+      url: 'https://' + website,
       icon: '/assets/images/website.svg',
     },
     !emailAddress ? null : {
