@@ -20,7 +20,7 @@ const ProfilePicture = ({ picture, fullname}) => {
   return (
     <div
       id="profile-picture"
-      className="zoom mb-3"
+      className="mb-3"
       onMouseMove={ ({ offsetX: x, offsetY: y }) => set({ xy: calc(x, y) }) }
       onMouseLeave={ () => set({ xy: [0, 0] }) }
     >
