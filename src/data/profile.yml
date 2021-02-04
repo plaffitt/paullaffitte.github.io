@@ -1,19 +1,19 @@
 firstname: Paul
 lastname: Laffitte
-profession: Developer
+profession: Développeur / Administrateur Système & Réseau
 picture: https://avatars0.githubusercontent.com/u/23403270
-phoneNumber: "+33.01.04.24.96"
-emailAddress: paul.laffitte@epitech.eu
-website: paullaffitte.github.io
+phoneNumber: '+336.01.04.24.96'
+emailAddress: plaffitt@gmail.com
+website: blog.plaffitt.com
 location:
-  address: 20, Rue Ernest Michel
-  zipCode: '34000'
-  city: MONTPELLIER
+  address: 25, Rue de la Défense
+  zipCode: 92130
+  city: ISSY-LES-MOULINEAUX
 
 bio: |-
- Passionné d'informatique depuis jeune. Je cherche à en apprendre toujours plus, à améliorer mes compétences dans des languages et technologies déjà connus ainsi qu'en apprendre de nouveaux.
- Après avoir passé mon bac en fillière scientifique, j'ai intégré l'école Epitech où j'ai rapidement pu me placer parmis les meilleurs élements. Je suis curieux de nature et j'aime aller au fond des choses, je suis toujours en quête de qualité lorsque je travail sur un projet.
- Mes qualités de développeur sont renforcées par des notions relativement approfondies en administration système et réseaux, notamment au travers d'outils tels que docker ou kubernetes.
+  Passionné d'informatique depuis jeune. J'ai eu la chance de pouvoir travailler sur une grande variété de projets et de développer des compétences dans la gestion de ceux-ci.
+  Après avoir passé mon bac en fillière scientifique, j'ai intégré l'école Epitech où j'ai rapidement pu me placer parmis les meilleurs élements. Je suis curieux de nature et j'aime aller au fond des choses, je suis toujours en quête de qualité dans mon travail.
+  Mes qualités de développeur sont renforcées par des notions relativement approfondies en administration système et réseaux, notamment au travers d'outils tels que docker ou kubernetes.
 
 profiles:
   - label: paullaffitte

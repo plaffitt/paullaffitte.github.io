@@ -1,16 +1,16 @@
 softskills:
   autonomous:
-    label: Autonomous
+    label: Autonome
   creative:
-    label: Creative
+    label: Créatif
   involved:
-    label: Involved
+    label: Impliqué
   organized:
-    label: Organized
+    label: Organisé
   sociable:
     label: Sociable
   tepitech:
-    label: Tepitech (Epitech TOEIC like) 770
+    label: 770pts au TOEIC
 
 langs:
   c:
@@ -24,13 +24,13 @@ langs:
     value: 40
   haskell:
     label: Haskell
-    value: 40
+    value: 30
   java:
     label: Java
-    value: 40
+    value: 50
   js:
     label: Javascript
-    value: 80
+    value: 90
   python:
     label: Python
     value: 70
@@ -45,7 +45,10 @@ langs:
     value: 80
   sql:
     label: SQL
-    value: 50
+    value: 70
+  go:
+    label: Go
+    value: 75
 
 libraries:
   opengl:
@@ -56,27 +59,30 @@ libraries:
     value: 90
   react:
     label: React
-    value: 70
+    value: 80
   electron:
     label: Electron
-    value: 60
+    value: 50
   spring:
     label: Spring
     value: 40
+  spring:
+    label: Go gRPC
+    value: 85
 
 tools:
   docker:
     label: Docker
-    value: 80
+    value: 90
   dockerCompose:
     label: Docker-Compose
     value: 90
   kubernetes:
     label: Kubernetes
-    value: 50
+    value: 70
   git:
     label: Git
-    value: 50
+    value: 65
   windows:
     label: Windows
     value: 40
@@ -85,4 +91,7 @@ tools:
     value: 70
   photoshop:
     label: Photoshop
-    value: 70
+    value: 55
+  daVinci:
+    label: DaVinci Resolve
+    value: 40
