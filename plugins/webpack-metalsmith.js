@@ -1,23 +1,31 @@
 const webpack = require('webpack');
 const { createFsFromVolume, Volume } = require('memfs');
+const fs = require('fs');
+const path = require('path');
+const unionfs = require('unionfs');
+const MemoryFileSystem = require('memory-fs');
 const join = require('memory-fs/lib/join');
 
+
 // https://github.com/streamich/memfs/issues/404#issuecomment-522450466
-function buildWebpackCompiler(fs, webpackConfig) {
-  function ensureWebpackMemoryFs(fs) {
-    if (fs.join) {
-      return fs
-    }
-    const nextFs = Object.create(fs)
-    nextFs.join = join;
-
-    return nextFs
+function buildWebpackCompiler(outputFs, inputFs, webpackConfig) {
+  function ensureWebpackMemoryFs(outputFs) {
+    if (outputFs.join) {
+        return outputFs
+      }
+      const nextFs = Object.create(outputFs)
+      nextFs.join = join;
+    
+      return nextFs
   }
-
-  const webpackFs = ensureWebpackMemoryFs(fs)
+    
   const compiler = webpack(webpackConfig)
 
-  compiler.outputFileSystem = webpackFs
+  compiler.inputFileSystem = inputFs;
+  compiler.resolvers.normal.fileSystem = inputFs;
+  compiler.resolvers.context.fileSystem = inputFs;
+  compiler.outputFileSystem = ensureWebpackMemoryFs(outputFs);
+
   return compiler;
 }
 
@@ -40,14 +48,30 @@ function withCustomOutput(metalsmith, config) {
   return config;
 }
 
+function createInputFs(files, metalsmith) {
+  var inputMemFs = new MemoryFileSystem();
+
+  const sourceDir = metalsmith.source();
+  Object.entries(files).forEach(([filename, { contents }]) => {
+    inputMemFs.mkdirpSync(path.join(sourceDir, path.dirname(filename)));
+    inputMemFs.writeFileSync(path.join(sourceDir, filename), contents);
+  });
+
+  const inputFs = new unionfs.Union();
+  inputFs.use(fs).use(inputMemFs);
+
+  return inputFs;
+}
+
 module.exports = (options) => (files, metalsmith, done) => {
   const config = require(metalsmith.directory() + '/webpack.config.js')(options);
-  const vol = new Volume();
-  const fs = createFsFromVolume(vol);
-  const compiler = buildWebpackCompiler(fs, withCustomOutput(metalsmith, config));
+
+  const volume = new Volume()
+  const fs = createFsFromVolume(volume);
+  const compiler = buildWebpackCompiler(fs, createInputFs(files, metalsmith), withCustomOutput(metalsmith, config));
 
   compiler.run((err, stats) => {
-    const webpackOutputs = vol.toJSON();
+    const webpackOutputs = volume.toJSON();
 
     cleanWebpackDependencies(metalsmith, stats, files);
 
