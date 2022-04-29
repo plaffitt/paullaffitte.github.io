@@ -9,7 +9,8 @@
     "build": "yarn prod",
     "clean": "rm build build-dev -rfv",
     "re": "yarn clean && yarn build",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "pdf": "chrome-headless-render-pdf --url https://cv.plaffitt.com/ --pdf ./cv.pdf --include-background"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -43,5 +44,8 @@
     "unionfs": "^4.4.0",
     "webpack": "^4.25.1",
     "yaml-js": "^0.2.3"
+  },
+  "dependencies": {
+    "chrome-headless-render-pdf": "^1.9.0"
   }
 }
