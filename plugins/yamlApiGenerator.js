@@ -1,12 +1,11 @@
 const yaml = require('yaml-js');
-const minimatch = require('minimatch');
 const path = require('path');
 
-function readItems(files, cache={}) {
+function readItems(files, cache={}, metalsmith) {
   const data = {};
 
   for (var filename in files) {
-    if (!minimatch(filename, '**/*.{yml,yaml}')) {
+    if (metalsmith.match('**/*.{yml,yaml}', [filename]).length == 0) {
       continue;
     }
 
@@ -24,7 +23,7 @@ function readItems(files, cache={}) {
 function yamlApiGenerator({ destination='data.json', metadataDestination='api' }={}) {
   return async function(files, metalsmith, done) {
     const metadata = metalsmith.metadata();
-    const data = readItems(files, metadata[metadataDestination]);
+    const data = readItems(files, metadata[metadataDestination], metalsmith);
     metadata[metadataDestination] = data;
     files[destination] = { contents: JSON.stringify(data) };
     done();
