@@ -1,8 +1,8 @@
 xppro:
   enix:
     title: Enix
-    location: Paris
-    role: Développeur / Administrateur système et réseau
+    location: Paris 🗼 / Remote 🚂
+    role: Site Reliability Engineer
     from: Septembre 2020
     description: |-
       Développement d'outils d'administration système et réseau.
@@ -10,7 +10,7 @@ xppro:
 
   vrxTech:
     title: Rebirth Technologies
-    location: Barcelone / Paris
+    location: Barcelone ☀️ / Paris 🗼
     role: Développeur full-stack
     from: Aout 2017
     to: Août 2020
@@ -31,7 +31,7 @@ xppro:
 
   iamanys:
     title: Iamanys
-    location: Fabrègues
+    location: Montpellier ❤️
     role: Développeur Java
     from: Aout 2015
     to: Avril 2016
@@ -44,16 +44,16 @@ xppro:
 academic:
   epitech:
     title: Epitech
-    location: Montpellier
+    location: Montpellier ❤️
     role: Étudiant
     from: 2016
     to: 2021
     description: |-
       Etudes d'expert en informatique. De nombreux projets sont à réaliser et à rendre sur une base régulière.
-  
+
   kubernetesFormation:
     title: Formation Kubernetes
-    location: Enix, Paris
+    location: Enix, Paris 🗼
     role: Participant
     from: 16 Décembre
     to: 18 Décembre 2018
@@ -64,7 +64,7 @@ academic:
 perso:
   worldAnim:
     title: WorldAnim
-    location: Depuis ma chambre
+    location: Depuis chez moi 🏠️
     role: Co-chef de projet et développeur
     from: 2011 à 2016 puis de Novembre 2019
     link: worldanim.net
@@ -74,7 +74,7 @@ perso:
 
   cardsEditor:
     title: Cards Editor
-    location: Depuis ma chambre
+    location: Depuis chez moi 🏠️
     role: Chef de projet et développeur
     from: 16 Janvier 2019
     link: github.com/paullaffitte/cards-editor
@@ -82,4 +82,3 @@ perso:
       Création et gestion d'un outil open-source de fabrication de cartes à jouer.
       Après une discussion avec mon frère, passionné de jeux de cartes, j'ai eu l'idée de créer un logiciel qui puisse lui permettre de créer ses propres jeux de carte.
       Inspiré de jeux tels que Hearthstone ou Magic, l'éditeur permet de créer des cartes de différents types répondants aux exigences de mon frère.
-
