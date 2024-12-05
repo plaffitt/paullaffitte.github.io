@@ -1,24 +1,21 @@
 firstname: Paul
 lastname: Laffitte
-profession: Développeur / Administrateur Système & Réseau
+profession: Site Reliability Engineer
 picture: https://avatars0.githubusercontent.com/u/23403270
 phoneNumber: '+336.01.04.24.96'
 emailAddress: plaffitt@gmail.com
 website: blog.plaffitt.com
-location:
-  address: 25, Rue de la Défense
-  zipCode: 92130
-  city: ISSY-LES-MOULINEAUX
+location: Montpellier
 
 bio: |-
-  Passionné d'informatique depuis jeune. J'ai eu la chance de pouvoir travailler sur une grande variété de projets et de développer des compétences dans la gestion de ceux-ci.
-  Après avoir passé mon bac en fillière scientifique, j'ai intégré l'école Epitech où j'ai rapidement pu me placer parmis les meilleurs élements. Je suis curieux de nature et j'aime aller au fond des choses, je suis toujours en quête de qualité dans mon travail.
-  Mes qualités de développeur sont renforcées par des notions relativement approfondies en administration système et réseaux, notamment au travers d'outils tels que docker ou kubernetes.
+  Passionné de technologie, j'ai eu la chance d'avoir une éducation qui m'a permise de m'intéresser à l'informatique dès le plus jeune age.
+  Après avoir obtenu un bac en filière scientifique, j'ai intégré l'école Epitech où j'ai rapidement pu me placer parmis les meilleurs élements. Je suis curieux de nature et j'aime aller au fond des choses, je suis toujours en quête de qualité et de découvertes.
+  Fort de mon expérience et entouré des monkeys 🐒 d'Enix, j'ai aquis des compétences profondes en administration système et réseaux qui ont su consolider mes bases et faire de moi le Site Reliability Engineer que je suis aujourd'hui.
 
 profiles:
-  - label: paullaffitte
+  - label: plaffitt
     service: github
-    url: https://github.com/paullaffitte/
+    url: https://github.com/plaffitt/
     icon: 'https://github.com/fluidicon.png'
 
   - label: paul-laffitte
