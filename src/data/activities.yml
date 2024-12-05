@@ -54,31 +54,11 @@ academic:
   kubernetesFormation:
     title: Formation Kubernetes
     location: Enix, Paris 🗼
-    role: Participant
+    role: Stagiaire
     from: 16 Décembre
     to: 18 Décembre 2018
     description: |-
-      Formation à l'utilisation de Kubernetes chez l'entreprise Enix. Durant deux jours se sont succédé théorie et pratique, un cluster de 5 noeud nous étant fourni durant toute la durée de la formation afin de pratiquer dans des conditions proches du réel.
+      Formation à l'utilisation de Kubernetes avec le fameux Jérôme Petazzoni et mon mentor Alexandre Buisine. Durant deux jours se sont succédé théorie et pratique, un cluster de 5 noeud nous étant fourni durant toute la durée de la formation afin de pratiquer dans des conditions proches du réel.
       J'ai rapidement pu faire le tour de Kubernetes en assimillant la plupart des concepts clés de cette technologie, que j'utilise aujourd'hui dans mes projets personnels et professionnels.
 
-perso:
-  worldAnim:
-    title: WorldAnim
-    location: Depuis chez moi 🏠️
-    role: Co-chef de projet et développeur
-    from: 2011 à 2016 puis de Novembre 2019
-    link: worldanim.net
-    description: |-
-      Réseau social et forum dans le domaine du graphisme et de l'animation 2D et 3D.
-      Ce projet, commencé il y a de nombreuses années avec un ami, a pu revoir le jour en 2019 grâce à nos compétences nouvellement aquises et voit sa communautée se reformer petit à petit.
-
-  cardsEditor:
-    title: Cards Editor
-    location: Depuis chez moi 🏠️
-    role: Chef de projet et développeur
-    from: 16 Janvier 2019
-    link: github.com/paullaffitte/cards-editor
-    description: |-
-      Création et gestion d'un outil open-source de fabrication de cartes à jouer.
-      Après une discussion avec mon frère, passionné de jeux de cartes, j'ai eu l'idée de créer un logiciel qui puisse lui permettre de créer ses propres jeux de carte.
-      Inspiré de jeux tels que Hearthstone ou Magic, l'éditeur permet de créer des cartes de différents types répondants aux exigences de mon frère.
+perso: []
