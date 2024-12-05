@@ -24,6 +24,8 @@ cd $TMPDIR
 git symbolic-ref HEAD refs/heads/$DEPLOYED
 git reset --soft $TO_DEPLOY
 
+export NODE_OPTIONS=--openssl-legacy-provider
+
 yarn
 yarn run prod
 
