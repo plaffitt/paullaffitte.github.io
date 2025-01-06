@@ -25,12 +25,8 @@ const App = ({ profile, activityCategories }) => {
                 />
               </section>
               <div className="cv-card skills mb-4">
-                <SkillCards categoryId="softskills" />
-                <SkillCards categoryId="langs" />
-              </div>
-              <div className="cv-card skills">
-                <SkillCards categoryId="tools" />
-                <SkillCards categoryId="libraries" />
+                <SkillCards categoryId="speaks" className="mb-4" />
+                <SkillCards categoryId="uses" />
               </div>
             </div>
             <div className="col">

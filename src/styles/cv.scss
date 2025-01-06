@@ -51,16 +51,6 @@ header {
   box-shadow: 0em 0.3em 1em $border-color;
 }
 
-.progress-bar, .badge {
-  white-space: nowrap;
-}
-
-.skill-cards:hover {
-  .progress-bar {
-    width: 100% !important;
-  }
-}
-
 section#cv {
   #cv-side {
     -ms-flex: 0 0 $cv-side-width;
@@ -102,22 +92,14 @@ section#cv {
       padding: 1em;
       .skill-cards {
         h2 {
-          margin-bottom: 0.3em;
+          font-size: 1.5rem;
         }
-        span.badge {
-          margin-right: 0.3em;
+        p {
+          margin-bottom: 0.1rem;
+          font-size: 0.8rem;
         }
-      }
-      .skill-cards.skills-softskills {
-        h2 {
-          margin-bottom: 0.15em;
-        }
-      }
-      .skill-cards:last-child {
-        margin-bottom: 0 !important;
       }
     }
-
   }
 
   section.activity-cards {
