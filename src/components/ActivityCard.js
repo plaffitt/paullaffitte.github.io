@@ -6,7 +6,7 @@ const ActivityCard = ({ title, role, location, from, to="aujourd'hui", descripti
   return (
     <article className="activity">
       <h3 className="activity-title">{ title }<small className="activity-role">, { role }</small></h3>
-      <span><small>Emplacement: { location } - de {from } à { to }</small></span>
+      <span><small>Localisation: { location } - de {from } à { to }</small></span>
       <p>{ !link ? null : <a href={ 'https://' + link } target="_blank">{ link }</a> }</p>
       <hr/>
       <Text text={ description }/>
