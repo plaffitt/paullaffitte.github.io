@@ -29,7 +29,7 @@ export NODE_OPTIONS=--openssl-legacy-provider
 yarn
 yarn run prod
 
-cp -r .git CNAME $BUILD_TARGET/
+cp -r .git $BUILD_TARGET/
 cd $BUILD_TARGET
 
 git add --all
