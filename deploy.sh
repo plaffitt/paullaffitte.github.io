@@ -39,7 +39,7 @@ if [[ $DRY_RUN != 'true' ]]; then
 	git push --force
 fi
 buildedHash=$(git log $DEPLOYED --oneline --pretty=format:"%h" -2 | awk 'NR==2')
-lastTag=$(git tag | grep -P "\d*-\d{4}-\d{2}-\d{2}" | tail -n1 | cut -d'-' -f1)
+lastTag=$(git tag | sort -h | grep -P "\d*-\d{4}-\d{2}-\d{2}" | tail -n1 | cut -d'-' -f1)
 tag=$(echo "$lastTag + 1" | bc)-$(date +%Y-%m-%d)
 git tag $tag $buildedHash
 if [[ $DRY_RUN != 'true' ]]; then
