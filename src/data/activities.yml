@@ -61,4 +61,21 @@ academic:
       Formation à l'utilisation de Kubernetes avec le fameux Jérôme Petazzoni et mon mentor Alexandre Buisine. Durant deux jours se sont succédé théorie et pratique, un cluster de 5 noeud nous étant fourni durant toute la durée de la formation afin de pratiquer dans des conditions proches du réel.
       J'ai rapidement pu faire le tour de Kubernetes en assimillant la plupart des concepts clés de cette technologie, que j'utilise aujourd'hui dans mes projets personnels et professionnels.
 
-perso: []
+perso:
+  histctx:
+    title: histctx
+    location: Chez moi 🏠️
+    role: Développeur
+    from: 2021
+    description: |-
+      Un outil pour faciliter le changement de contexte en créant et en gérant plusieurs historiques bash. Je l'ai mis au point pour m'aider à plus facilement gérer le context switch entre mes différents projets. J'en parle plus longement sur mon <a href="https://blog.plaffitt.com/en/2024/12/26/histctx-handle-shell-context-switching/" target="_blank">blog</a>.
+      code source: <a href="https://github.com/plaffitt/histctx" target="_blank">https://github.com/plaffitt/histctx</a>
+  shoot-the-aliens:
+    title: Shoot The Aliens
+    location: Chez moi 🏠️
+    role: Développeur, graphiste, sound designer
+    from: début 2014
+    to: été 2014
+    description: |-
+      Un shoot them up où vous devez affronter des vagues de vaisseaux aliens de plus en plus importantes. J'ai écris un article qui en parle plus en détail sur mon <a href="https://blog.plaffitt.com/en/2022/08/30/shoot-the-aliens-a-game-that-changed-my-life/" target="_blank">blog</a>.
+      code source: <a href="https://github.com/plaffitt/shoot-the-aliens-legacy" target="_blank">https://github.com/plaffitt/shoot-the-aliens-legacy</a>
