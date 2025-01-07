@@ -20,12 +20,11 @@ function readItems(files, cache={}, metalsmith) {
   return { ...cache, ...data };
 }
 
-function yamlApiGenerator({ destination='data.json', metadataDestination='api' }={}) {
+function yamlApiGenerator({ metadataDestination='api' }={}) {
   return async function(files, metalsmith, done) {
     const metadata = metalsmith.metadata();
     const data = readItems(files, metadata[metadataDestination], metalsmith);
     metadata[metadataDestination] = data;
-    files[destination] = { contents: JSON.stringify(data) };
     done();
   };
 };

@@ -11,11 +11,6 @@ const prod = process.argv.includes('--prod');
 const ms = metalsmith(__dirname)
   .destination(process.env.BUILD_TARGET || './build')
   .use(yamlApiGenerator())
-  .use(function(files) {
-    if (!prod) {
-      files['index.js'].contents = files['index.js'].contents.toString().replace(/hydrate/g, 'render');
-    }
-  })
   .use(webpack({
     prod
   }))

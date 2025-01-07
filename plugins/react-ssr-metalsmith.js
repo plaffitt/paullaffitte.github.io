@@ -12,8 +12,8 @@ const renderApp = async ({ contents }, files, preloadedState) => {
     </Provider>
   );
 
-  const renderedApp = `<div id="container">${renderToString(app)}</div>`;
-  return contents.replace('<div id="container"></div>', renderedApp);
+  const renderedApp = `${renderToString(app)}`;
+  return contents.toString().replace('<app/>', renderedApp);
 }
 
 function reactSSR() {

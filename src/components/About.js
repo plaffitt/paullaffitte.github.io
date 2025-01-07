@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Collapse } from 'reactstrap';
 import Text from './Text';
 
 const About = ({ profile }) => {
