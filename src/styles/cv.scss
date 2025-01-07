@@ -12,6 +12,11 @@ header {
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
     display: inline-block;
+
+    cursor: default;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   h1:hover {
