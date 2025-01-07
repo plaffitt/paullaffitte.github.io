@@ -10,7 +10,7 @@ if [[ "$1" == '--dry-run' ]]; then
 else
 	read -p "This action will hard reset $DEPLOYED onto $TO_DEPLOY and force push. Are you sure? (y/n) " -n 1 -r
 	echo
-	if [[ $REPLY =~ ^[Nn]$ ]];
+	if [[ ! $REPLY =~ ^[Yy]$ ]];
 		then exit
 	fi
 fi
