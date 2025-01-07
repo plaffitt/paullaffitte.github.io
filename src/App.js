@@ -24,10 +24,6 @@ const App = ({ profile, activityCategories }) => {
                   phoneNumber={ profile.phoneNumber }
                 />
               </section>
-              <div className="cv-card skills mb-4">
-                <SkillCards categoryId="speaks" className="mb-4" />
-                <SkillCards categoryId="uses" />
-              </div>
             </div>
             <div className="col">
               <header className="d-flex flex-row mb-2">
@@ -36,6 +32,20 @@ const App = ({ profile, activityCategories }) => {
                   <About profile={ profile } />
                 </div>
               </header>
+            </div>
+          </div>
+
+          <div className="row mb-4">
+            <div className="col">
+            <div id="skills" className="cv-card">
+              <SkillCards categoryId="speaks" />
+              <SkillCards categoryId="uses" />
+            </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col">
               { activityCategories.map(categoryId => <ActivityCards categoryId={ categoryId } />) }
             </div>
           </div>

@@ -23,7 +23,7 @@ header {
 
 .about {
   font-family: 'Kalam', cursive;
-  font-size: 16pt;
+  font-size: 14pt;
 
   .toggle-more {
     float: right;
@@ -55,49 +55,50 @@ section#cv {
   #cv-side {
     -ms-flex: 0 0 $cv-side-width;
     flex: 0 0 $cv-side-width;
-
-    #profiles-card {
-      #profile-picture {
-        border-radius: 0.2em;
-        overflow: hidden;
-        img {
-          transition: transform .2s;
-          transform: scale(1.02);
-          &:hover{
-            transform: scale(1.05);
-          }
-        }
-      }
-      ul#profiles {
-        list-style-type: none;
-        margin-left: 1em;
-        font-size: 11pt;
-        .profile-icon {
-          height: 1.3em;
-          margin-right: 0.3em;
-        }
-        li {
-          margin-bottom: 0.2em;
-        }
-        li.profile-service- {
-          .profile-icon {
-            height: 1.2em;
-            margin-left: 0.05em;
-          }
+  }
+  #profiles-card {
+    #profile-picture {
+      border-radius: 0.2em;
+      overflow: hidden;
+      img {
+        transition: transform .2s;
+        transform: scale(1.02);
+        &:hover{
+          transform: scale(1.05);
         }
       }
     }
+    ul#profiles {
+      list-style-type: none;
+      margin-left: 1em;
+      font-size: 11pt;
+      .profile-icon {
+        height: 1.3em;
+        margin-right: 0.3em;
+      }
+      li {
+        margin-bottom: 0.2em;
+      }
+      li.profile-service- {
+        .profile-icon {
+          height: 1.2em;
+          margin-left: 0.05em;
+        }
+      }
+    }
+  }
 
-    .cv-card.skills {
-      padding: 1em;
-      .skill-cards {
-        h2 {
-          font-size: 1.5rem;
-        }
-        p {
-          margin-bottom: 0.1rem;
-          font-size: 0.8rem;
-        }
+  .cv-card#skills {
+    padding: 1em;
+    display: flex;
+    .skill-cards {
+      width: 50%;
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        margin-bottom: 0.1rem;
+        font-size: 0.8rem;
       }
     }
   }

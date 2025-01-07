@@ -7,7 +7,7 @@ const ActivityCards = ({ categoryId, categories, activities }) => {
   const category = categories[categoryId];
 
   return (
-    <section className={ `activity-cards activities-${categoryId} cv-card mb-4` }>
+    <section className={ `activity-cards cv-card mb-4` }>
       <h2 className="section-title">{ category }</h2>
       { activitiesList.map((activity, i) => <ActivityCard key={ i } { ...activity } />) }
     </section>
