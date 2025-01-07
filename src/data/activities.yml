@@ -70,6 +70,15 @@ perso:
     link: https://github.com/plaffitt/histctx
     description: |-
       Un outil pour faciliter le changement de contexte en créant et en gérant plusieurs historiques bash. Je l'ai mis au point pour m'aider à plus facilement gérer le context switch entre mes différents projets. J'en parle plus longement sur mon <a href="https://blog.plaffitt.com/en/2024/12/26/histctx-handle-shell-context-switching/" target="_blank">blog</a>.
+  gravity:
+    title: Gravity
+    location: Chez moi 🏠️
+    role: Développeur
+    from: 2021
+    to: 2023
+    link: https://gravity.plaffitt.com
+    description: |-
+      Une simulation de gravité en 2D dans votre navigateur. L'utilisateur peut imtéragir en faisant apparaitre des petites boules de matière, ces dernières fusionnent lors de l'impact.
   shoot-the-aliens:
     title: Shoot The Aliens
     location: Chez moi 🏠️
