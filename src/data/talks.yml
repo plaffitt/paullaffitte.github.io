@@ -1,9 +1,0 @@
-- title: "Cauchemar dans Kubernetes : quand la registry fait des siennes !"
-  location: Paris 🗼
-  date: 17 octobre 2023
-  link: https://www.youtube.com/live/7th3T93Fqs0
-  thumbnail: https://img.youtube.com/vi/7th3T93Fqs0/0.jpg
-  description: |-
-    Vous avez déjà rencontré des problèmes d’indisponibilité ou de quotas avec vos registries d’images de conteneurs ?
-    Dans cet épisode du Enix Live Show, avec Alexandre Buisine nous présentons kuik ou kube-image-keeper, notre outil open source de caching d’images au sein de clusters Kubernetes.
-    En direct des locaux d'Enix, Alexandre jouer le rôle de l’administrateur de clusters K8s pleins de problèmes, tandis que j'ai le rôle du spécialiste kuik qui lui viendra en aide.

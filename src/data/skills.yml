@@ -1,7 +1,0 @@
-speaks:
-  french: 🇫🇷 Français - nativement
-  english: 🇬🇧 English - fluently
-  portuguese: 🇧🇷 Português - só um pouquinho
-
-uses:
-  list: docker, kubernetes, git, linux, neovim, golang, python, bash, php, sql...
