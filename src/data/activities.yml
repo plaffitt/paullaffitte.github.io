@@ -9,25 +9,25 @@ xppro:
       À l'occasion d'un stage optionnel puis d'un stage de fin d'études en CDI, je rejoins Enix afin de développer des outils ayant pour objectifs d'aider notre équipe à répondre aux besoins de nos clients ainsi que de cristaliser nos connaissances dans le domaines dans des outils open-sources.
 
   vrxTech:
-    title: Rebirth Technologies
+    title: VRX Technologies
     location: Barcelone ☀️ / Paris 🗼
     role: Développeur full-stack
     from: Aout 2017
     to: Août 2020
     description: |-
       Développement et administration d'une plateforme de streaming en réalité virtuelle.
-      C'est lors de ma 2e année à Epitech que je rejoins l'équipe de Rebirth Technologies, une jeune start-up française, d'abord en tant que stagiaire, puis en tant que freelance.
+      C'est lors de ma 2e année à Epitech que je rejoins l'équipe de VRX Technologies, une jeune start-up française, d'abord en tant que stagiaire, puis en tant que freelance.
     skills:
-     - php
-     - docker
-     - dockerCompose
-     - kubernetes
-     - js
-     - sql
-     - python
-     - shellScript
-     - opengl
-     - webgl
+      - php
+      - docker
+      - dockerCompose
+      - kubernetes
+      - js
+      - sql
+      - python
+      - shellScript
+      - opengl
+      - webgl
 
   iamanys:
     title: Iamanys
@@ -37,9 +37,9 @@ xppro:
     to: Avril 2016
     description: Développement d'un gestionnaire de dossier médicaux.
     skills:
-     - java
-     - csharp
-     - sql
+      - java
+      - csharp
+      - sql
 
 academic:
   epitech:
