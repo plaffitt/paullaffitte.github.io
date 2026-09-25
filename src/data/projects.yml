@@ -1,0 +1,136 @@
+starsReadOn: septembre 2026
+
+projects:
+  - id: kube-image-keeper
+    name: kube-image-keeper (kuik)
+    role: Développeur principal et mainteneur
+    pitch: Routage, mirroring et supervision d'images de conteneurs pour Kubernetes. Vos pods démarrent même quand la registry tombe ou vous limite.
+    facts:
+      - 750 étoiles GitHub, en production sur plusieurs clusters
+      - Environ 790 commits, chart Helm, site de documentation, processus de release
+      - Réécriture v3 en cours, première alpha publiée en septembre 2026
+    link: https://github.com/enix/kube-image-keeper
+    type: featured
+
+  - id: topomatik
+    name: topomatik
+    role: Premier contributeur
+    pitch: Met à jour automatiquement les labels de topologie des nœuds Kubernetes à partir de l'infrastructure découverte.
+    facts:
+      - Moteurs de découverte LLDP, matériel, réseau, hostname et fichiers
+      - Gestion des taints, fonctionne sur nœuds virtuels et bare metal
+      - Présenté par Enix aux Cloud Native Days France 2026
+    link: https://github.com/enix/topomatik
+    type: featured
+
+  - id: pvecontrol
+    name: pvecontrol
+    role: Co-développeur
+    pitch: CLI d'administration de clusters Proxmox VE, écrite en Python.
+    facts:
+      - Tests et CI, format de sortie configurable, sanity checks
+      - Restauration de VM, évacuation de nœuds
+      - Support des clusters derrière un reverse proxy avec authentification par certificat
+    link: https://github.com/enix/pvecontrol
+    type: featured
+
+  - id: x509-certificate-exporter
+    name: x509-certificate-exporter
+    role: Contributeur
+    pitch: Exporter Prometheus pour les certificats X.509, pensé pour Kubernetes.
+    facts:
+      - 950 étoiles GitHub
+      - Filtrage des namespaces par labels, probes configurables
+    link: https://github.com/enix/x509-certificate-exporter
+    type: featured
+
+  - id: san-iscsi-csi
+    name: san-iscsi-csi
+    role: Développeur
+    pitch: Driver CSI pour les baies SAN iSCSI Dothill et Seagate, avec provisionnement dynamique de volumes.
+    facts:
+      - Repris par Seagate en janvier 2023 sous le nom seagate-exos-x-csi
+      - Retour d'expérience publié sur le blog Enix
+    link: https://github.com/enix/san-iscsi-csi
+    type: featured
+
+  - id: zfs-localpv
+    name: openebs/zfs-localpv
+    role: Contributeur
+    pitch: Provisionneur de volumes locaux ZFS pour Kubernetes.
+    facts:
+      - Correction du redimensionnement de volume au-delà de l'espace disponible
+    link: https://github.com/openebs/zfs-localpv
+    type: contribution
+
+  - id: home-assistant
+    name: home-assistant/core
+    role: Contributeur
+    pitch: Domotique open source.
+    facts:
+      - Flux de reconfiguration pour l'intégration QNAP
+    link: https://github.com/home-assistant/core
+    type: contribution
+
+  - id: slog-gin
+    name: samber/slog-gin
+    role: Contributeur
+    pitch: Middleware de journalisation slog pour Gin.
+    facts:
+      - Corrections du filtre d'exclusion et des messages d'erreur par défaut
+    link: https://github.com/samber/slog-gin
+    type: contribution
+
+  - id: yggops
+    name: YggOps
+    role: Auteur
+    pitch: GitOps pour n'importe quel outil. Tire des dépôts git et applique leur contenu via des plugins, Docker Compose en premier.
+    facts:
+      - Écrit en Go, service systemd, paquets Debian, webhook de réconciliation
+    link: https://github.com/plaffitt/yggops
+    type: personal
+
+  - id: histctx
+    name: histctx
+    role: Auteur
+    pitch: Un historique bash par projet pour changer de contexte sans se perdre.
+    facts:
+      - Article détaillé sur mon blog
+    link: https://github.com/plaffitt/histctx
+    type: personal
+
+  - id: traefik-compose
+    name: traefik-compose
+    role: Auteur
+    pitch: Plusieurs stacks Docker Compose isolées réseau derrière un seul Traefik, sans configuration manuelle.
+    facts:
+      - Démo et article sur mon blog
+    link: https://github.com/plaffitt/traefik-compose
+    type: personal
+
+  - id: gravity
+    name: Gravity
+    role: Auteur
+    pitch: Simulation de gravité en 2D dans le navigateur, où les boules de matière fusionnent à l'impact.
+    facts:
+      - 2021 à 2023, JavaScript
+    link: https://gravity.plaffitt.com
+    type: personal
+
+  - id: shoot-the-aliens
+    name: Shoot The Aliens
+    role: Auteur, graphiste, sound designer
+    pitch: Un shoot them up en C++ face à des vagues de vaisseaux aliens, écrit en 2014.
+    facts:
+      - Le projet qui m'a décidé à faire de l'informatique mon métier, raconté sur mon blog
+    link: https://github.com/plaffitt/shoot-the-aliens-legacy
+    type: personal
+
+  - id: lua-map-generator-workshop
+    name: Atelier de génération de cartes en Lua
+    role: Auteur
+    pitch: Introduction à la génération de cartes 2D avec Lua et LÖVE2D, donnée en atelier à Epitech.
+    facts:
+      - 18 étoiles GitHub
+    link: https://github.com/plaffitt/lua-map-generator-workshop
+    type: personal

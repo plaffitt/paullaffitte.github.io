@@ -1,0 +1,34 @@
+- title: "Stockage Kubernetes : comment nous avons développé un plugin CSI"
+  publisher: Blog Enix
+  date: 18 octobre 2021
+  link: https://enix.io/en/blog/kubernetes-storage-csi-plugin/
+
+- title: "K9s : un outil de gestion de clusters Kubernetes"
+  publisher: Blog Enix
+  date: 9 octobre 2023
+  link: https://enix.io/fr/blog/k9s/
+
+- title: Commandes kubectl avancées pour gérer votre cluster Kubernetes
+  publisher: Blog Enix
+  date: 11 octobre 2023
+  link: https://enix.io/fr/blog/kubectl-commands-2/
+
+- title: "Kubernetes (K8s), c'est quoi ?"
+  publisher: Blog Enix
+  date: 3 octobre 2023
+  link: https://enix.io/fr/blog/kubernetes-k8s/
+
+- title: "Traefik : plusieurs stacks Docker Compose isolées réseau"
+  publisher: Mon blog
+  date: 5 mars 2025
+  link: https://github.com/plaffitt/traefik-compose
+
+- title: "histctx : mieux gérer le changement de contexte dans votre shell"
+  publisher: Mon blog
+  date: 26 décembre 2024
+  link: https://blog.plaffitt.com/en/2024/12/26/histctx-handle-shell-context-switching/
+
+- title: Communiquer sur un port série depuis un conteneur Docker
+  publisher: Mon blog
+  date: 12 septembre 2022
+  link: https://blog.plaffitt.com/en/2022/09/12/how-to-communicate-over-serial-port-from-a-docker-container/

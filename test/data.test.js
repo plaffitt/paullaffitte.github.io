@@ -59,3 +59,41 @@ test('AI offer promises no result', () => {
   const text = [ai.summary, ...ai.points].join(' ');
   assert.ok(!/garanti|x\d+ plus vite|divis[ée] par/i.test(text), 'AI offer must not promise results');
 });
+
+test('projects are well formed and every offer proof resolves', () => {
+  const ids = new Set(data.projects.projects.map(p => p.id));
+  assert.equal(ids.size, data.projects.projects.length, 'duplicate project id');
+  for (const p of data.projects.projects) {
+    assert.ok(['featured', 'contribution', 'personal'].includes(p.type), `bad type on ${p.id}`);
+    assert.ok(p.name && p.role && p.pitch && p.link, `${p.id} lacks a field`);
+    assert.ok(Array.isArray(p.facts) && p.facts.length >= 1, `${p.id} lacks facts`);
+  }
+  for (const offer of data.offers.offers) {
+    for (const proof of offer.proofs) {
+      assert.ok(ids.has(proof), `offer ${offer.id} references unknown project ${proof}`);
+    }
+  }
+  const featured = data.projects.projects.filter(p => p.type === 'featured').map(p => p.id);
+  assert.deepEqual(featured, ['kube-image-keeper', 'topomatik', 'pvecontrol', 'x509-certificate-exporter', 'san-iscsi-csi']);
+  for (const id of ['yggops', 'histctx', 'traefik-compose', 'gravity', 'shoot-the-aliens', 'lua-map-generator-workshop']) {
+    assert.ok(ids.has(id), `personal project ${id} was dropped`);
+  }
+  assert.ok(data.projects.starsReadOn.length > 0);
+});
+
+test('talks name their speaker and keep both of Paul\'s talks', () => {
+  const mine = data.talks.filter(t => t.speaker === 'me');
+  const others = data.talks.filter(t => t.speaker === 'others');
+  assert.equal(mine.length + others.length, data.talks.length, 'speaker must be me or others');
+  assert.ok(mine.some(t => t.link === 'https://www.youtube.com/watch?v=FwOc2jnxjkc'), 'CND 2026 talk missing');
+  assert.ok(mine.some(t => t.link === 'https://www.youtube.com/live/7th3T93Fqs0'), 'Enix Live Show missing');
+  for (const t of others) assert.ok(t.speakerName, `talk by others needs speakerName: ${t.title}`);
+  for (const t of data.talks) assert.ok(!/topomatik/i.test(t.title), 'the topomatik talk is not Paul\'s');
+});
+
+test('articles have the 4 fields', () => {
+  assert.ok(data.articles.length >= 5);
+  for (const a of data.articles) {
+    assert.ok(a.title && a.publisher && a.date && a.link, `article lacks a field: ${a.title}`);
+  }
+});
