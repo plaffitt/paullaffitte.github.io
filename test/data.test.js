@@ -124,3 +124,10 @@ test('skills are grouped, Go and Kubernetes first', () => {
   assert.equal(data.skills.languages.length, 3);
   assert.ok(!data.skills.groups.some(g => g.items.includes('C#')), 'C# removed');
 });
+
+test('known typos are gone from the data', () => {
+  const typos = /cristaliser|assimillant|aquis|parmis|imtéragir|\bAout\b|\bage\b|noeud/;
+  for (const { trail, value } of strings(data)) {
+    assert.ok(!typos.test(value), `typo in ${trail}: ${value}`);
+  }
+});

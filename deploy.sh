@@ -26,8 +26,8 @@ git reset --soft $TO_DEPLOY
 
 export NODE_OPTIONS=--openssl-legacy-provider
 
-yarn
-yarn run prod
+npx yarn@1 install --frozen-lockfile
+npm run prod
 
 cp -r .git $BUILD_TARGET/
 cd $BUILD_TARGET
