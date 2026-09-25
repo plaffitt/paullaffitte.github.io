@@ -1,90 +1,72 @@
 xppro:
   enix:
     title: Enix
-    location: Paris 🗼 / Remote 🚂
-    role: Site Reliability Engineer
-    from: Septembre 2020
-    description: |-
-      Développement d'outils d'administration système et réseau.
-      À l'occasion d'un stage optionnel puis d'un stage de fin d'études en CDI, je rejoins Enix afin de développer des outils ayant pour objectifs d'aider notre équipe à répondre aux besoins de nos clients ainsi que de cristaliser nos connaissances dans le domaines dans des outils open-sources.
+    role: Platform Engineer
+    location: Paris et télétravail
+    from: septembre 2020
+    summary: |-
+      Enix est un infogéreur spécialiste de Kubernetes et de l'hébergement. J'y conçois, développe et exploite des briques d'infrastructure cloud-native, la plupart open source.
+    highlights:
+      - "kube-image-keeper : création et maintenance d'un système de routage et de mirroring d'images de conteneurs pour Kubernetes, en Go. 750 étoiles, en production, v3 en cours."
+      - "topomatik, pvecontrol, x509-certificate-exporter : outillage Kubernetes et Proxmox en Go et Python, avec tests, CI et releases."
+      - "Driver CSI san-iscsi-csi pour baies SAN iSCSI, repris par Seagate en 2023."
+      - "Cloud privé OpenStack sur Kubernetes, en production et pré-production de 2022 à 2024 : 7 montées de version consécutives de Rocky à Yoga, intégration d'Octavia et de Cinder sur Ceph RBD, sauvegardes et vérifications automatisées autour des montées de version, runbooks d'exploitation. 24 hyperviseurs bare metal."
+      - "Clusters Kubernetes de développement et de pré-production avec kubeadm, Cluster API et Rancher."
+      - "Livraison pour une banque d'un service SFTPGo sur Docker Compose, en production et pré-production."
+    links:
+      - label: kube-image-keeper
+        url: https://github.com/enix/kube-image-keeper
+      - label: Enix
+        url: https://enix.io/
 
   vrxTech:
     title: VRX Technologies
-    location: Barcelone ☀️ / Paris 🗼
-    role: Développeur full-stack
-    from: Aout 2017
-    to: Août 2020
-    description: |-
-      Développement et administration d'une plateforme de streaming en réalité virtuelle.
-      C'est lors de ma 2e année à Epitech que je rejoins l'équipe de VRX Technologies, une jeune start-up française, d'abord en tant que stagiaire, puis en tant que freelance.
-    skills:
-      - php
-      - docker
-      - dockerCompose
-      - kubernetes
-      - js
-      - sql
-      - python
-      - shellScript
-      - opengl
-      - webgl
+    role: Développeur full stack
+    location: Barcelone et Paris
+    from: août 2017
+    to: août 2020
+    summary: |-
+      Plateforme de streaming vidéo en réalité virtuelle, rejointe en 2e année d'Epitech, puis développée en freelance pendant 3 ans.
+    highlights:
+      - Ferme d'encodage vidéo basée sur ffmpeg
+      - Lecteur vidéo VR avec gestion des projections, des qualités et des casques
+      - Back-office, module de gestion de la TVA, paiements en ligne et en cryptomonnaies
+      - Déploiement de toute la stack et automatisation de l'exploitation
+    links: []
 
   iamanys:
     title: Iamanys
-    location: Montpellier ❤️
-    role: Développeur Java
-    from: Aout 2015
-    to: Avril 2016
-    description: Développement d'un gestionnaire de dossier médicaux.
-    skills:
-      - java
-      - csharp
-      - sql
+    role: Développeur full stack
+    location: Montpellier
+    from: août 2015
+    to: avril 2016
+    summary: |-
+      Logiciel web de suivi de patients en Java (GWT), utilisé par des médecins et des infirmiers et commercialisé auprès de Bastide.
+    highlights:
+      - Refonte complète de la messagerie interne de l'application
+      - Écriture d'un parseur JSON
+      - Écriture de tests unitaires
+    links: []
 
 academic:
   epitech:
     title: Epitech
-    location: Montpellier ❤️
-    role: Étudiant
+    role: Expert en technologies de l'information
+    location: Montpellier
     from: 2016
     to: 2021
-    description: |-
-      Etudes d'expert en informatique. De nombreux projets sont à réaliser et à rendre sur une base régulière.
+    summary: |-
+      Formation par projets, avec des rendus réguliers en C, C++ et technologies web. Diplômé en 2021.
+    highlights: []
+    links: []
 
   kubernetesFormation:
     title: Formation Kubernetes
-    location: Enix, Paris 🗼
-    role: Stagiaire
-    from: 16 Décembre
-    to: 18 Décembre 2018
-    description: |-
-      Formation à l'utilisation de Kubernetes avec le fameux Jérôme Petazzoni et mon mentor Alexandre Buisine. Durant deux jours se sont succédé théorie et pratique, un cluster de 5 noeud nous étant fourni durant toute la durée de la formation afin de pratiquer dans des conditions proches du réel.
-      J'ai rapidement pu faire le tour de Kubernetes en assimillant la plupart des concepts clés de cette technologie, que j'utilise aujourd'hui dans mes projets personnels et professionnels.
-
-perso:
-  histctx:
-    title: histctx
-    location: Chez moi 🏠️
-    role: Développeur
-    from: 2021
-    link: https://github.com/plaffitt/histctx
-    description: |-
-      Un outil pour faciliter le changement de contexte en créant et en gérant plusieurs historiques bash. Je l'ai mis au point pour m'aider à plus facilement gérer le context switch entre mes différents projets. J'en parle plus longement sur mon <a href="https://blog.plaffitt.com/en/2024/12/26/histctx-handle-shell-context-switching/" target="_blank">blog</a>.
-  gravity:
-    title: Gravity
-    location: Chez moi 🏠️
-    role: Développeur
-    from: 2021
-    to: 2023
-    link: https://gravity.plaffitt.com
-    description: |-
-      Une simulation de gravité en 2D dans votre navigateur. L'utilisateur peut imtéragir en faisant apparaitre des petites boules de matière, ces dernières fusionnent lors de l'impact.
-  shoot-the-aliens:
-    title: Shoot The Aliens
-    location: Chez moi 🏠️
-    role: Développeur, graphiste, sound designer
-    from: début 2014
-    to: été 2014
-    link: https://github.com/plaffitt/shoot-the-aliens-legacy
-    description: |-
-      Un shoot them up où vous devez affronter des vagues de vaisseaux aliens de plus en plus importantes. J'ai écris un article qui en parle plus en détail sur mon <a href="https://blog.plaffitt.com/en/2022/08/30/shoot-the-aliens-a-game-that-changed-my-life/" target="_blank">blog</a>.
+    role: Participant
+    location: Enix, Paris
+    from: 16 décembre 2018
+    to: 18 décembre 2018
+    summary: |-
+      2 jours de théorie et de pratique avec Jérôme Petazzoni et Alexandre Buisine, sur un cluster de 5 nœuds fourni pour la durée de la formation.
+    highlights: []
+    links: []

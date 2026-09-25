@@ -97,3 +97,30 @@ test('articles have the 4 fields', () => {
     assert.ok(a.title && a.publisher && a.date && a.link, `article lacks a field: ${a.title}`);
   }
 });
+
+test('activities: Enix has no end date and no internship wording, personal projects moved out', () => {
+  assert.deepEqual(Object.keys(data.activities), ['xppro', 'academic']);
+  assert.deepEqual(Object.keys(data.categories), ['xppro', 'academic']);
+  const enix = data.activities.xppro.enix;
+  assert.equal(enix.role, 'Platform Engineer');
+  assert.equal(enix.to, undefined, 'Enix must have no end date');
+  const enixText = [enix.summary, ...enix.highlights].join(' ');
+  assert.ok(!/\bstage\b|stagiaire/i.test(enixText), 'no internship wording in Enix');
+  assert.ok(/OpenStack/.test(enixText) && /kube-image-keeper/.test(enixText));
+  assert.equal(data.activities.xppro.vrxTech.to, 'août 2020');
+  assert.equal(data.activities.xppro.iamanys.role, 'Développeur full stack');
+  for (const category of Object.values(data.activities)) {
+    for (const [id, a] of Object.entries(category)) {
+      assert.ok(a.title && a.role && a.location && a.from && a.summary, `${id} lacks a field`);
+      assert.ok(Array.isArray(a.highlights), `${id} lacks highlights`);
+      assert.ok(Array.isArray(a.links), `${id} lacks links`);
+    }
+  }
+});
+
+test('skills are grouped, Go and Kubernetes first', () => {
+  assert.equal(data.skills.groups[0].items[0], 'Go');
+  assert.equal(data.skills.groups[1].items[0], 'Kubernetes');
+  assert.equal(data.skills.languages.length, 3);
+  assert.ok(!data.skills.groups.some(g => g.items.includes('C#')), 'C# removed');
+});
