@@ -1,15 +1,20 @@
 firstname: Paul
 lastname: Laffitte
-profession: Site Reliability Engineer
+headline: Développeur Go et Platform Engineer Kubernetes, en freelance
+tagline: |-
+  Je développe des outils qui tournent au cœur de vos clusters Kubernetes : opérateurs, webhooks, exporters, CLI.
+  Je construis et je fiabilise les plateformes qui les font tourner, et j'applique une méthode de développement assisté par IA sur de vrais projets en production.
+missionFrame: Missions de 1 à 3 semaines, ou 1 jour par semaine sur la durée. En télétravail depuis Montpellier, déplacements ponctuels à Paris.
 picture: https://avatars0.githubusercontent.com/u/23403270
 emailAddress: plaffitt@gmail.com
+bookingUrl: https://cal.com/plaffitt/decouverte
+bookingLabel: Prendre rendez-vous
 website: blog.plaffitt.com
 location: Montpellier
 
 bio: |-
-  Passionné de technologie, j'ai eu la chance d'avoir une éducation qui m'a permis de m'intéresser à l'informatique dès le plus jeune age.
-  Après avoir obtenu un bac en filière scientifique, j'ai intégré l'école Epitech où j'ai rapidement pu me placer parmis les meilleurs élements. Je suis curieux de nature et j'aime aller au fond des choses, je suis toujours en quête de qualité et de découvertes.
-  Fort de mon expérience et entouré des monkeys 🐒 d'Enix, j'ai aquis des compétences profondes en administration système et réseaux qui ont su consolider mes bases et faire de moi le Site Reliability Engineer que je suis aujourd'hui.
+  Diplômé d'Epitech Montpellier en 2021, j'ai commencé à coder enfant et je n'ai jamais arrêté. J'aime autant comprendre un système de bout en bout que le rendre plus simple à exploiter.
+  Depuis 2020 chez Enix, un infogéreur spécialiste de Kubernetes, je développe des composants d'infrastructure open source et j'exploite les plateformes qui les font tourner. Mon terrain de jeu : le code d'infrastructure, entre développement et exploitation.
 
 profiles:
   - label: plaffitt
