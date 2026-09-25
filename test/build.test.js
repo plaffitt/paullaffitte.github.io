@@ -64,3 +64,18 @@ test('projects render featured, contributions and personal projects', () => {
   assert.ok(html.includes('750 étoiles GitHub'));
   assert.ok(html.includes('septembre 2026'));
 });
+
+test('talks render both of Paul\'s talks and mark the one by others', () => {
+  const { html } = buildSite();
+  assert.ok(html.includes('quand kube-image-keeper sauve la prod'));
+  assert.ok(html.includes('Cauchemar dans Kubernetes'));
+  assert.ok(hasHref(html, 'https://www.youtube.com/watch?v=FwOc2jnxjkc'));
+  assert.ok(html.includes('Par Jérôme Petazzoni'), 'talk by others must name its speaker');
+});
+
+test('articles render with their publisher', () => {
+  const { html } = buildSite();
+  assert.ok(html.includes('comment nous avons développé un plugin CSI'));
+  assert.ok(/href="?https:\/\/enix\.io\//.test(html));
+  assert.ok(html.includes('Blog Enix'));
+});

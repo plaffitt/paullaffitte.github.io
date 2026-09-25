@@ -1,25 +1,24 @@
 import React from 'react';
 import Text from './Text';
 
-const TalkCard = ({ title, location, date, description, link, thumbnail }) => {
-  return (
-    <article className="activity">
-      <h3 className="activity-title">{ title }<small className="activity-role"></small></h3>
-      <span><small>Localisation: { location } - le { date }</small></span>
-      <hr/>
-      { !thumbnail ? <Text text={ description }/> :
-        <div class="d-flex">
-          <div class="w-75">
-            <Text text={ description }/>
-          </div>
-          <a class="w-25 h-25" href={ link } target="_blank">
-            <img src={ thumbnail } alt={ title + " thumbnail" }/>
-          </a>
-        </div>
+const TalkCard = ({ title, event, location, date, description, link, thumbnail, speaker, speakerName }) => (
+  <article className={ 'activity talk talk-' + speaker }>
+    <h3 className="activity-title">{ title }</h3>
+    <span><small>{ `${event}, ${location}, ${date}` }</small></span>
+    { speaker === 'others' ? <span><small>{ ` · Par ${speakerName}` }</small></span> : null }
+    <hr/>
+    <div className="d-flex">
+      <div className={ thumbnail ? 'w-75' : 'w-100' }>
+        <Text text={ description } />
+        <p><small><a href={ link } target="_blank" rel="noopener">Voir la vidéo</a></small></p>
+      </div>
+      { !thumbnail ? null :
+        <a className="w-25 talk-thumbnail" href={ link } target="_blank" rel="noopener">
+          <img src={ thumbnail } alt={ title } />
+        </a>
       }
-      <p><small>{ !link ? null : <>source : <a href={ link } target="_blank">{ link }</a></> }</small></p>
-    </article>
-  );
-};
+    </div>
+  </article>
+);
 
 export default TalkCard;

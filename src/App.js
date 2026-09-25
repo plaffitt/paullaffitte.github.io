@@ -6,6 +6,8 @@ import Hero from './components/Hero.js';
 import Footer from './components/Footer.js';
 import Offers from './components/Offers.js';
 import Projects from './components/Projects.js';
+import Talks from './components/Talks.js';
+import Articles from './components/Articles.js';
 
 // Page blocks, top to bottom. Later tasks insert Offers, Projects, Talks,
 // Articles, About, ActivityCards and Skills between Hero and Footer.
@@ -30,7 +32,9 @@ const App = ({ profile, legal }) => {
 
           <div className="row"><div className="col"><Offers /></div></div>
           <div className="row"><div className="col"><Projects /></div></div>
-          {/* BLOCKS: talks, articles, about, activities, skills */}
+          <div className="row"><div className="col"><Talks /></div></div>
+          <div className="row"><div className="col"><Articles /></div></div>
+          {/* BLOCKS: about, activities, skills */}
 
           <div className="row">
             <div className="col">
