@@ -27,3 +27,12 @@ function buildSite() {
 }
 
 module.exports = { buildSite };
+
+// The production HTML is minified and attribute quotes are dropped, so a
+// link is matched with or without quotes around its URL.
+function hasHref(html, url) {
+  const escaped = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`href="?${escaped}"?[\\s>]`).test(html);
+}
+
+module.exports.hasHref = hasHref;
