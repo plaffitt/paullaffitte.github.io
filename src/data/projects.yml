@@ -11,6 +11,9 @@ projects:
       - Réécriture v3 en cours, première alpha publiée en septembre 2026
     link: https://github.com/enix/kube-image-keeper
     type: featured
+    links:
+      - label: Documentation
+        url: https://kuik.enix.io/
 
   - id: topomatik
     name: topomatik
@@ -22,6 +25,9 @@ projects:
       - Présenté par Enix aux Cloud Native Days France 2026
     link: https://github.com/enix/topomatik
     type: featured
+    links:
+      - label: Talk CND France 2026 (Enix)
+        url: https://www.youtube.com/watch?v=CBrj0YF6KzE
 
   - id: pvecontrol
     name: pvecontrol
@@ -33,6 +39,7 @@ projects:
       - Support des clusters derrière un reverse proxy avec authentification par certificat
     link: https://github.com/enix/pvecontrol
     type: featured
+    links: []
 
   - id: x509-certificate-exporter
     name: x509-certificate-exporter
@@ -43,6 +50,7 @@ projects:
       - Filtrage des namespaces par labels, probes configurables
     link: https://github.com/enix/x509-certificate-exporter
     type: featured
+    links: []
 
   - id: san-iscsi-csi
     name: san-iscsi-csi
@@ -53,6 +61,11 @@ projects:
       - Retour d'expérience publié sur le blog Enix
     link: https://github.com/enix/san-iscsi-csi
     type: featured
+    links:
+      - label: Article sur le blog Enix
+        url: https://enix.io/en/blog/kubernetes-storage-csi-plugin/
+      - label: Fork Seagate
+        url: https://github.com/Seagate/seagate-exos-x-csi
 
   - id: zfs-localpv
     name: openebs/zfs-localpv
@@ -62,6 +75,7 @@ projects:
       - Correction du redimensionnement de volume au-delà de l'espace disponible
     link: https://github.com/openebs/zfs-localpv
     type: contribution
+    links: []
 
   - id: home-assistant
     name: home-assistant/core
@@ -71,6 +85,7 @@ projects:
       - Flux de reconfiguration pour l'intégration QNAP
     link: https://github.com/home-assistant/core
     type: contribution
+    links: []
 
   - id: slog-gin
     name: samber/slog-gin
@@ -80,6 +95,27 @@ projects:
       - Corrections du filtre d'exclusion et des messages d'erreur par défaut
     link: https://github.com/samber/slog-gin
     type: contribution
+    links: []
+
+  - id: tmuxifier
+    name: jimeh/tmuxifier
+    role: Contributeur
+    pitch: Gestion de sessions, fenêtres et panneaux tmux.
+    facts:
+      - Commandes de suppression de fenêtres et de sessions
+    link: https://github.com/jimeh/tmuxifier
+    type: contribution
+    links: []
+
+  - id: traefik-network-connector
+    name: obeone/traefik_network_connector
+    role: Contributeur
+    pitch: Connecte automatiquement Traefik aux réseaux Docker de ses services.
+    facts:
+      - Corrections de configuration
+    link: https://github.com/obeone/traefik_network_connector
+    type: contribution
+    links: []
 
   - id: yggops
     name: YggOps
@@ -89,6 +125,9 @@ projects:
       - Écrit en Go, service systemd, paquets Debian, webhook de réconciliation
     link: https://github.com/plaffitt/yggops
     type: personal
+    links:
+      - label: Modèle de démarrage
+        url: https://github.com/plaffitt/yggops-quickstart-template
 
   - id: histctx
     name: histctx
@@ -98,6 +137,9 @@ projects:
       - Article détaillé sur mon blog
     link: https://github.com/plaffitt/histctx
     type: personal
+    links:
+      - label: Article sur mon blog
+        url: https://blog.plaffitt.com/en/2024/12/26/histctx-handle-shell-context-switching/
 
   - id: traefik-compose
     name: traefik-compose
@@ -107,6 +149,7 @@ projects:
       - Démo et article sur mon blog
     link: https://github.com/plaffitt/traefik-compose
     type: personal
+    links: []
 
   - id: gravity
     name: Gravity
@@ -116,6 +159,9 @@ projects:
       - 2021 à 2023, JavaScript
     link: https://gravity.plaffitt.com
     type: personal
+    links:
+      - label: Code source
+        url: https://github.com/plaffitt/gravity
 
   - id: shoot-the-aliens
     name: Shoot The Aliens
@@ -125,6 +171,9 @@ projects:
       - Le projet qui m'a décidé à faire de l'informatique mon métier, raconté sur mon blog
     link: https://github.com/plaffitt/shoot-the-aliens-legacy
     type: personal
+    links:
+      - label: Article sur mon blog
+        url: https://blog.plaffitt.com/en/2022/08/30/shoot-the-aliens-a-game-that-changed-my-life/
 
   - id: lua-map-generator-workshop
     name: Atelier de génération de cartes en Lua
@@ -134,3 +183,4 @@ projects:
       - 18 étoiles GitHub
     link: https://github.com/plaffitt/lua-map-generator-workshop
     type: personal
+    links: []

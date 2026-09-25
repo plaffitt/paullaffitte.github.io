@@ -19,7 +19,7 @@
   link: https://enix.io/fr/blog/kubernetes-k8s/
 
 - title: "Traefik : plusieurs stacks Docker Compose isolées réseau"
-  publisher: Mon blog
+  publisher: Dépôt GitHub, référencé sur mon blog
   date: 5 mars 2025
   link: https://github.com/plaffitt/traefik-compose
 

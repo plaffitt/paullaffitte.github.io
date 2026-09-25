@@ -1,10 +1,10 @@
 import React from 'react';
 import Text from './Text';
 
-const ActivityCard = ({ title, role, location, from, to = "aujourd'hui", summary, highlights, links }) => (
+const ActivityCard = ({ title, role, location, from, to, summary, highlights, links }) => (
   <article className="activity">
     <h3 className="activity-title">{ title }<small className="activity-role">{ `, ${role}` }</small></h3>
-    <span><small>{ `${location}, de ${from} à ${to}` }</small></span>
+    <span><small>{ `${location}, de ${from} à ${to ?? "aujourd'hui"}` }</small></span>
     <hr/>
     <Text text={ summary } />
     { highlights.length === 0 ? null :

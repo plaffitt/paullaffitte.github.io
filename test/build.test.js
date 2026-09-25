@@ -95,3 +95,15 @@ test('about and skills render', () => {
   assert.ok(html.includes('Langages') && html.includes('Kubernetes et cloud'));
   assert.ok(html.includes('Français, langue maternelle'));
 });
+
+test('page declares a viewport and the French language', () => {
+  const { html } = buildSite();
+  assert.ok(/<meta name="?viewport"? content="?width=device-width, ?initial-scale=1"?/.test(html), 'viewport meta missing');
+  assert.ok(/<html lang="?fr"?/.test(html), 'lang must be fr');
+});
+
+test('project links are rendered', () => {
+  const { html } = buildSite();
+  assert.ok(hasHref(html, 'https://blog.plaffitt.com/en/2022/08/30/shoot-the-aliens-a-game-that-changed-my-life/'));
+  assert.ok(hasHref(html, 'https://github.com/jimeh/tmuxifier'));
+});

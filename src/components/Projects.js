@@ -11,6 +11,18 @@ const ProjectCard = ({ project }) => (
     <ul className="project-facts">
       { project.facts.map((fact, i) => <li key={ i }>{ fact }</li>) }
     </ul>
+    { project.links.length === 0 ? null :
+      <p className="project-links">
+        <small>
+          { project.links.map((l, i) => (
+            <span key={ l.url }>
+              { i > 0 ? ' · ' : '' }
+              <a href={ l.url } target="_blank" rel="noopener">{ l.label }</a>
+            </span>
+          )) }
+        </small>
+      </p>
+    }
   </article>
 );
 

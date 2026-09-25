@@ -131,3 +131,14 @@ test('known typos are gone from the data', () => {
     assert.ok(!typos.test(value), `typo in ${trail}: ${value}`);
   }
 });
+
+test('projects keep every contribution of the spec and their blog links', () => {
+  const ids = new Set(data.projects.projects.map(p => p.id));
+  for (const id of ['tmuxifier', 'traefik-network-connector']) assert.ok(ids.has(id), `contribution ${id} missing`);
+  for (const p of data.projects.projects) {
+    assert.ok(Array.isArray(p.links), `${p.id} lacks a links list`);
+    for (const l of p.links) assert.ok(l.label && /^https:\/\//.test(l.url), `${p.id} has a malformed link`);
+  }
+  const sta = data.projects.projects.find(p => p.id === 'shoot-the-aliens');
+  assert.ok(sta.links.some(l => l.url.startsWith('https://blog.plaffitt.com/')), 'shoot-the-aliens blog post link missing');
+});
