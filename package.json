@@ -4,11 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "node ./build.js",
-    "prod": "node ./build.js --prod",
-    "build": "yarn prod",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider node ./build.js",
+    "prod": "NODE_OPTIONS=--openssl-legacy-provider node ./build.js --prod",
+    "build": "npm run prod",
+    "test": "node --test test/*.test.js",
     "clean": "rm build build-dev -rfv",
-    "re": "yarn clean && yarn build",
+    "re": "npm run clean && npm run build",
     "deploy": "./deploy.sh"
   },
   "devDependencies": {

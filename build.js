@@ -10,6 +10,9 @@ const prod = process.argv.includes('--prod');
 
 const ms = metalsmith(__dirname)
   .destination(process.env.BUILD_TARGET || './build')
+  // React sources are read from disk by webpack and by the SSR plugin.
+  // They must not be copied to the published site.
+  .ignore('**/*.js')
   .use(yamlApiGenerator())
   .use(webpack({
     prod
