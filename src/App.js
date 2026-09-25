@@ -8,10 +8,13 @@ import Offers from './components/Offers.js';
 import Projects from './components/Projects.js';
 import Talks from './components/Talks.js';
 import Articles from './components/Articles.js';
+import About from './components/About.js';
+import ActivityCards from './components/ActivityCards.js';
+import SkillCards from './components/SkillCards.js';
 
-// Page blocks, top to bottom. Later tasks insert Offers, Projects, Talks,
-// Articles, About, ActivityCards and Skills between Hero and Footer.
-const App = ({ profile, legal }) => {
+// Page blocks, top to bottom: hero, offers, projects, talks, articles,
+// about, experience and education, skills, legal footer.
+const App = ({ profile, legal, activityCategories }) => {
   const fullname = profile.firstname + ' ' + profile.lastname;
 
   return (
@@ -34,7 +37,13 @@ const App = ({ profile, legal }) => {
           <div className="row"><div className="col"><Projects /></div></div>
           <div className="row"><div className="col"><Talks /></div></div>
           <div className="row"><div className="col"><Articles /></div></div>
-          {/* BLOCKS: about, activities, skills */}
+          <div className="row"><div className="col"><About bio={ profile.bio } /></div></div>
+          <div className="row">
+            <div className="col">
+              { activityCategories.map(categoryId => <ActivityCards key={ categoryId } categoryId={ categoryId } />) }
+            </div>
+          </div>
+          <div className="row"><div className="col"><SkillCards /></div></div>
 
           <div className="row">
             <div className="col">
@@ -50,6 +59,7 @@ const App = ({ profile, legal }) => {
 const mapStateToProps = state => ({
   profile: state.profile,
   legal: state.legal,
+  activityCategories: Object.keys(state.activities),
 });
 
 export default connect(mapStateToProps)(App);

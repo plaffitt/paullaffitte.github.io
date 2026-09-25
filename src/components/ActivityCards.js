@@ -3,13 +3,12 @@ import { connect } from 'react-redux'
 import ActivityCard from './ActivityCard';
 
 const ActivityCards = ({ categoryId, categories, activities }) => {
-  const activitiesList = Object.values(activities[categoryId]);
   const category = categories[categoryId];
 
   return (
     <section className={ `activity-cards cv-card mb-4` }>
       <h2 className="section-title">{ category }</h2>
-      { activitiesList.map((activity, i) => <ActivityCard key={ i } { ...activity } />) }
+      { Object.entries(activities[categoryId]).map(([id, activity]) => <ActivityCard key={ id } { ...activity } />) }
     </section>
   );
 };

@@ -79,3 +79,19 @@ test('articles render with their publisher', () => {
   assert.ok(/href="?https:\/\/enix\.io\//.test(html));
   assert.ok(html.includes('Blog Enix'));
 });
+
+test('experience renders Enix as Platform Engineer, ongoing, with OpenStack facts', () => {
+  const { html } = buildSite();
+  assert.ok(html.includes('Platform Engineer'));
+  assert.ok(html.includes('septembre 2020'));
+  assert.ok(html.includes("aujourd'hui") || html.includes('aujourd&#x27;hui'));
+  assert.ok(html.includes('7 montées de version'));
+  assert.ok(html.includes('VRX Technologies') && html.includes('Iamanys') && html.includes('Epitech'));
+});
+
+test('about and skills render', () => {
+  const { html } = buildSite();
+  assert.ok(html.includes('Epitech Montpellier en 2021'));
+  assert.ok(html.includes('Langages') && html.includes('Kubernetes et cloud'));
+  assert.ok(html.includes('Français, langue maternelle'));
+});
