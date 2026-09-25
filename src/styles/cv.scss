@@ -97,7 +97,6 @@ section#cv {
     padding: 1em;
     display: flex;
     .skill-cards {
-      width: 50%;
       h2 {
         font-size: 1.5rem;
       }
@@ -133,5 +132,163 @@ section#cv {
   .col {
     padding-right: 12px;
     padding-left: 12px;
+  }
+}
+
+#hero {
+  .hero-headline {
+    font-family: 'Exo', sans-serif;
+    font-size: 16pt;
+    color: $primary;
+    margin-bottom: 0.5em;
+  }
+  .hero-tagline {
+    font-family: 'Kalam', cursive;
+    font-size: 13pt;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    .btn-primary {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+  .hero-mission {
+    color: $grey-color;
+  }
+}
+
+#offers {
+  padding: 1em;
+  .section-title {
+    box-shadow: none;
+    background: none;
+    color: $text-color;
+    padding-left: 0;
+  }
+  .offers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .offer {
+    flex: 1 1 16em;
+    border-left: 4px solid $primary-light;
+    padding-left: 0.8em;
+    .offer-title {
+      font-family: 'Exo', sans-serif;
+      font-size: 1.2rem;
+    }
+    .offer-points {
+      padding-left: 1.2em;
+      margin-left: 0;
+      font-size: 0.9rem;
+    }
+    .offer-proofs {
+      margin-bottom: 0;
+    }
+  }
+  .offers-closing {
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+}
+
+#projects {
+  .project {
+    padding: 1em 1em 0 1em;
+    margin-bottom: 1em;
+    .project-title {
+      font-family: 'Exo', sans-serif;
+      font-size: 1.2rem;
+    }
+    .project-facts {
+      padding-left: 1.2em;
+      margin-left: 0;
+      font-size: 0.9rem;
+    }
+  }
+  .project-personal {
+    .project-pitch, .project-facts {
+      font-size: 0.85rem;
+    }
+  }
+  .projects-note {
+    padding: 0 1em;
+    color: $grey-color;
+  }
+}
+
+.talk-thumbnail img {
+  border-radius: 0.2em;
+}
+
+.talk-others {
+  .activity-title {
+    font-size: 1.1rem;
+  }
+}
+
+#articles {
+  padding: 1em;
+  .articles-list {
+    padding-left: 1.2em;
+    margin-left: 0;
+    margin-bottom: 0;
+    li {
+      margin-bottom: 0.3em;
+    }
+  }
+}
+
+.activity-highlights {
+  padding-left: 1.2em;
+  margin-left: 0;
+}
+
+#about {
+  padding: 1em;
+  .section-title {
+    box-shadow: none;
+    background: none;
+    color: $text-color;
+    padding-left: 0;
+  }
+}
+
+#skills {
+  padding: 1em;
+  .skill-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .skill-cards {
+    flex: 1 1 14em;
+    width: auto;
+  }
+}
+
+#legal {
+  border-top: 1px solid $border-color;
+  color: $grey-color;
+  p {
+    margin-bottom: 0.2em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section#cv #cv-side {
+    flex: 1 1 100%;
+    #profile-picture {
+      max-width: 12em;
+    }
+  }
+  #hero h1 {
+    font-size: 28pt;
   }
 }
