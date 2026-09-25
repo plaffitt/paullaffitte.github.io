@@ -45,3 +45,22 @@ test('page never mentions an internship or a departure from Enix', () => {
   assert.ok(!/\bstage\b/i.test(html));
   assert.ok(!/quitte|départ d.Enix|disponible à partir/i.test(html));
 });
+
+test('offers render the 3 titles, their proofs and the closing line', () => {
+  const { html } = buildSite();
+  for (const title of ['Outillage Kubernetes en Go', 'Plateformes Kubernetes', 'Développement assisté par IA']) {
+    assert.ok(html.includes(title), `offer missing: ${title}`);
+  }
+  assert.ok(html.includes('accompagnement de vos équipes'));
+  // proofs are links to the project pages
+  assert.ok(hasHref(html, 'https://github.com/enix/topomatik'));
+});
+
+test('projects render featured, contributions and personal projects', () => {
+  const { html } = buildSite();
+  for (const name of ['kube-image-keeper (kuik)', 'pvecontrol', 'san-iscsi-csi', 'openebs/zfs-localpv', 'YggOps', 'histctx', 'Shoot The Aliens']) {
+    assert.ok(html.includes(name), `project missing: ${name}`);
+  }
+  assert.ok(html.includes('750 étoiles GitHub'));
+  assert.ok(html.includes('septembre 2026'));
+});
