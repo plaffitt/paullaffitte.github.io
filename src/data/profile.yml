@@ -11,6 +11,18 @@ bookingUrl: https://cal.com/plaffitt/decouverte
 bookingLabel: Prendre rendez-vous
 website: blog.plaffitt.com
 location: Montpellier
+contactTitle: Un cluster à fiabiliser, un opérateur à écrire ?
+
+# Key figures under the hero, each one backed by projects.yml, talks.yml or activities.yml.
+highlights:
+  - value: "750"
+    label: étoiles GitHub sur kube-image-keeper, dont je suis développeur principal
+  - value: "400"
+    label: personnes à mon talk des Cloud Native Days France 2026
+  - value: "7"
+    label: montées de version OpenStack en production, de Rocky à Yoga
+  - value: "2023"
+    label: mon driver CSI san-iscsi-csi est repris par Seagate
 
 bio: |-
   Diplômé d'Epitech Montpellier en 2021, j'ai commencé à coder enfant et je n'ai jamais arrêté. J'aime autant comprendre un système de bout en bout que le rendre plus simple à exploiter.

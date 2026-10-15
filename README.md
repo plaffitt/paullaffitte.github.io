@@ -5,7 +5,7 @@ Source of Paul Laffitte's freelance site. A single French page generated at buil
 ## How it works
 
 - `src/data/*.yml`: all the content, one file per page block (`profile`, `offers`, `projects`, `talks`, `articles`, `activities`, `categories`, `skills`, `legal`). Free text holds no HTML; links live in dedicated fields.
-- `build.js`: a Metalsmith pipeline. `plugins/yamlApiGenerator.js` loads the YAML into a Redux store, `plugins/webpack-metalsmith.js` bundles `src/index.js` (SCSS and the profile picture animation) with webpack 4, and `plugins/react-ssr-metalsmith.js` renders `src/App.js` once with React into `index.html`. No React runs in the browser.
+- `build.js`: a Metalsmith pipeline. `plugins/yamlApiGenerator.js` loads the YAML into a Redux store, `plugins/webpack-metalsmith.js` bundles `src/index.js` (the SCSS only, no client script) with webpack 4, and `plugins/react-ssr-metalsmith.js` renders `src/App.js` once with React into `index.html`. No React runs in the browser.
 - `src/components/`: one component per block.
 - `test/`: `node --test` suite. `data.test.js` lints the YAML (content rules, cross references), `build.test.js` runs a production build and asserts on the generated HTML.
 

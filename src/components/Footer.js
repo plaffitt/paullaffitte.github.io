@@ -1,18 +1,15 @@
 import React from 'react';
+import ExternalLink from './ExternalLink';
 
 const Footer = ({ legal }) => (
-  <footer id="legal" className="mt-4 pt-3">
-    <h2 className="h6">Mentions légales</h2>
+  <footer id="legal" className="legal">
+    <h2 className="legal-title">Mentions légales</h2>
     <p>
-      <small>
-        { legal.name }, { legal.status.toLowerCase() }, SIRET { legal.siret }. { legal.address }.
-        Contact : <a href={ 'mailto:' + legal.email }>{ legal.email }</a>.
-      </small>
+      { legal.name }, { legal.status.toLowerCase() }, SIRET { legal.siret }. { legal.address }.
+      Contact : <a href={ 'mailto:' + legal.email }>{ legal.email }</a>.
     </p>
     <p>
-      <small>
-        Hébergeur : <a href={ legal.host.url } target="_blank" rel="noopener">{ legal.host.name }</a>, { legal.host.address }.
-      </small>
+      Hébergeur : <ExternalLink href={ legal.host.url }>{ legal.host.name }</ExternalLink>, { legal.host.address }.
     </p>
   </footer>
 );

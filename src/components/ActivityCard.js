@@ -1,29 +1,29 @@
 import React from 'react';
 import Text from './Text';
+import ExternalLink from './ExternalLink';
 
 const ActivityCard = ({ title, role, location, from, to, summary, highlights, links }) => (
-  <article className="activity">
-    <h3 className="activity-title">{ title }<small className="activity-role">{ `, ${role}` }</small></h3>
-    <span><small>{ `${location}, de ${from} à ${to ?? "aujourd'hui"}` }</small></span>
-    <hr/>
-    <Text text={ summary } />
-    { highlights.length === 0 ? null :
-      <ul className="activity-highlights">
-        { highlights.map((h, i) => <li key={ i }>{ h }</li>) }
-      </ul>
-    }
-    { links.length === 0 ? null :
-      <p className="activity-links">
-        <small>
-          { links.map((l, i) => (
-            <span key={ l.url }>
-              { i > 0 ? ' · ' : '' }
-              <a href={ l.url } target="_blank" rel="noopener">{ l.label }</a>
-            </span>
-          )) }
-        </small>
-      </p>
-    }
+  <article className="dated-row">
+    <div className="dated-row-date">
+      <p>{ `${from} → ${to ?? "aujourd'hui"}` }</p>
+      <p className="dated-row-place">{ location }</p>
+    </div>
+    <div className="dated-row-body">
+      <h3 className="activity-title">{ title } <span className="activity-role">· { role }</span></h3>
+      <div className="activity-summary">
+        <Text text={ summary } />
+      </div>
+      { highlights.length === 0 ? null :
+        <ul className="activity-highlights">
+          { highlights.map((h, i) => <li key={ i }>{ h }</li>) }
+        </ul>
+      }
+      { links.length === 0 ? null :
+        <p className="project-links">
+          { links.map(l => <ExternalLink key={ l.url } href={ l.url }>{ l.label } ↗</ExternalLink>) }
+        </p>
+      }
+    </div>
   </article>
 );
 

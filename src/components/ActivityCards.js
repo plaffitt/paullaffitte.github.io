@@ -2,16 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux'
 import ActivityCard from './ActivityCard';
 
-const ActivityCards = ({ categoryId, categories, activities }) => {
-  const category = categories[categoryId];
-
-  return (
-    <section className={ `activity-cards cv-card mb-4` }>
-      <h2 className="section-title">{ category }</h2>
+const ActivityCards = ({ categoryId, categories, activities }) => (
+  <div className="activity-group">
+    <h3 className="list-title">{ categories[categoryId] }</h3>
+    <div className="dated-rows">
       { Object.entries(activities[categoryId]).map(([id, activity]) => <ActivityCard key={ id } { ...activity } />) }
-    </section>
-  );
-};
+    </div>
+  </div>
+);
 
 const mapStateToProps = state => ({
   activities: state.activities,

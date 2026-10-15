@@ -19,7 +19,6 @@
     "@babel/preset-react": "^7.10.1",
     "@babel/register": "^7.10.3",
     "babel-loader": "^8.1.0",
-    "bootstrap": "4.0.0",
     "css-loader": "^3.4.2",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.1",

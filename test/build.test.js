@@ -107,3 +107,37 @@ test('project links are rendered', () => {
   assert.ok(hasHref(html, 'https://blog.plaffitt.com/en/2022/08/30/shoot-the-aliens-a-game-that-changed-my-life/'));
   assert.ok(hasHref(html, 'https://github.com/jimeh/tmuxifier'));
 });
+
+test('navigation links to every section of the page', () => {
+  const { html } = buildSite();
+  for (const id of ['offres', 'projets', 'talks', 'parcours', 'contact']) {
+    assert.ok(hasHref(html, `#${id}`), `nav link to #${id} missing`);
+    assert.ok(new RegExp(`id="?${id}"?[\\s>]`).test(html), `section #${id} missing`);
+  }
+});
+
+test('hero shows the verified highlights', () => {
+  const { html } = buildSite();
+  assert.ok(html.includes('étoiles GitHub sur kube-image-keeper'));
+  assert.ok(html.includes('de Rocky à Yoga'));
+  assert.ok(html.includes('repris par Seagate'));
+});
+
+test('contact block closes the page with the booking link, the email and the legal notice', () => {
+  const { html } = buildSite();
+  const contact = html.slice(html.search(/id="?contact"?[\s>]/));
+  assert.ok(contact.includes('Un cluster à fiabiliser, un opérateur à écrire ?'));
+  assert.ok(hasHref(contact, 'https://cal.com/plaffitt/decouverte'));
+  assert.ok(hasHref(contact, 'mailto:plaffitt@gmail.com'));
+  assert.ok(contact.includes('81279348700057'));
+});
+
+test('page uses IBM Plex and drops the old handwritten fonts and Bootstrap', () => {
+  const { dir, html } = buildSite();
+  const css = fs.readFileSync(path.join(dir, 'main.css'), 'utf8');
+  assert.ok(/IBM\+Plex\+Sans/.test(html) && /IBM\+Plex\+Mono/.test(html), 'IBM Plex fonts not loaded');
+  for (const font of ['Permanent Marker', 'Kalam', 'Barlow', 'Exo']) {
+    assert.ok(!css.includes(font) && !html.includes(font.replace(' ', '+')), `${font} still used`);
+  }
+  assert.ok(!/\.btn-primary|\.container-fluid/.test(css), 'Bootstrap is still bundled');
+});

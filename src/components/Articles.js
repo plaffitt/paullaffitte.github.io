@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ExternalLink from './ExternalLink';
 
 const Articles = ({ articles }) => (
-  <section id="articles" className="cv-card mb-4">
-    <h2 className="section-title">Articles</h2>
-    <ul className="articles-list">
+  <div id="articles" className="articles">
+    <h3 className="list-title">Articles</h3>
+    <ul className="article-grid">
       { articles.map((article, i) => (
         <li key={ i }>
-          <a href={ article.link } target="_blank" rel="noopener">{ article.title }</a>
-          <small>{ ` · ${article.publisher}, ${article.date}` }</small>
+          <ExternalLink className="article" href={ article.link }>
+            <span className="article-title">{ article.title }</span>
+            <span className="article-meta">{ `${article.publisher} · ${article.date}` }</span>
+          </ExternalLink>
         </li>
       )) }
     </ul>
-  </section>
+  </div>
 );
 
 const mapStateToProps = state => ({ articles: state.articles });

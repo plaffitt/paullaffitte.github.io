@@ -1,27 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import SectionHead from './SectionHead';
+import ExternalLink from './ExternalLink';
 
-const Offer = ({ offer, projectsById }) => (
+const Offer = ({ offer, index, projectsById }) => (
   <article className="offer">
+    <div className="offer-number">{ String(index + 1).padStart(2, '0') }</div>
     <h3 className="offer-title">{ offer.title }</h3>
     <p className="offer-summary">{ offer.summary }</p>
-    <ul className="offer-points">
+    <ul className="plus-list">
       { offer.points.map((point, i) => <li key={ i }>{ point }</li>) }
     </ul>
-    <p className="offer-proofs">
-      <small>
-        Preuves :{ ' ' }
-        { offer.proofs.map((id, i) => {
-          const project = projectsById[id];
-          return (
-            <span key={ id }>
-              { i > 0 ? ', ' : '' }
-              <a href={ project.link } target="_blank" rel="noopener">{ project.name }</a>
-            </span>
-          );
-        }) }
-      </small>
-    </p>
+    <ul className="chips" aria-label="Projets qui en témoignent">
+      { offer.proofs.map(id => {
+        const project = projectsById[id];
+        return <li key={ id }><ExternalLink className="chip" href={ project.link }>{ project.id }</ExternalLink></li>;
+      }) }
+    </ul>
   </article>
 );
 
@@ -29,12 +24,15 @@ const Offers = ({ offers, closing, projects }) => {
   const projectsById = Object.fromEntries(projects.map(p => [p.id, p]));
 
   return (
-    <section id="offers" className="cv-card mb-4">
-      <h2 className="section-title">Ce que je fais pour vous</h2>
-      <div className="offers-grid">
-        { offers.map(offer => <Offer key={ offer.id } offer={ offer } projectsById={ projectsById } />) }
+    <section id="offres" className="section section-alt">
+      <div className="container">
+        <SectionHead number="01" label="Offres" title="Ce que je fais pour vous">
+          <p className="section-aside">{ closing }</p>
+        </SectionHead>
+        <div className="offers">
+          { offers.map((offer, i) => <Offer key={ offer.id } offer={ offer } index={ i } projectsById={ projectsById } />) }
+        </div>
       </div>
-      <p className="offers-closing">{ closing }</p>
     </section>
   );
 };

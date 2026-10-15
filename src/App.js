@@ -1,60 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ProfilePicture from './components/ProfilePicture.js';
-import Profiles from './components/Profiles.js';
+import Nav from './components/Nav.js';
 import Hero from './components/Hero.js';
-import Footer from './components/Footer.js';
 import Offers from './components/Offers.js';
 import Projects from './components/Projects.js';
 import Talks from './components/Talks.js';
-import Articles from './components/Articles.js';
+import SectionHead from './components/SectionHead.js';
 import About from './components/About.js';
 import ActivityCards from './components/ActivityCards.js';
 import SkillCards from './components/SkillCards.js';
+import Contact from './components/Contact.js';
 
-// Page blocks, top to bottom: hero, offers, projects, talks, articles,
-// about, experience and education, skills, legal footer.
-const App = ({ profile, legal, activityCategories }) => {
-  const fullname = profile.firstname + ' ' + profile.lastname;
-
-  return (
-    <main className="page-content" aria-label="Content">
-      <div className="wrapper">
-        <section id="cv" className="container-fluid">
-          <div className="row">
-            <div id="cv-side" className="col">
-              <section id="profiles-card" className="mb-4 cv-card">
-                <ProfilePicture picture={ profile.picture } fullname={ fullname } />
-                <Profiles profiles={ profile.profiles } website={ profile.website } />
-              </section>
-            </div>
-            <div className="col">
-              <Hero profile={ profile } />
-            </div>
-          </div>
-
-          <div className="row"><div className="col"><Offers /></div></div>
-          <div className="row"><div className="col"><Projects /></div></div>
-          <div className="row"><div className="col"><Talks /></div></div>
-          <div className="row"><div className="col"><Articles /></div></div>
-          <div className="row"><div className="col"><About bio={ profile.bio } /></div></div>
-          <div className="row">
-            <div className="col">
-              { activityCategories.map(categoryId => <ActivityCards key={ categoryId } categoryId={ categoryId } />) }
-            </div>
-          </div>
-          <div className="row"><div className="col"><SkillCards /></div></div>
-
-          <div className="row">
-            <div className="col">
-              <Footer legal={ legal } />
-            </div>
-          </div>
-        </section>
-      </div>
+// Page blocks, top to bottom: navigation, hero with key figures, offers,
+// open source projects, talks and articles, career and skills, contact
+// with the legal notice.
+const App = ({ profile, legal, activityCategories }) => (
+  <>
+    <Nav profile={ profile } />
+    <main>
+      <Hero profile={ profile } />
+      <Offers />
+      <Projects />
+      <Talks />
+      <section id="parcours" className="section container">
+        <SectionHead number="04" label="Parcours" title="Entre développement et exploitation" />
+        <About bio={ profile.bio } />
+        { activityCategories.map(categoryId => <ActivityCards key={ categoryId } categoryId={ categoryId } />) }
+        <SkillCards />
+      </section>
     </main>
-  );
-};
+    <Contact profile={ profile } legal={ legal } />
+  </>
+);
 
 const mapStateToProps = state => ({
   profile: state.profile,

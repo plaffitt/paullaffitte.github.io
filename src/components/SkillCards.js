@@ -2,20 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const SkillCards = ({ groups, languages }) => (
-  <section id="skills" className="cv-card mb-4">
-    <div className="skill-groups">
-      { groups.map(group => (
-        <div key={ group.title } className="skill-cards">
-          <h2>{ group.title }</h2>
-          <p>{ group.items.join(', ') }</p>
-        </div>
-      )) }
-      <div className="skill-cards">
-        <h2>Langues</h2>
-        { languages.map(language => <p key={ language }>{ language }</p>) }
+  <div id="skills" className="skills">
+    { groups.map(group => (
+      <div key={ group.title }>
+        <h3 className="list-title">{ group.title }</h3>
+        <p>{ group.items.join(', ') }</p>
       </div>
+    )) }
+    <div>
+      <h3 className="list-title">Langues</h3>
+      { languages.map(language => <p key={ language }>{ language }</p>) }
     </div>
-  </section>
+  </div>
 );
 
 const mapStateToProps = state => ({

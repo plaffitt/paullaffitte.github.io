@@ -142,3 +142,12 @@ test('projects keep every contribution of the spec and their blog links', () => 
   const sta = data.projects.projects.find(p => p.id === 'shoot-the-aliens');
   assert.ok(sta.links.some(l => l.url.startsWith('https://blog.plaffitt.com/')), 'shoot-the-aliens blog post link missing');
 });
+
+test('profile highlights are figures with a label, and the contact block has a title', () => {
+  assert.equal(data.profile.highlights.length, 4);
+  for (const h of data.profile.highlights) {
+    assert.ok(/^\d/.test(h.value), `highlight value must be a figure: ${h.value}`);
+    assert.ok(h.label.length > 0);
+  }
+  assert.ok(data.profile.contactTitle.length > 0);
+});
