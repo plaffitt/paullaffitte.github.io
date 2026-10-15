@@ -139,12 +139,13 @@ test('profile picture keeps its spring animation', () => {
   assert.ok(js.includes('profile-picture') && js.includes('mousemove'), 'animation script missing from main.js');
 });
 
-test('page uses IBM Plex and drops the old handwritten fonts and Bootstrap', () => {
+test('page shares the blog identity: its fonts and its link blue, without Bootstrap', () => {
   const { dir, html } = buildSite();
   const css = fs.readFileSync(path.join(dir, 'main.css'), 'utf8');
-  assert.ok(/IBM\+Plex\+Sans/.test(html) && /IBM\+Plex\+Mono/.test(html), 'IBM Plex fonts not loaded');
-  for (const font of ['Permanent Marker', 'Kalam', 'Barlow', 'Exo']) {
-    assert.ok(!css.includes(font) && !html.includes(font.replace(' ', '+')), `${font} still used`);
+  for (const font of ['Permanent+Marker', 'Barlow', 'Exo']) {
+    assert.ok(html.includes(font), `${font} not loaded`);
   }
+  assert.ok(!/Kalam|Caveat|Satisfy/.test(css + html), 'unused handwritten fonts loaded');
+  assert.ok(/#157bbc/i.test(css), 'blog link blue missing');
   assert.ok(!/\.btn-primary|\.container-fluid/.test(css), 'Bootstrap is still bundled');
 });

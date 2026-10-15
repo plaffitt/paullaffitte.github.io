@@ -11,7 +11,7 @@ const LINKS = [
 const Nav = ({ profile }) => (
   <header className="site-header">
     <nav className="nav container" aria-label="Navigation principale">
-      <a className="nav-brand" href="#top"><span className="nav-mark" aria-hidden="true"></span>plaffitt</a>
+      <a className="nav-brand" href="#top">{ profile.firstname } { profile.lastname }</a>
       <div className="nav-links">
         { LINKS.map(link => <a key={ link.id } className="nav-link" href={ '#' + link.id }>{ link.label }</a>) }
         <a className="button button-dark button-small" href={ profile.bookingUrl } target="_blank" rel="noopener">{ profile.bookingLabel }</a>

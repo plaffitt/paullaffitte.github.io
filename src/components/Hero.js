@@ -55,7 +55,7 @@ const Hero = ({ profile }) => {
     <section id="top" className="hero container">
       <div className="hero-main">
         <div className="hero-text">
-          <p className="hero-eyebrow"><span className="nav-mark" aria-hidden="true"></span>{ fullname } · { profile.location } et télétravail</p>
+          <p className="hero-eyebrow"><span className="nav-mark" aria-hidden="true"></span>{ profile.location } et télétravail</p>
           <Headline text={ profile.headline } />
           <div className="hero-tagline">
             <Text text={ profile.tagline } />
