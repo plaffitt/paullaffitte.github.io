@@ -24,7 +24,10 @@ const ProfileCard = ({ profile, fullname }) => {
 
   return (
     <div className="profile-card">
-      <img className="profile-picture" src={ profile.picture } alt={ 'Portrait de ' + fullname } width="460" height="460" />
+      { /* src/index.js makes the picture follow the mouse with a spring */ }
+      <div id="profile-picture">
+        <img src={ profile.picture } alt={ 'Portrait de ' + fullname } width="460" height="460" />
+      </div>
       <div className="profile-card-footer">
         <div>
           <div className="profile-name">{ fullname }</div>

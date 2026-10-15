@@ -132,6 +132,13 @@ test('contact block closes the page with the booking link, the email and the leg
   assert.ok(contact.includes('81279348700057'));
 });
 
+test('profile picture keeps its spring animation', () => {
+  const { dir, html } = buildSite();
+  const js = fs.readFileSync(path.join(dir, 'main.js'), 'utf8');
+  assert.ok(/id="?profile-picture"?[\s>]/.test(html), '#profile-picture missing from the page');
+  assert.ok(js.includes('profile-picture') && js.includes('mousemove'), 'animation script missing from main.js');
+});
+
 test('page uses IBM Plex and drops the old handwritten fonts and Bootstrap', () => {
   const { dir, html } = buildSite();
   const css = fs.readFileSync(path.join(dir, 'main.css'), 'utf8');

@@ -347,12 +347,22 @@ a {
   border-radius: var(--radius);
 }
 
-.profile-picture {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+#profile-picture {
+  overflow: hidden;
   border-radius: 3px;
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.2s;
+    transform: scale(1.02);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .profile-card-footer {
